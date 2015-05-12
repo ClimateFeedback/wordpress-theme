@@ -12,7 +12,8 @@ Template Name: Homepage
 	  <div class="row">
 	    <h1>CLIMATE FEEDBACK </h1>
 	    <p class="testo">Scientific feedback for Climate Change information online</p>
-	  </div>
+	    <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p>
+      </div>
 	</div>
 </div>
 
@@ -72,10 +73,19 @@ Template Name: Homepage
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <article>
                 <header>
+                <?php if ( 'press' == get_post_type() ) : ?>
+                    <h3>
+                        <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
+                            if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>"><?php the_title(); ?>
+                        </a>
+                    </h3>
+                <?php endif; ?>
+                <?php if ( 'press' != get_post_type() ) : ?>
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <?php endif; ?>
                 </header>
                 <div class="media-left hidden-xs">
-                    <a class="frontpage-postpic" href="'.get_post_meta( get_the_ID(), 'link', true ).'">
+                    <a class="postpic" href="<?php the_permalink(); ?>">
                       <?php the_post_thumbnail() ?>
                     </a>
                 </div>
