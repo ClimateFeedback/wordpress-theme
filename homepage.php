@@ -11,90 +11,123 @@ Template Name: Homepage
 	<div class="container">
 	  <div class="row">
 	    <h1>CLIMATE FEEDBACK </h1>
-	    <p class="testo">Scientific feedback for Climate Change information online</p>
+	    <p class="testo">A voice for science in climate change media coverage</p>
 	    <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p>
       </div>
 	</div>
 </div>
 
 <div class="container">
-    <div class="row section">             
-        <div class="col-lg-3">
-            <p class="quote">feedback (noun):<br />"Constructive response to a product, work or performance, provided to encourage improvement."</p>
-        </div>	
-        <div class="col-lg-9">
-            <h3>THE ISSUE TO ADDRESS</h3>
-            <p> The accuracy of climate change journalism and commentary can be distorted by an author’s ideology, conflicts of interest, or simple misunderstandings. Non-expert readers can find it difficult to determine whether specific information is grounded in scientific fact. </p>
-                    
-            <h3>OUR GOAL</h3>
-            <p>Our goal is to improve the scientific accuracy of climate change coverage, by presenting feedback from accredited scientists directly alongside original online texts.</p>
+    
+    <section>
+        <div class="row section">             
+            <div class="col-lg-6">
+                <h3>What’s the issue?</h3>
+                <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science?</p>
+            </div>	
+            <div class="col-lg-6">
+                <img src="">
+            </div>
         </div>
-    </div>
 
-    <div class="row section">
-        <!-- PROCESS --> 
-        <h2>HOW WE'LL PROCEED</h2>
-        <div class="col-lg-3">
-        	<img class="fig" alt="Picture showing hypothesis annotation on a page." src="http://climatefeedback.org/img/h_ex.png" /> 
+        <div class="row section">
+            <div class="col-lg-6">
+                <img alt="A daily mail article annotated by scientists." src="http://climatefeedback.org/img/cherry.png" class="fig" />
+                <p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p>
+            </div>
+            <div class="col-lg-6">
+                <h3>What if online coverage could be peer-reviewed?</h3>
+                <p>Through the use of the Hypothesis annotation web browser plug-in, the community of scientists go through a variety of online news articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
+    	    </div>
+       	</div>
+
+        <div class="row section">
+            <div class="col-lg-6">
+                <h3>Why should we care?</h3>
+                <p>An informed citizenry is essential for a functioning democracy. And to be properly informed, citizens need access to journalism of the highest accuracy and the tools to evaluate the credibility of what they read. This project aims to achieve both by 1) bringing the expertise of the scientific community into the world of online journalism, and 2) providing readers with top-level “credibility ratings” for a broad range of online news articles.</p>
+            </div>
+            <div class="col-lg-6">
+                <img alt="" src="">
+            </div>
         </div>
-        <div class="col-lg-9">
-	        <h3>WEB ANNOTATION...</h3>
-	        <p><a href="https://hypothes.is" target="_blank">Hypothes.is</a> is a new web browser plug-in that allows anyone to annotate information presented on the Internet (see figure below).</p>
-			
-			<h3>... BY SCIENTISTS</h3>
-	        <p>Climate scientists will use Hypothes.is to annotate target articles sentence by sentence, evaluating their accuracy based on the best available thinking in climate science.</p>
-	    </div>
+    </section>
+    
+    <hr/>
 
-        <img alt="A daily mail article annotated by scientists." src="http://climatefeedback.org/img/cherry.png" class="fig" />
-    	<p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p>
-   	</div>
-
-    <div class="row section">
-	    <!-- OUTCOME --> 
-	    <h2>WHY THIS PROJECT?</h2> 
-	    
-	    <h3>CONTEXT</h3>
-	    <p> We are now at a crucial time in history, when we must make critical decisions about climate action. The availability of accurate information is essential to choosing the right path. </p>
-
-	    <h3>EXPECTED BENEFITS</h3>
-	    <p>The annotation process provides authors with feedback that will encourage them to improve the scientific rigor of their writing.   Our project will also increase awareness and understanding of climate issues, promote scientific reasoning and make scientific information and resources more accessible to general readers.  
-	    </p>
-    </div>
-
-    <div class="row section">
-        <!-- News --> 
-        <h2>NEWS</h2>
-        <?php 
-            $args = array( 
-                'post_type' => array( 'post', 'evaluation', 'press' ),
-                'posts_per_page' => 5 );
-            $loop = new WP_Query( $args );
-        ?>
-        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-            <article>
-                <header>
-                <?php if ( 'press' == get_post_type() ) : ?>
-                    <h3>
-                        <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
-                            if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>"><?php the_title(); ?>
+    <section>
+        <div class="row section">
+          <div class="col-lg-6">
+            <!-- News --> 
+            <h2>News</h2>
+            <?php 
+                $args = array( 
+                    'post_type' => array( 'post', 'press' ),
+                    'posts_per_page' => 5 );
+                $loop = new WP_Query( $args );
+            ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <article>
+                    <header>
+                    <?php if ( 'press' == get_post_type() ) : ?>
+                        <h3>
+                            <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
+                                if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>"><?php the_title(); ?>
+                            </a>
+                        </h3>
+                    <?php endif; ?>
+                    <?php if ( 'press' != get_post_type() ) : ?>
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php endif; ?>
+                    </header>
+                    <div class="media-left hidden-xs">
+                        <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
+                          <?php the_post_thumbnail() ?>
                         </a>
-                    </h3>
-                <?php endif; ?>
-                <?php if ( 'press' != get_post_type() ) : ?>
-                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <?php endif; ?>
-                </header>
-                <div class="media-left hidden-xs">
-                    <a class="postpic" href="<?php the_permalink(); ?>">
-                      <?php the_post_thumbnail() ?>
-                    </a>
-                </div>
-                <div class="media-body">
-                    <?php the_excerpt(); ?>
-                </div>
-            </article> 
-        <?php endwhile; ?>
-        <?php the_posts_navigation(); ?>
-    </div>
-</div>
+                    </div>
+                    <div class="media-body small">
+                        <?php the_excerpt(); ?>
+                    </div>
+                </article> 
+            <?php endwhile; ?>
+            <?php the_posts_navigation(); ?>
+          </div>
+          
+          <div class="col-lg-6">
+            <!-- Evaluations --> 
+            <h2>Evaluations</h2>
+            <?php 
+                $args = array( 
+                    'post_type' => array( 'evaluation'),
+                    'posts_per_page' => 5 );
+                $loop = new WP_Query( $args );
+            ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <article>
+                    <header>
+                    <?php if ( 'press' == get_post_type() ) : ?>
+                        <h3>
+                            <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
+                                if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>"><?php the_title(); ?>
+                            </a>
+                        </h3>
+                    <?php endif; ?>
+                    <?php if ( 'press' != get_post_type() ) : ?>
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php endif; ?>
+                    </header>
+                    <div class="media-left hidden-xs">
+                        <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
+                          <?php the_post_thumbnail() ?>
+                        </a>
+                    </div>
+                    <div class="media-body small">
+                        <?php the_excerpt(); ?>
+                    </div>
+                </article> 
+            <?php endwhile; ?>
+            <?php the_posts_navigation(); ?>
+          </div>
+        </div>
+    </section>
 
+</div><!-- / .container -->
