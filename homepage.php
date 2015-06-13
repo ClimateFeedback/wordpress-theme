@@ -26,13 +26,13 @@ Template Name: Homepage
                 <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science?</p>
             </div>	
             <div class="col-lg-6">
-                <img src="">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image1.jpg">
             </div>
         </div>
 
         <div class="row section">
             <div class="col-lg-6">
-                <img alt="A daily mail article annotated by scientists." src="http://climatefeedback.org/img/cherry.png" class="fig" />
+                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.jpg" class="fig" />
                 <p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p>
             </div>
             <div class="col-lg-6">
@@ -47,7 +47,7 @@ Template Name: Homepage
                 <p>An informed citizenry is essential for a functioning democracy. And to be properly informed, citizens need access to journalism of the highest accuracy and the tools to evaluate the credibility of what they read. This project aims to achieve both by 1) bringing the expertise of the scientific community into the world of online journalism, and 2) providing readers with top-level “credibility ratings” for a broad range of online news articles.</p>
             </div>
             <div class="col-lg-6">
-                <img alt="" src="">
+                <img alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image3.jpg">
             </div>
         </div>
     </section>
