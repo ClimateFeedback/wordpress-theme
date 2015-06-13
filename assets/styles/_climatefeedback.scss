@@ -1,0 +1,137 @@
+/* Custom stylings for the climate feedback theme should go here. */
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800,700);
+
+html, body, p, li {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+}
+
+h3 {
+	font-weight: 300;
+}
+
+.small {
+	font-size: .9em;
+
+  p {
+    font-size: .9em;
+    margin-top: 2em;
+  }
+}
+
+.headline {
+  margin-bottom: -1em;
+}
+
+.press {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.quote {
+	font-size: .9em;
+	opacity: .8;
+	padding-top: 65px;
+}
+
+.sigla {
+	background-image: url(http://climatefeedback.org/img/Haiyan5.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: cover;
+	color: #fff;
+}
+
+.navbar {
+	background-color: transparent;
+	margin-bottom: 0px;
+}
+
+.fig {
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 0.5em;
+}
+
+.caption {
+	font-size: .7em;
+}
+
+footer {
+  padding-bottom: 40px;
+}
+
+/* Spacing between sections */
+section {
+	padding: 2em 4em;
+}
+
+.grey {
+	background-color: #EEE;
+}
+
+.social-media {
+  float: right;
+  padding-top: 7px;
+  font-size: 1.4em;
+
+  a {
+    color: #777;
+    padding: 3px;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+.postpic {
+  img {
+    width: 275px !important;
+    height: auto !important;
+    margin-top: 1.7em;
+    margin-right: 2em;
+  }
+}
+
+.frontpagepostpic {
+  img {
+    width: 180px !important;
+    height: auto !important;
+    margin-top: 1.7em;
+    margin-right: 2em;
+  }
+}
+
+img {
+  height: auto;
+
+  &.fig {
+    width: 100%;
+  }
+
+  &.sponser {
+    height: 70px;
+    width: auto;
+    margin-bottom: 1em;
+  }
+}
+
+.highlevel-overview {
+  .row {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+
+.news-and-evaluations {
+  // Replace these with actual classes.
+  .col-lg-6:first-of-type {
+    margin: -2em;
+  }
+  .col-lg-6:nth-of-type(2) {
+    margin-top: -2em;
+    margin-left: 4em;
+  }
+}
