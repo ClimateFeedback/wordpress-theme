@@ -87,7 +87,7 @@ Template Name: Homepage
                     <div class="media-body small">
                         <?php the_excerpt(); ?>
                     </div>
-                </article> 
+                </article>
             <?php endwhile; ?>
             <?php the_posts_navigation(); ?>
           </div>
