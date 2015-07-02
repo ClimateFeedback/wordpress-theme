@@ -12,7 +12,7 @@ Template Name: Homepage
 	  <div class="row">
 	    <h1>CLIMATE FEEDBACK </h1>
 	    <p class="testo">A voice for science in climate change media coverage</p>
-	    <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p>
+	    <!-- <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p> -->
       </div>
 	</div>
 </div>
@@ -21,48 +21,60 @@ Template Name: Homepage
     
     <section class="highlevel-overview">
         <div class="row">             
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <h3>What’s the issue?</h3>
                 <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science?</p>
             </div>	
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image1.jpg">
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.jpg" class="fig" />
                 <p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <h3>What if online coverage could be peer-reviewed?</h3>
                 <p>Through the use of the Hypothesis annotation web browser plug-in, the community of scientists go through a variety of online news articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
     	    </div>
        	</div>
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <h3>Why should we care?</h3>
                 <p>An informed citizenry is essential for a functioning democracy. And to be properly informed, citizens need access to journalism of the highest accuracy and the tools to evaluate the credibility of what they read. This project aims to achieve both by 1) bringing the expertise of the scientific community into the world of online journalism, and 2) providing readers with top-level “credibility ratings” for a broad range of online news articles.</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-sm-6">
                 <img alt="" class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image3.jpg">
             </div>
         </div>
     </section>
     
-    <hr/>
-
+    </div><!-- / .container -->
+    
+    <section class="scientist-signup">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Scientists!</h4>   
+                    <span class="call-to-action">Help us create a better informed society. Join our community today! <a href="for-scientists/" class="btn btn-primary btn-sm">Apply Now</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
     <section class="news-and-evaluations">
         <div class="row section">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <!-- News --> 
             <h2>News</h2>
             <?php 
                 $args = array( 
                     'post_type' => array( 'post', 'press' ),
-                    'posts_per_page' => 4 );
+                    'posts_per_page' => 3 );
                 $loop = new WP_Query( $args );
             ?>
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -90,16 +102,17 @@ Template Name: Homepage
                 </article>
                 <hr/>
             <?php endwhile; ?>
-            <?php the_posts_navigation(); ?>
+            
+            <a href="#" class="btn btn-primary">More News</a>
           </div>
           
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <!-- Evaluations --> 
             <h2>Evaluations</h2>
             <?php 
                 $args = array( 
                     'post_type' => array( 'evaluation'),
-                    'posts_per_page' => 4 );
+                    'posts_per_page' => 3 );
                 $loop = new WP_Query( $args );
             ?>
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -127,7 +140,7 @@ Template Name: Homepage
                 </article>
                 <hr/>
             <?php endwhile; ?>
-            <?php the_posts_navigation(); ?>
+            <a href="#" class="btn btn-primary">Evaluations</a>
           </div>
         </div>
     </section>
