@@ -13,7 +13,7 @@
 	  		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/citris.jpg" class="sponser" style="float:left; margin-right:1em;">
 	  		<p class="small">The Center for Information Technology Research in the Interest of Society (<a href="http://citris-uc.org/">CITRIS</a>)</p>
 	  		<p class="small">Data and Democracy seed grant #2015-313</p>
-	  		<p class="small">Generous support from private donors. <a href="contribute.html">Make a tax-deductible contribution today</a>!</p>
+	  		<p class="small">Generous support from private donors. <a href="contribute/">Make a tax-deductible contribution today</a>!</p>
 	  		</ul>
 	  	</div>
 	  	<div class="col-sm-3">
