@@ -61,6 +61,17 @@ h3 {
 	padding-bottom: 0.5em;
 }
 
+.logo {
+    font-weight: 600;
+    img {
+        height: 50px;
+        float: left;
+        position: relative;
+        top: -15px;
+        right: 10px;        
+    }
+}
+
 .caption {
 	font-size: .7em;
 }
