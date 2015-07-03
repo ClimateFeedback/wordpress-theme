@@ -54,6 +54,13 @@ h3 {
 	padding-bottom: 0.5em;
 }
 
+.press-fig {
+    height: 80px;	
+    padding-top: 0.5em;
+    padding-right: 40px;
+	padding-bottom: 0.5em;
+}
+
 .caption {
 	font-size: .7em;
 }
@@ -139,6 +146,7 @@ section {
 
 .news-and-evaluations {
   // Replace these with actual classes.
+  margin-bottom: 2em;
   .col-sm-6:first-of-type {
     margin: -2em;
   }

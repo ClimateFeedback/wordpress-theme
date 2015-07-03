@@ -32,8 +32,9 @@ Template Name: Homepage
 
         <div class="row">
             <div class="col-sm-6">
-                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.jpg" class="fig" />
-                <p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p>
+                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.png" class="fig" />
+                <!--<p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p> 
+                -->
             </div>
             <div class="col-sm-6">
                 <h3>What if online coverage could be peer-reviewed?</h3>
@@ -47,7 +48,7 @@ Template Name: Homepage
                 <p>To be properly informed, citizens need access to journalism of the highest accuracy and the tools to evaluate the credibility of what they read. This project aims to achieve both by 1) bringing the expertise of the scientific community into the world of online journalism, and 2) providing readers with top-level “credibility ratings” for a broad range of online news articles.</p>
             </div>
             <div class="col-sm-6">
-                <img alt="" class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image3.jpg">
+                <img alt="" class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image3.png">
             </div>
         </div>
     </section>
@@ -102,7 +103,7 @@ Template Name: Homepage
                 </article>
                 <hr/>
             <?php endwhile; ?>
-            <a href="feedbacks/" class="btn btn-primary">Evaluations</a>
+            <a href="feedbacks/" class="btn btn-primary">More Feedbacks</a>
             </div>
             
             <div class="col-sm-6">
@@ -153,8 +154,10 @@ Template Name: Homepage
             <div class="row">
                 <div class="col-sm-12">
                     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
-                    <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/img_press.png"> 
-                    <a href="press/" class="btn btn-primary">More</a>
+                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png">
+                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-salon.png">
+                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"> 
+                    <a href="press/" class="btn btn-primary">More Press</a>
                 </div>
             </div>
         </div>
