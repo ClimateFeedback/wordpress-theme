@@ -144,5 +144,16 @@ Template Name: Homepage
           </div>
         </div>
     </section>
-
+        
+    <section class="press-show">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
+                    <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/img_press.png">
+                </div>
+            </div>
+        </div>
+    </section>
+        
 </div><!-- / .container -->
