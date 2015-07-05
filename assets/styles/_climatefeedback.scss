@@ -6,12 +6,17 @@ html, body, p, li {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 }
+
 a {
-    color: #066481;
+  color: #066481;
             
-    &:hover {
-        color: #043E4B;
-    }   
+  &:hover {
+    color: #043E4B;
+  }
+
+  &.btn {
+    background-color: #27AE60;
+  }
 }
 
 h3 {
@@ -53,6 +58,7 @@ h3 {
 .navbar {
 	background-color: transparent;
 	margin-bottom: 0px;
+  padding: 14px;
 }
 
 .fig {
@@ -61,11 +67,11 @@ h3 {
 	padding-bottom: 0.5em;
 }
 
-.sci-fig {
-    height: 140px;	
-	padding-top: 2em;
-	padding-bottom: 0.5em;
-}
+// .sci-fig {
+//     height: 140px;	
+// 	padding-top: 2em;
+// 	padding-bottom: 0.5em;
+// }
 
 .press-fig {
     height: 80px;	
@@ -75,14 +81,16 @@ h3 {
 }
 
 .logo {
-    font-weight: 600;
-    img {
-        height: 50px;
-        float: left;
-        position: relative;
-        top: -15px;
-        right: 10px;        
-    }
+  font-weight: 600;
+  font-size: 24px;
+
+  img {
+    height: 50px;
+    float: left;
+    position: relative;
+    top: -15px;
+    right: 10px;        
+  }
 }
 
 .caption {
@@ -101,6 +109,13 @@ footer {
     &:hover {
       color: #5DB3C1;
     }
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 4em;
+    max-width: 100%;
   }
 } 
 
@@ -145,29 +160,6 @@ section {
   }
 }
 
-// .frontpagepostpic {
-//   img {
-//     width: 180px !important;
-//     height: auto !important;
-//     margin-top: 1.7em;
-//     margin-right: 2em;
-//   }
-// }
-
-// img {
-//   height: auto;
-
-//   &.fig {
-//     width: 100%;
-//   }
-
-//   &.sponser {
-//     height: 70px;
-//     width: auto;
-//     margin-bottom: 1em;
-//   }
-// }
-
 .highlevel-overview {
   .row {
     margin-top: 2em;
@@ -175,17 +167,17 @@ section {
   }
 }
 
-.news-and-evaluations {
-  // Replace these with actual classes.
-  margin-bottom: 2em;
-  .col-sm-6:first-of-type {
-    margin: -2em;
-  }
-  .col-sm-6:nth-of-type(2) {
-    margin-top: -2em;
-    margin-left: 4em;
-  }
-}
+// .news-and-evaluations {
+//   // Replace these with actual classes.
+//   margin-bottom: 2em;
+//   .col-sm-6:first-of-type {
+//     margin: -2em;
+//   }
+//   .col-sm-6:nth-of-type(2) {
+//     margin-top: -2em;
+//     margin-left: 4em;
+//   }
+// }
 
 .scientist-signup {
   background: #046380;
@@ -196,9 +188,9 @@ section {
   background: #DBDBDB;
 }
 
-.call-to-action {
-  position: relative;
-}
+// .call-to-action {
+//   position: relative;
+// }
 
 // #001A25 Climate Feedback black. : )
 
