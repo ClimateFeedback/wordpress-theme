@@ -5,16 +5,16 @@
 html, body, p, li {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-}
-
-h3 {
-	font-weight: 400;
     a {
         color: #066481;
         
         &:hover {
             color: #043E4B;
         }   
+}
+
+h3 {
+	font-weight: 400;
 }
 
 .small {
@@ -24,15 +24,6 @@ h3 {
     font-size: .9em;
     margin-top: 2em;
   }
-}
-
-.container {
-    a {
-        color: #066481;
-
-        &:hover {
-            color: #043E4B;
-        }
 }
     
 .headline {
