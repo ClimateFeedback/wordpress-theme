@@ -5,12 +5,13 @@
 html, body, p, li {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-    a {
-        color: #066481;
-        
-        &:hover {
-            color: #043E4B;
-        }   
+}
+a {
+    color: #066481;
+            
+    &:hover {
+        color: #043E4B;
+    }   
 }
 
 h3 {
