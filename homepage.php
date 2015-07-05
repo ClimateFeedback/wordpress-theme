@@ -10,7 +10,6 @@ Template Name: Homepage
 <div class="sigla jumbotron">
 	<div class="container">
 	  <div class="row">
-	    <h1>CLIMATE FEEDBACK </h1>
 	    <p class="testo">A voice for science in climate change media coverage</p>
 	    <!-- <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p> -->
       </div>
@@ -26,7 +25,7 @@ Template Name: Homepage
                 <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science? </p>
             </div>	
             <div class="col-sm-6">
-                <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image1.jpg">
+                <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/media_confusion.png">
             </div>
         </div>
 
@@ -59,7 +58,8 @@ Template Name: Homepage
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4>Scientists!</h4>   
+                    <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
+                    <h3> SCIENTISTS!</h3>   
                     <span class="call-to-action">Help us create a better informed society. Join our community today! <a href="for-scientists/" class="btn btn-primary btn-sm">Apply Now</a></span>
                 </div>
             </div>
@@ -154,10 +154,19 @@ Template Name: Homepage
             <div class="row">
                 <div class="col-sm-12">
                     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
-                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png">
-                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-salon.png">
-                    <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"> 
-                    <a href="press/" class="btn btn-primary">More Press</a>
+                    <div class="col-xs-3">
+                       <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href="http://www.salon.com/2014/12/04/new_mit_app_lets_scientists_fact_check_the_media_on_climate/" target="_blank">   <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-salon.png"></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a> 
+                    </div>
+                    <div class="col-xs-3">
+                    <div class="col-xs-3">
+                        <a href="press/" class="btn btn-primary">More Press</a>
+                    </div>
                 </div>
             </div>
         </div>
