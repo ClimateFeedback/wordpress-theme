@@ -36,11 +36,6 @@ h3 {
   margin-bottom: -1em;
 }
 
-.press {
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
 .quote {
 	font-size: .9em;
 	opacity: .8;
@@ -72,13 +67,6 @@ h3 {
 // 	padding-top: 2em;
 // 	padding-bottom: 0.5em;
 // }
-
-.press-fig {
-    height: 80px;	
-    padding-top: 0.5em;
-    padding-right: 40px;
-	padding-bottom: 0.5em;
-}
 
 .logo {
   font-weight: 600;
@@ -157,6 +145,20 @@ section {
   }
 }
 
+.highlevel-overview {
+  .row {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+
+
+// People and Expert loops ///////////////
+.responsive-modal-image {
+  max-width: 100%;
+  height: auto;
+}
+
 .picunit {
   img {
     width: 150px;
@@ -172,11 +174,18 @@ section {
   }
 }
 
-.highlevel-overview {
-  .row {
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
+
+// PRESS /////////////////////////////
+.press-fig {
+  height: 80px;
+  padding-top: 0.5em;
+  padding-right: 40px;
+  padding-bottom: 0.5em;
+}
+
+.press {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 // .news-and-evaluations {
@@ -200,12 +209,8 @@ section {
   background: #DBDBDB;
 }
 
-// .call-to-action {
-//   position: relative;
-// }
 
-// #001A25 Climate Feedback black. : )
-
+// RESPONSIVE STUFF /////////////////////////
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
   .frontpagepostpic {
