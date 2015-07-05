@@ -8,7 +8,13 @@ html, body, p, li {
 }
 
 h3 {
-	font-weight: 300;
+	font-weight: 400;
+    a {
+        color: #066481;
+        
+        &:hover {
+            color: #043E4B;
+        }   
 }
 
 .small {
@@ -20,6 +26,15 @@ h3 {
   }
 }
 
+.container {
+    a {
+        color: #066481;
+
+        &:hover {
+            color: #043E4B;
+        }
+}
+    
 .headline {
   margin-bottom: -1em;
 }
