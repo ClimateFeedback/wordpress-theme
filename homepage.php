@@ -10,8 +10,7 @@ Template Name: Homepage
 <div class="sigla jumbotron">
 	<div class="container">
 	  <div class="row">
-	    <p class="testo">A voice for science in climate change media coverage</p>
-	    <!-- <p><a href="for-scientists/" class="btn btn-primary btn-lg">Scientist sign up page</a></p> -->
+	    <h2 class="testo">A voice for science in climate change media coverage</h2>
       </div>
 	</div>
 </div>
@@ -30,15 +29,16 @@ Template Name: Homepage
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 hidden-xs">
                 <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.png" class="fig" />
-                <!--<p class="caption"> Screenshot illustrating a possible use of the Hypothes.is annotator. Here a scientist added a comment and a link to a scientific publication.</p> 
-                -->
             </div>
             <div class="col-sm-6">
                 <h3>What if online coverage could be peer-reviewed?</h3>
                 <p>Using the <a href="http://hypothes.is" target="_blank">Hypothesis</a> annotation platform, our community of scientists go through a variety of online media articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
     	    </div>
+            <div class="col-sm-6 visible-xs">
+                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.png" class="fig" />
+            </div>
        	</div>
 
         <div class="row">
@@ -55,12 +55,17 @@ Template Name: Homepage
     </div><!-- / .container -->
     
     <section class="scientist-signup">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
-                    <h3> SCIENTISTS!</h3>   
-                    <span class="call-to-action">Help us create a better informed society. Join our community today! <a href="for-scientists/" class="btn btn-primary btn-sm">Apply Now</a></span>
+                <div class="col-sm-12 call-to-action">
+                    <div class="media-left">
+                        <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
+                    </div>
+                    <div class="media-body">
+                        <h3>SCIENTISTS!</h3>   
+                        <h4>Help us create a better informed society. Join our community today!</h4>
+                        <a href="for-scientists/" class="btn btn-primary btn-lg">Apply Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,9 +155,8 @@ Template Name: Homepage
 </div><!-- / .container -->
 
     <section class="press-show">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-12">
                     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
                     <div class="col-xs-3">
                        <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
@@ -164,10 +168,8 @@ Template Name: Homepage
                         <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a> 
                     </div>
                     <div class="col-xs-3">
-                    <div class="col-xs-3">
                         <a href="press/" class="btn btn-primary">More Press</a>
                     </div>
-                </div>
             </div>
         </div>
     </section>
