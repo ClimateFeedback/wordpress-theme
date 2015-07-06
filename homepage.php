@@ -156,8 +156,9 @@ Template Name: Homepage
 
     <section class="press-show">
         <div class="container">
-            <div class="row">
+            
                     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
+            <div class="row">
                     <div class="col-xs-3">
                        <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
                     </div>
