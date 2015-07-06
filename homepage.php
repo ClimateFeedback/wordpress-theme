@@ -10,7 +10,7 @@ Template Name: Homepage
 <div class="sigla jumbotron">
 	<div class="container">
 	  <div class="row">
-	    <h2 class="testo">A voice for science in climate change media coverage</h2>
+	    <h3 class="tagline">A voice for science in climate change media coverage</h3>
       </div>
 	</div>
 </div>
@@ -18,36 +18,36 @@ Template Name: Homepage
 <div class="container">
     
     <section class="highlevel-overview">
-        <div class="row">             
-            <div class="col-sm-6">
-                <h3>Today’s media climate leads to confusion</h3>
+        <div class="row ">             
+            <div class="col-sm-6 ">
+                <h3 class="spaceup">Today’s media climate leads to confusion</h3>
                 <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science? </p>
             </div>	
             <div class="col-sm-6">
-                <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/media_confusion.png">
+                <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i1_confusion.png">
             </div>
         </div>
 
-        <div class="row">
+        <div class="row ">
             <div class="col-sm-6 hidden-xs">
-                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.png" class="fig" />
+                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i2_our-process.png" class="fig" />
             </div>
-            <div class="col-sm-6">
-                <h3>What if online coverage could be peer-reviewed?</h3>
+            <div class="col-sm-6 ">
+                <h3 class="spaceup">What if online coverage could be peer-reviewed?</h3>
                 <p>Using the <a href="http://hypothes.is" target="_blank">Hypothesis</a> annotation platform, our community of scientists go through a variety of online media articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
     	    </div>
             <div class="col-sm-6 visible-xs">
-                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image2.png" class="fig" />
+                <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i2_our-process.png" class="fig" />
             </div>
        	</div>
 
-        <div class="row">
+        <div class="row ">
             <div class="col-sm-6">
-                <h3>Accurate information: the foundation of a functioning democracy</h3>
+                <h3 class="spaceup">Accurate information: the foundation of a functioning democracy</h3>
                 <p>To be properly informed, citizens need access to journalism of the highest accuracy and the tools to evaluate the credibility of what they read. This project aims to achieve both by 1) bringing the expertise of the scientific community into the world of online journalism, and 2) providing readers with top-level “credibility ratings” for a broad range of online news articles.</p>
             </div>
             <div class="col-sm-6">
-                <img alt="" class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/image3.png">
+                <img alt="" class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i3_result.png">
             </div>
         </div>
     </section>

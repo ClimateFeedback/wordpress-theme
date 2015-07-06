@@ -1,6 +1,6 @@
 /* Custom stylings for the climate feedback theme should go here. */
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,400,300,800,700);
 
 html, body, p, li {
 	font-family: 'Raleway', sans-serif;
@@ -15,7 +15,7 @@ a {
   }
 
   &.btn {
-    background-color: #27AE60;
+    background-color: #3AAFCB;
   }
 }
 
@@ -43,17 +43,23 @@ h3 {
 }
 
 .sigla {
-	background-image: url(http://climatefeedback.org/img/Haiyan5.png);
+	background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/Haiyan_crop.png);
 	background-repeat: no-repeat;
 	background-color: transparent;
 	background-size: cover;
-	color: #fff;
+    color: #fff;
+}
+
+    
+.tagline {
+	margin-top: -20px;
+	margin-bottom: 100px;
 }
 
 .navbar {
 	background-color: transparent;
 	margin-bottom: 0px;
-  padding: 14px;
+    padding: 14px;
 }
 
 .fig {
@@ -62,22 +68,36 @@ h3 {
 	padding-bottom: 0.5em;
 }
 
-// .sci-fig {
-//     height: 140px;	
-// 	padding-top: 2em;
-// 	padding-bottom: 0.5em;
-// }
+.spaceup{
+    padding-top: 2em;
+}
+
+.spaceup1{
+    padding-top: 1em;
+}
+
+.sci-fig {
+    height: 140px;	
+ 	padding-top: 2em;
+ 	padding-bottom: 0.5em;
+ }
+
+.valign{
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
 
 .logo {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
 
-  img {
-    height: 50px;
-    float: left;
-    position: relative;
-    top: -15px;
-    right: 10px;        
+  img {  
+      height: 64px;
+      float: left;
+      position: relative;
+      top: -20px;
+      right: 13px;
   }
 }
 
@@ -114,7 +134,7 @@ footer {
 
 /* Spacing between sections */
 section {
-	padding: 2em 4em;
+	padding: 1em 1em;
 }
 
 .grey {
@@ -132,6 +152,21 @@ section {
 
     &:hover {
       color: #333;
+    }
+  }
+}
+
+.social-footer {
+  float: center;
+  padding-top: 7px;
+  font-size: 1.4em;
+
+  a {
+    color: #FFFFFF;
+    padding: 3px;
+
+    &:hover {
+      color: #999;
     }
   }
 }
