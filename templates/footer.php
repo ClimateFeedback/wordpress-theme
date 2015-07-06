@@ -18,7 +18,7 @@
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 	  		<h4>IN PARTNERSHIP WITH</h4>
-	  		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/csrrt.jpg" class="sponser">
+	  		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/csrrt.png" class="sponser">
 	  		<p class="small">Climate Science Rapid Response Team (<a href="http://www.climaterapidresponse.org/">CSRRT</a>)</p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
