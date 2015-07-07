@@ -10,7 +10,7 @@ Template Name: Homepage
 <div class="sigla jumbotron">
 	<div class="container">
 	  <div class="row">
-	    <h3 class="tagline">A voice for science in climate change media coverage</h3>
+	    <h3 class="tagline half-black">A voice for science in climate change media coverage</h3>
       </div>
 	</div>
 </div>
