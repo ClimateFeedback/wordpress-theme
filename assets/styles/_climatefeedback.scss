@@ -43,11 +43,46 @@ h3 {
 }
 
 .sigla {
-	background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/Haiyan_crop.png);
+	background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
 	background-repeat: no-repeat;
 	background-color: transparent;
 	background-size: cover;
     color: #fff;
+}
+
+//.myfull{
+//  margin: 0 -9999rem;
+//  padding: 0.25rem 9999rem;
+//  background-color: transparent;
+//  background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  color: #fff;
+//}
+
+.myfull {
+  position: relative; 
+  margin: 0 -30px;
+  padding: 0.25rem 30px;
+  background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  color: #fff;
+}
+.myfull:before, .myfull:after {
+  content: "";
+  position: absolute;
+  /* fill vertically */
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  right: 100%;
+  background: black;
+}
+.myfull:after { 
+  width: 100%;
+  left: 100%;
+  background: black;
 }
     
 .tagline {
