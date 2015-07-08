@@ -5,6 +5,7 @@
 html, body, p, li {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
+    overflow-x: hidden;
 }
 
 a {
@@ -50,41 +51,34 @@ h3 {
     color: #fff;
 }
 
-//.myfull{
-//  margin: 0 -9999rem;
-//  padding: 0.25rem 9999rem;
-//  background-color: transparent;
-//  background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//  color: #fff;
-//}
-
 .myfull {
   position: relative; 
   margin: 0 -30px;
   padding: 0.25rem 30px;
   background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
 }
-.myfull:before, .myfull:after {
+.myfull:before {
   content: "";
   position: absolute;
-  /* fill vertically */
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 9600px;
   right: 100%;
   background: black;
 }
 .myfull:after { 
-  width: 100%;
-  left: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
   background: black;
+  width: 5000px; 
+  left: 100%;
 }
-    
+
 .tagline {
 	margin-top: -20px;
 	margin-bottom: 100px;
@@ -243,12 +237,27 @@ section {
 
 .expert {
   img {
-    width: 150px;
+    width: 140px;
     height: auto;
     margin: 0.5em; 
   }
+  p {
+    margin: 0px -1px 5px;
+  }
 }
 
+.med-left {
+    float: left;
+    background:transparent;
+    padding-right: 10px;
+}
+
+.med-body {
+    display: table-cell;
+    vertical-align: top;
+    width: 10000px;
+    overflow: hidden;
+}
 
 // PRESS /////////////////////////////
 .press-fig {
