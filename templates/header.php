@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand logo" href="<?= esc_url(home_url('/')); ?>"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Climate_Feedback_logo.png"> Climate Feedback</a>
+      <a class="navbar-brand logo" href="<?= esc_url(home_url('/')); ?>"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Climate_Feedback_logo_s.png"> Climate Feedback</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <?php
