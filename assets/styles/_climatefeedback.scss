@@ -8,6 +8,10 @@ html, body, p, li {
     overflow-x: hidden;
 }
 
+ol, ul {
+	list-style-position: inside;
+}
+
 a {
   color: #066481;
             
@@ -54,7 +58,7 @@ h3 {
 .myfull {
   position: relative; 
   margin: 0 -30px;
-  padding: 0.25rem 30px;
+  padding: 0.35rem 30px;
   background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
   background-repeat: no-repeat;
   background-size: cover;
