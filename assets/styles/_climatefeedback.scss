@@ -24,6 +24,12 @@ a {
   }
 }
 
+a.bott {
+  &.btn {
+    background-color: #066481;
+  }
+}
+
 h3 {
 	font-weight: 400;
 }
@@ -110,6 +116,10 @@ h3 {
 
 .spaceup1{
     padding-top: 1em;
+}
+
+.spaceup05{
+    padding-top: 0.5em;
 }
 
 .sci-fig {
@@ -294,6 +304,33 @@ section {
 .scientist-signup {
   background: #046380;
   color: #FFF;
+}
+
+.scientist-signup_full_bottom {
+  position: relative; 
+  margin: 0 -30px;
+  padding: 0.35rem 30px;
+  background: #071C25;
+  color: #FFF;
+}
+
+.scientist-signup_full_bottom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9600px;
+  right: 100%;
+  background: #071C25;
+}
+.scientist-signup_full_bottom:after { 
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #071C25;
+  width: 5000px; 
+  left: 100%;
 }
 
 .press-show {
