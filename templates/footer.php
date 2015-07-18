@@ -29,7 +29,6 @@
             <div class="social-footer">
                 <a href="https://www.facebook.com/pages/Climate-Feedback/1547593572151463" target="_blank"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/ClimateFdbk" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="https://github.com/climatefeedback" target="_blank"><i class="fa fa-github"></i></a>
             </div>
 	  	</div>
   	</div>
