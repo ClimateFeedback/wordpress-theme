@@ -22,12 +22,25 @@ a {
   &.btn {
     background-color: #3AAFCB;
   }
+  &.inline-btn {
+    text-decoration: none;
+  }
 }
 
 a.bott {
   &.btn {
     background-color: #066481;
   }
+}
+
+.inline-btn{
+    background-color: #d3d3d3;
+    padding: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px; 
 }
 
 h3 {
