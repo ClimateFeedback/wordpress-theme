@@ -274,6 +274,30 @@ section {
   }
 }
 
+.camp-left {
+    float: left;
+    background:transparent;
+    padding-right: 3em;
+}
+
+.camp-body {
+    display: table-cell;
+    width: 10000px;
+    overflow: hidden;
+    float: none;
+    padding-left: 16px; 
+    line-height: 130%;
+}
+
+.camp-fig {
+    height: 120px;	
+ 	padding-bottom: 0.5em;
+ }
+
+.nospaceup{
+margin-top: 1em;
+}
+
 .med-left {
     float: left;
     background:transparent;
@@ -314,6 +338,12 @@ section {
 //     margin-left: 4em;
 //   }
 // }
+
+.campaign {
+  background: #046380;
+  color: #FFF;
+  margin-top: -1.9em;
+}
 
 .scientist-signup {
   background: #046380;
