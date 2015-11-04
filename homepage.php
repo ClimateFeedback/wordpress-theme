@@ -36,13 +36,13 @@ Template Name: Homepage
     </section>
 
 <div class="container">
-    
+
     <section class="highlevel-overview">
-        <div class="row ">             
+        <div class="row ">
             <div class="col-sm-6 ">
                 <h3 class="spaceup">Today’s media climate leads to confusion</h3>
                 <p>With so much information available online, trying to figure out which information is credible — and what is not — is a real challenge. When so much of what we read falls outside of our own expertise, how can we know which headlines and news articles are consistent with science? </p>
-            </div>	
+            </div>
             <div class="col-sm-6">
                 <img class="fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i1_confusion.png">
             </div>
@@ -71,9 +71,9 @@ Template Name: Homepage
             </div>
         </div>
     </section>
-    
+
     </div><!-- / .container -->
-    
+
     <section class="scientist-signup">
         <div class="container">
             <div class="row">
@@ -82,7 +82,7 @@ Template Name: Homepage
                         <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
                     </div>
                     <div class="media-body">
-                        <h3>SCIENTISTS!</h3>   
+                        <h3>SCIENTISTS!</h3>
                         <h4>Help us create a better informed society. Join our community today!</h4>
                         <a href="for-scientists/" class="btn btn-primary btn-lg">Apply Now</a>
                     </div>
@@ -90,15 +90,15 @@ Template Name: Homepage
             </div>
         </div>
     </section>
-    
+
     <div class="container">
     <section class="news-and-evaluations">
         <div class="row section">
             <div class="col-sm-6">
-            <!-- Evaluations --> 
+            <!-- Evaluations -->
             <h2>Latest Feedbacks</h2>
-            <?php 
-                $args = array( 
+            <?php
+                $args = array(
                     'post_type' => array( 'evaluation'),
                     'posts_per_page' => 3 );
                 $loop = new WP_Query( $args );
@@ -114,7 +114,7 @@ Template Name: Homepage
                         </h4>
                     <?php endif; ?>
                     <?php if ( 'press' != get_post_type() ) : ?>
-                        <h4 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                     <?php endif; ?>
                     </header>
                     <div class="media-left hidden-xs">
@@ -123,6 +123,7 @@ Template Name: Homepage
                         </a>
                     </div>
                     <div class="media-body small">
+												<h4 style="margin-bottom:-1em;"><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></h4>
                         <?php the_excerpt(); ?>
                     </div>
                 </article>
@@ -130,12 +131,12 @@ Template Name: Homepage
             <?php endwhile; ?>
             <a href="feedbacks/" class="btn btn-primary">More Feedbacks</a>
             </div>
-            
+
             <div class="col-sm-6">
-            <!-- News --> 
+            <!-- News -->
             <h2>News</h2>
-            <?php 
-                $args = array( 
+            <?php
+                $args = array(
                     'post_type' => array( 'post', 'press' ),
                     'posts_per_page' => 3 );
                 $loop = new WP_Query( $args );
@@ -165,19 +166,19 @@ Template Name: Homepage
                 </article>
                 <hr/>
             <?php endwhile; ?>
-            
+
             <!-- / <a href="news-feed/" class="btn btn-primary">More News</a> -->
             </div>
-          
+
         </div>
     </section>
-        
+
 </div><!-- / .container -->
 
     <section class="press-show">
         <div class="container">
-            
-                    <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>   
+
+                    <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>
             <div class="row">
                     <div class="col-sm-3 col-xs-6">
                        <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
@@ -186,7 +187,7 @@ Template Name: Homepage
                         <a href="http://www.salon.com/2014/12/04/new_mit_app_lets_scientists_fact_check_the_media_on_climate/" target="_blank">   <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-salon.png"></a>
                     </div>
                     <div class="col-sm-3 col-xs-6">
-                        <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a> 
+                        <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
                     </div>
                     <div class="col-sm-3 col-xs-6">
                         <a href="press/" class="btn btn-primary">More Press</a>
