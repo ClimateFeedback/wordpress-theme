@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ClimateFdbk">
+    <meta name="twitter:creator" content="@ClimateFdbk">
+    <meta name="twitter:title" content="<?php the_title(); ?>">
+    <meta name="twitter:description" content="<?php echo get_the_excerpt(); ?>">
+    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+    <meta name="twitter:image" content="<?php echo $url; ?>">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <?php wp_head(); ?>
