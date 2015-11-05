@@ -10,12 +10,14 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/assets.php',    // Scripts and stylesheets
-  'lib/extras.php',    // Custom functions
-  'lib/setup.php',     // Theme setup
-  'lib/titles.php',    // Page titles
-  'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php' // Theme customizer
+  'lib/utils.php',                 // Utility functions
+  'lib/init.php',                  // Initial theme setup and constants
+  'lib/wrapper.php',               // Theme wrapper class
+  'lib/conditional-tag-check.php', // ConditionalTagCheck class
+  'lib/config.php',                // Configuration
+  'lib/assets.php',                // Scripts and stylesheets
+  'lib/titles.php',                // Page titles
+  'lib/extras.php',                // Custom functions
 ];
 
 foreach ($sage_includes as $file) {
@@ -27,22 +29,26 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
+// styling shortcodes
+function section_shortcode( $atts, $content = null ) {
+    return '<section class="separator"><h3 class="inseparator">' . $content . '</h3> </section>';
+}
+add_shortcode( 'eval-separator', 'section_shortcode' );
 
 
-
-// Creating the campaign widget
+// Creating the CAMPAIGN WIDGET
 class wpb_widget extends WP_Widget {
 
   function __construct() {
     parent::__construct(
     // Base ID of your widget
-    'wpb_widget',
+      'wpb_widget',
 
-    // Widget name will appear in UI
-    __('Campaign Widget', 'wpb_widget_domain'),
+      // Widget name will appear in UI
+      __('Campaign Widget', 'wpb_widget_domain'),
 
-    // Widget description
-    array( 'description' => __( 'This is the kickstarter campaign widget', 'wpb_widget_domain' ), )
+      // Widget description
+      array( 'description' => __( 'This is the kickstarter campaign widget', 'wpb_widget_domain' ), )
     );
   }
 
@@ -58,13 +64,14 @@ class wpb_widget extends WP_Widget {
     echo $args['before_widget'];
     if ( is_single() ) {
       echo '<img src="' . $imgURL . '/img/campaign-splash-sm.png" class="img-responsive campaign-img hidden-xs">'; // smaller img
-      echo '<img src="' . $imgURL . '/img/campaign-splash.png" class="img-responsive campaign-img visible-xs">'; // larger img
+      echo '<img src="' . $imgURL . '/img/campaign-splash.jpg" class="img-responsive campaign-img visible-xs">'; // larger img
 
       echo "<div class='campaign-content'>";
       echo $args['before_title'] . $title . $args['after_title'];
       echo "<p class='large'>" . $args['before_description'] . $description . $args['after_description'] . "</p>";
       echo "</div>";
 
+//    echo "<a class='btn btn-primary btn-lg campaign-button' href='http://tilt.climatefeedback.org' target='_blank'>$title</a>";
       echo "<a class='btn btn-primary btn-lg campaign-button' href='$link' target='_blank'>$button</a>";
 
       // This is where you run the code and display the output
@@ -103,7 +110,7 @@ class wpb_widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id( 'button' ); ?>"><?php _e( 'Button Title:' ); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id( 'button' ); ?>" name="<?php echo $this->get_field_name( 'button' ); ?>" type="text" value="<?php echo esc_attr( $button ); ?>" />
     </p>
-    <?php
+  <?php
   }
 
   // Updating widget replacing old instances with new
@@ -120,7 +127,159 @@ class wpb_widget extends WP_Widget {
 
 // Register and load the widget
 function wpb_load_widget() {
-    register_widget( 'wpb_widget' );
+  register_widget( 'wpb_widget' );
 }
 add_action( 'widgets_init', 'wpb_load_widget' );
 
+
+// Allowing to use shortcode in WIDGETS 
+add_filter('widget_text', 'do_shortcode');
+
+
+//repositioning the jetpack sharing icons
+function jptweak_remove_share() {
+  remove_filter( 'the_content', 'sharing_display',19 );
+  remove_filter( 'the_excerpt', 'sharing_display',19 );
+  if ( class_exists( 'Jetpack_Likes' ) ) {
+    remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+  }
+}
+
+add_action( 'loop_start', 'jptweak_remove_share' );
+
+// Adds evaluations post types to the rss feed
+function myfeed_request($qv) {
+    if (isset($qv['feed']) && !isset($qv['post_type']))
+        $qv['post_type'] = array('post', 'evaluation');
+    return $qv;
+}
+add_filter('request', 'myfeed_request');
+
+// shortcode for STYLING sections in Feedbacks
+
+
+// shortcode for adding tags in post
+function tags_in_post($atts) {    // [tags] outputs post's tags in a span
+global $post;
+$tags = '<span class="post-tags">';
+ob_start();
+the_tags( '<span class="post-tags">', ', ', '</span>' );
+$tags = ob_get_contents();
+ob_end_clean();
+return $tags;
+}
+add_shortcode ('tags', 'tags_in_post');
+
+// Custom Taxonomies
+
+add_action( 'init', 'create_my_taxonomies', 0 );
+
+function create_my_taxonomies() {
+  register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'authors', 'evaluation', array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'reviewers', 'evaluation', array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
+}
+
+
+// shortcode for adding articles outlet in post
+function art_outlet($atts) {    
+global $post;
+$outlet = '<span class="art-outlet">';
+ob_start();
+echo get_the_term_list( $post->ID, 'outlet', '', ', ', '' ); 
+$outlet = ob_get_contents();
+ob_end_clean();
+return $outlet;
+}
+add_shortcode ('outlet', 'art_outlet');
+
+// shortcode for adding articles authors in post
+function art_author($atts) {    
+global $post;
+$auths = '<span class="art-author">';
+ob_start();
+echo get_the_term_list( $post->ID, 'authors', '', ', ', '' ); 
+$auths = ob_get_contents();
+ob_end_clean();
+return $auths;
+}
+add_shortcode ('author', 'art_author');
+
+// shortcode for adding article-level tags in post
+function art_tags($atts) {    
+global $post;
+$atags = '<span class="art-tags">';
+ob_start();
+echo get_the_term_list( $post->ID, 'article-tag', '', ', ', '' ); 
+$atags = ob_get_contents();
+ob_end_clean();
+return $atags;
+}
+add_shortcode ('article-tags', 'art_tags');
+
+//  [quote_sci user="username"]
+function quote_sci( $atts ) {
+    $a = shortcode_atts( array(
+        'user' => '',
+    ), $atts );
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a['user'] ) );
+foreach ( $blogusers as $user ) {   
+     $output .= '<strong> <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).':</strong>';
+}    
+    //Close and return markup
+    return $output;
+}
+add_shortcode( 'quote_sci', 'quote_sci' );
+
+
+// shortcode for adding reviewers list in post
+function art_revsl($atts) {    
+global $post;
+$arevs = '<span class="art-revs">';
+ob_start();
+echo get_the_term_list( $post->ID, 'reviewers', '', ', ', '' ); 
+$arevs = ob_get_contents();
+ob_end_clean();
+return $arevs;
+}
+add_shortcode ('reviewers-list', 'art_revsl');
+
+// shortcode for adding reviewers list in widget
+function art_revs($atts) {    
+global $post;
+$arevs = '<span class="art-revs">';
+ob_start();
+$terms = wp_get_object_terms( $post->ID, 'reviewers' );
+    foreach ( $terms as $term ) {   
+     $term_names[] = $term->name;
+     //echo $term->name;
+     
+     echo quote_sci2( $term->name );
+     echo '<br /> ';
+} 
+$arevs = ob_get_contents();
+ob_end_clean();
+return $arevs;
+}
+add_shortcode ('reviewers', 'art_revs');
+
+function quote_sci2( $a ) {
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a ) );
+foreach ( $blogusers as $user ) {   
+     $output .= ' <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'';
+}    
+    //Close and return markup
+    return $output;
+}
+
+// Kill pingbacks
+// from http://blog.carlesmateo.com/2014/08/30/stopping-and-investigating-a-wordpress-xmlrpc-php-attack/
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
+function remove_xmlrpc_pingback_ping( $methods ) {
+    unset( $methods['pingback.ping'] );
+    
+    return $methods;
+}
