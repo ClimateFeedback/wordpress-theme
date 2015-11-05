@@ -18,19 +18,19 @@ Template Name: Homepage
     <section class="campaign">
         <div class="container">
             <div class="row">
-                
+
                     <div class="col-xs-12 col-md-6">
                     <div class="camp-left">
                         <img alt="" class="camp-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Istandwithscience.png">
                     </div>
                     </div>
                     <div class="col-xs-12 col-md-6">
-                    <div class="camp-body">  
+                    <div class="camp-body">
                         <h4 class="nospaceup">Crowd-funding campaign coming soon</h4>
                         <a target="_blank" href="http://eepurl.com/buIIXv" class="btn btn-primary btn-lg">Stay tuned</a>
                     </div>
                     </div>
-                
+
             </div>
         </div>
     </section>

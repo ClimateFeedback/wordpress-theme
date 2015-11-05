@@ -285,12 +285,12 @@ section {
     width: 10000px;
     overflow: hidden;
     float: none;
-    padding-left: 16px; 
+    padding-left: 16px;
     line-height: 130%;
 }
 
 .camp-fig {
-    height: 120px;	
+    height: 120px;
  	padding-bottom: 0.5em;
  }
 
@@ -420,6 +420,24 @@ article header {
 
 p.small {
   overflow-wrap: break-word;
+}
+
+section.widget{
+  .campaign-img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .campaign-content {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px;
+  }
+  .campaign-button{
+    border-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+  }
 }
 /*==============================*/
 /*==============================*/
