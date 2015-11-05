@@ -38,13 +38,13 @@ class wpb_widget extends WP_Widget {
   function __construct() {
     parent::__construct(
     // Base ID of your widget
-    'wpb_widget',
+      'wpb_widget',
 
-    // Widget name will appear in UI
-    __('Campaign Widget', 'wpb_widget_domain'),
+      // Widget name will appear in UI
+      __('Campaign Widget', 'wpb_widget_domain'),
 
-    // Widget description
-    array( 'description' => __( 'This is the kickstarter campaign widget', 'wpb_widget_domain' ), )
+      // Widget description
+      array( 'description' => __( 'This is the kickstarter campaign widget', 'wpb_widget_domain' ), )
     );
   }
 
@@ -105,7 +105,7 @@ class wpb_widget extends WP_Widget {
       <label for="<?php echo $this->get_field_id( 'button' ); ?>"><?php _e( 'Button Title:' ); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id( 'button' ); ?>" name="<?php echo $this->get_field_name( 'button' ); ?>" type="text" value="<?php echo esc_attr( $button ); ?>" />
     </p>
-    <?php
+  <?php
   }
 
   // Updating widget replacing old instances with new
@@ -122,7 +122,6 @@ class wpb_widget extends WP_Widget {
 
 // Register and load the widget
 function wpb_load_widget() {
-    register_widget( 'wpb_widget' );
+  register_widget( 'wpb_widget' );
 }
 add_action( 'widgets_init', 'wpb_load_widget' );
-
