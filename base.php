@@ -20,11 +20,15 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap container" role="document">
       <div class="content row">
-        <main class="main">
+        <?php if ( ! is_page_template( 'template-campaign.php' ) ) { ?>
+        <main class="main" role="main">
+        <?php } else{ ?>
+        <main>
+        <?php } ?>
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
-          <aside class="sidebar">
+        <?php if (Setup\display_sidebar() && ! is_page_template( 'template-campaign.php' )) : ?>
+          <aside class="sidebar" role="complementary">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>

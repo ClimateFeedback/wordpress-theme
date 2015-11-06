@@ -6,6 +6,11 @@
       ],
       "main": true
     },
+    "progress-bar.js": {
+      "files": [
+        "scripts/progress-bar.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.scss"
