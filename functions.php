@@ -32,7 +32,7 @@ unset($file, $filepath);
 
 
 
-// Creating the campaign widget
+// Creating the widget
 class wpb_widget extends WP_Widget {
 
   function __construct() {
@@ -67,6 +67,7 @@ class wpb_widget extends WP_Widget {
       echo "<p class='large'>" . $args['before_description'] . $description . $args['after_description'] . "</p>";
       echo "</div>";
 
+//    echo "<a class='btn btn-primary btn-lg campaign-button' href='http://tilt.climatefeedback.org' target='_blank'>$title</a>";
       echo "<a class='btn btn-primary btn-lg campaign-button' href='$link' target='_blank'>$button</a>";
 
       // This is where you run the code and display the output
