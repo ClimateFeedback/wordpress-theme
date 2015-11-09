@@ -13,6 +13,18 @@
 
     <div class="entry-content">
       <p><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?></p>
+
+      <div class="sharing-icons">
+        <?php if ( function_exists( 'sharing_display' ) ) {
+          sharing_display( '', true );
+        }
+
+        if ( class_exists( 'Jetpack_Likes' ) ) {
+          $custom_likes = new Jetpack_Likes;
+          echo $custom_likes->post_likes( '' );
+        } ?>
+      </div>
+
       <center>
         <?php the_post_thumbnail(array(550, 300), array( 'class' => 'img-responsive' )); ?>
       </center>

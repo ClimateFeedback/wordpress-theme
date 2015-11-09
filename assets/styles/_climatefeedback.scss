@@ -400,12 +400,16 @@ article header {
 .sd-content ul li.share-twitter {
   display: block;
   margin: 0 !important;
-  padding: 10px 0px;
+  padding: 5px 0px;
+}
+
+.sharing-icons {
+  position: relative;
 }
 
 .sharedaddy.sd-sharing-enabled {
   position: absolute;
-  top: 15em;
+  top: 0em;
   left: 0;
 }
 .sd-social-icon .sd-content ul li a.sd-button.share-more {
