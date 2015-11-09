@@ -1,4 +1,5 @@
-<footer class="content-info">
+<?php if ( ! is_page_template( 'template-campaign.php' ) ) { ?>
+<footer class="content-info" role="contentinfo">
   <div class="container">
 	<div class="row">
 	  	<h3>climate feedback </h3>
@@ -24,7 +25,7 @@
 	  	<div class="col-sm-3 col-xs-6">
 			<h4 >CONTACT US</h4>
 			<p class="small">Climate Feedback · Sierra Nevada Research Institute · 5200 N. Lake Road · Merced, CA 95343 · USA</p>
-			<p class="small"><a href="mailto:feedback@climatefeedback.org">feedback@climatefeedback.org</a></p>  	      
+			<p class="small"><a href="mailto:feedback@climatefeedback.org">feedback@climatefeedback.org</a></p>
             <h4 class="spaceup05">FOLLOW US</h4>
             <div class="social-footer">
                 <a href="https://www.facebook.com/pages/Climate-Feedback/1547593572151463" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -34,3 +35,4 @@
   	</div>
   </div>
 </footer>
+<?php } ?>
