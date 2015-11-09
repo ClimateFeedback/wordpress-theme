@@ -5,11 +5,11 @@
   </div>
   <div class="content">
     <p><?php the_content(); ?></p>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        <span class="sr-only">60% Complete</span>
-      </div>
-    </div>
+<!--    <div class="progress">-->
+<!--      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">-->
+<!--        <span class="sr-only">60% Complete</span>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="col-md-4 step">
       <h3>1. Share on Facebook</h3>
       <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
