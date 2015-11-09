@@ -11,17 +11,17 @@
 <!--      </div>-->
 <!--    </div>-->
     <div class="col-md-4 step">
-      <h3>1. Share on Facebook</h3>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+      <h3><b>1. Share on Facebook</b></h3>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
 <!--      <a href="" title="" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook fa-3x"></i></a>-->
     </div>
     <div class="col-md-4 step">
-      <h3>2. Share on Twitter</h3>
-      <a href="http://twitter.com/home?status=<?php echo get_the_excerpt(); ?> <?php echo get_the_permalink(); ?>" title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+      <h3><b>1. Share on Twitter</b></h3>
+      <a href="http://twitter.com/home?status=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
     </div>
     <div class="col-md-4 step">
-      <h3>3. Back us</h3>
-      <a href="http://tilt.climatefeedback.org/" target="_blank">
+      <h3><b>3. Back us</b></h3>
+      <a href="http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage/" target="_blank">
         <span><i class="fa fa-globe fa-3x"></i></span>
       </a>
     </div>
