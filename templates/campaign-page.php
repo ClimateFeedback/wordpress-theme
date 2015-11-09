@@ -16,7 +16,7 @@
 <!--      <a href="" title="" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook fa-3x"></i></a>-->
     </div>
     <div class="col-md-4 step">
-      <h3><b>1. Share on Twitter</b></h3>
+      <h3><b>2. Share on Twitter</b></h3>
       <a href="http://twitter.com/home?status=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" title="Share on Twitter" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
     </div>
     <div class="col-md-4 step">
