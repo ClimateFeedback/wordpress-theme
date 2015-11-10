@@ -464,14 +464,19 @@ section.widget{
 /* ================= */
 /* campaign-page.php */
 /* ================= */
+main.campaign-container{
+  width: 900px;
+  margin: 0 auto;
+}
+
 .campaign-inner{
   .support {
-    height: 100px;
+    height: 80px;
     background-color: #046380;
     h1{
       color: #ffffff;
       text-align: center;
-      line-height: 100px;
+      line-height: 80px;
       margin: 0;
     }
   }
@@ -481,7 +486,7 @@ section.widget{
     p {
       text-align: left;
       font-size: 20px;
-      margin: 50px 0px;
+      margin: 40px 0px;
     }
   }
   .progress-bar {
@@ -491,7 +496,7 @@ section.widget{
   }
   .step {
     text-align: center;
-    margin-bottom: 50px;
+//    margin-bottom: 50px;
     p {
       text-align: center;
     }
