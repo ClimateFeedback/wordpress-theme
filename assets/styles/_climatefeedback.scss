@@ -393,6 +393,26 @@ margin-top: 1em;
 article header {
   margin-bottom: 20px;
 }
+ul.page-numbers{
+  padding: 0px;
+  li {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #066481;
+    background-color: #066481;
+    border-radius: 5px;
+    &:hover{
+      background-color: #999;
+      color: #066481;
+    }
+  }
+  a{
+    color: #ffffff;
+  }
+  span.current{
+    color: #002240;
+  }
+}
 
 //SOCIAL MEDIA STYLING
 .sd-content ul li.share-email,
