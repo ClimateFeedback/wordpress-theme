@@ -190,7 +190,7 @@ Template Name: Homepage
         <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <a href="press-coverage/" class="btn btn-primary">More Press</a>
+        <a href="press/" class="btn btn-primary">More Press</a>
       </div>
     </div>
   </div>
