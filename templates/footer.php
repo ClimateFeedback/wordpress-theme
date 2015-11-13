@@ -13,9 +13,9 @@
 	  		<h4>SUPPORTED BY</h4>
 	  		<a target="_blank" href="http://citris-uc.org/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/citris-logo.png" class="sponser" style="float:left; margin-right:1em;"></a>
 	  		<p class="small">The Center for Information Technology Research in the Interest of Society:</p>
-            <p class="small"> seed grant Data and Democracy #2015-313</p>
+        <p class="small"> seed grant Data and Democracy #2015-313</p>
 	  		<p class="small">Generous support from private donors. <a href="contribute/">Donate today</a>!</p>
-	  		</ul>
+<!--	  		</ul>-->
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 	  		<h4>IN PARTNERSHIP WITH</h4>
