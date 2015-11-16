@@ -316,11 +316,11 @@ margin-top: 1em;
 }
 
 // PRESS /////////////////////////////
-.press-fig {
+img.press-fig {
 //  padding-top: 0.5em;
 //  padding-right: 40px;
 //  padding-bottom: 0.5em;
-  width: 85%;
+  width: 55%;
 }
 
 .press {
@@ -380,6 +380,10 @@ margin-top: 1em;
 
 .press-show {
   background: #DBDBDB;
+  .col-4{
+    width: 25%;
+    float: left;
+  }
 }
 
 /*==============================*/
@@ -560,6 +564,20 @@ main.campaign-container{
 
 // RESPONSIVE STUFF /////////////////////////
 /* Extra small devices*/
+@media (max-width: 500px) {
+  .press-show{
+    .col-4{
+      width: 50%;
+    }
+    .forbes{
+      clear: both;
+    }
+    img.press-fig {
+      width: 50%;
+    }
+  }
+}
+
 @media (max-width: $screen-sm-max) {
   .sd-content ul li.share-email,
   .sd-content ul li.share-facebook,
