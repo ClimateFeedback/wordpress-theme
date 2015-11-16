@@ -578,6 +578,12 @@ main.campaign-container{
   }
 }
 
+@media (min-width: 0px) and (max-width: 992px) {
+  .camp-fig {
+    width: 260px;
+  }
+}
+
 @media (max-width: $screen-sm-max) {
   .sd-content ul li.share-email,
   .sd-content ul li.share-facebook,
