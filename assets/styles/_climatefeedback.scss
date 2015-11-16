@@ -316,12 +316,17 @@ margin-top: 1em;
 }
 
 // PRESS /////////////////////////////
-img.press-fig {
-//  padding-top: 0.5em;
-//  padding-right: 40px;
-//  padding-bottom: 0.5em;
-  width: 55%;
+.col-4{
+  line-height: 80px;
+  img.press-fig {
+    //  padding-top: 0.5em;
+    //  padding-right: 40px;
+    //  padding-bottom: 0.5em;
+    //  width: 55%;
+    height: 80px;
+  }
 }
+
 
 .press {
   margin-top: 25px;
@@ -578,9 +583,31 @@ main.campaign-container{
   }
 }
 
-@media (min-width: 0px) and (max-width: 992px) {
-  .camp-fig {
-    width: 260px;
+@media (min-width: 0px) and (max-width: 700px) {
+//  .camp-fig {
+//    width: 260px;
+//  }
+  .col-4{
+    line-height: 35px;
+    img.press-fig {
+      height: 35px;
+    }
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .col-4{
+    line-height: 50px;
+    img.press-fig {
+      height: 50px;
+    }
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .col-4{
+    line-height: 60px;
+    img.press-fig {
+      height: 60px;
+    }
   }
 }
 
