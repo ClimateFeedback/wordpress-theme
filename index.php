@@ -32,6 +32,17 @@
         </a>
     </div>
     <div class="media-body small">
+      <?php if( !post_type_exists( array('evaluations', 'press') ) ){ ?>
+        <?php get_template_part('templates/entry-meta'); ?>
+      <?php }?>
+
+      <?php if( post_type_exists( 'posts' ) ){ ?>
+        <?php $mykey_values = get_post_custom_values( 'date' );
+        foreach ( $mykey_values as $value ) {
+          echo $value;
+        } ?>
+      <?php }?>
+
         <?php the_excerpt(); ?>
     </div>
 	</article>
