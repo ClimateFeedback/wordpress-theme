@@ -507,7 +507,7 @@ main.campaign-container{
     p {
       text-align: left;
       font-size: 20px;
-      margin: 40px 0px;
+      margin: 35px 0px;
     }
   }
   .progress-bar {
@@ -522,17 +522,21 @@ main.campaign-container{
       text-align: center;
     }
     i{
-      margin: 30px 0px;
+      margin-top: 10px;
+      margin-bottom: 30px;
     }
     img{
-      width: 14%;
-      margin: 30px 0px;
+      width: 44px;
+      margin: 10px 0px;
     }
   }
   .bottom-social{
     margin-bottom: 30px;
     a {
       padding: 0px 10px;
+    }
+    i{
+      margin: 10px 0px;
     }
   }
 
@@ -574,6 +578,13 @@ main.campaign-container{
     position: static;
     left: 0;
   }
+  .campaign-inner {
+    .support {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -598,6 +609,13 @@ main.campaign-container{
       height: 40px;
       width: auto;
       margin-bottom: 1em;
+    }
+  }
+  .campaign-inner {
+    .support {
+      h1 {
+        font-size: 35px;
+      }
     }
   }
 }

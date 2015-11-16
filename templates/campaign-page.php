@@ -33,28 +33,26 @@
       </div>
     </div>
     <div class="row bottom-social">
-      <div class="col-md-6">
-        <b class="pull-right">or share on other media</b>
-      </div>
-      <div class="col-md-6 more-social">
-        <a href="//www.reddit.com/submit" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <i class="fa fa-reddit"></i>
-        </a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&title=<?php the_title(); ?>&summary=<?php echo get_the_excerpt(); ?>&source=LinkedIn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="https://plus.google.com/share?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <i class="fa fa-google-plus"></i>
-        </a>
-        <a href="http://pinterest.com/pin/create/button/?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>&description=<?php $mykey_values = get_post_custom_values( 'excerpt' );
-        foreach ( $mykey_values as $value ) {
-          echo $value;
-        } ?>"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <i class="fa fa-pinterest-p"></i>
-        </a>
-        <a href="http://tumblr.com/widgets/share/tool?canonicalUrl=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-          <i class="fa fa-tumblr"></i>
-        </a>
+      <div class="text-center">
+          <b class="">or share on other media</b>
+          <a href="//www.reddit.com/submit" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <i class="fa fa-reddit"></i>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&title=<?php the_title(); ?>&summary=<?php echo get_the_excerpt(); ?>&source=LinkedIn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://plus.google.com/share?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <i class="fa fa-google-plus"></i>
+          </a>
+          <a href="http://pinterest.com/pin/create/button/?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>&description=<?php $mykey_values = get_post_custom_values( 'excerpt' );
+          foreach ( $mykey_values as $value ) {
+            echo $value;
+          } ?>"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <i class="fa fa-pinterest-p"></i>
+          </a>
+          <a href="http://tumblr.com/widgets/share/tool?canonicalUrl=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <i class="fa fa-tumblr"></i>
+          </a>
       </div>
     </div>
   </div>
