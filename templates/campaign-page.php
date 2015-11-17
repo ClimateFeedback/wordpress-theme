@@ -27,7 +27,6 @@
       <div class="col-xs-4 col-md-4 step">
         <h4><b>3. Back us</b></h4>
         <a href="http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage/" target="_blank">
-<!--          <span><i class="fa fa-globe fa-3x"></i></span>-->
           <img src="<?php echo get_bloginfo('template_url'); ?>/img/backus-icon.png" alt="" class="backus-icon"/>
         </a>
       </div>
@@ -35,10 +34,10 @@
     <div class="row bottom-social">
       <div class="text-center">
           <b class="">or share on other media</b>
-          <a href="//www.reddit.com/submit" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          <a href="//www.reddit.com/submit?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             <i class="fa fa-reddit"></i>
           </a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&title=<?php the_title(); ?>&summary=<?php echo get_the_excerpt(); ?>&source=LinkedIn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage&source=LinkedIn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             <i class="fa fa-linkedin"></i>
           </a>
           <a href="https://plus.google.com/share?url=http://tilt.climatefeedback.org/bringing-the-voice-of-science-back-into-climate-change-media-coverage" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
