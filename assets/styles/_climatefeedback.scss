@@ -177,6 +177,7 @@ footer {
 
   a {
     color: #3AAFCB;
+    word-wrap: break-word;
 
     &:hover {
       color: #5DB3C1;
@@ -582,11 +583,15 @@ main.campaign-container{
     }
   }
 }
-
-@media (min-width: 0px) and (max-width: 700px) {
-//  .camp-fig {
-//    width: 260px;
-//  }
+@media (min-width: 0px) and (max-width: 400px) {
+  .col-4{
+    line-height: 25px;
+    img.press-fig {
+      height: 25px;
+    }
+  }
+}
+@media (min-width: 401px) and (max-width: 700px) {
   .col-4{
     line-height: 35px;
     img.press-fig {
