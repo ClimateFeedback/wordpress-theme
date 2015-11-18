@@ -180,16 +180,16 @@ Template Name: Homepage
 
     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>
     <div class="row">
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-4">
         <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-4">
         <a href="http://www.salon.com/2014/12/04/new_mit_app_lets_scientists_fact_check_the_media_on_climate/" target="_blank">   <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-salon.png"></a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-4 forbes">
         <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
       </div>
-      <div class="col-sm-3 col-xs-6">
+      <div class="col-4">
         <a href="press/" class="btn btn-primary">More Press</a>
       </div>
     </div>

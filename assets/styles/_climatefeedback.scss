@@ -3,13 +3,13 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,400,300,800,700);
 
 html, body, p, li {
-	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
-//    overflow-x: hidden;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  //    overflow-x: hidden;
 }
 
 ol, ul {
-	list-style-position: inside;
+  list-style-position: inside;
 }
 
 a {
@@ -34,22 +34,22 @@ a.bott {
 }
 
 .inline-btn{
-    background-color: #d3d3d3;
-    padding: 4px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    overflow: hidden;
+  background-color: #d3d3d3;
+  padding: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
 }
 
 h3 {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 .small {
-	font-size: .9em;
+  font-size: .9em;
 
   p {
     font-size: .9em;
@@ -62,17 +62,17 @@ h3 {
 }
 
 .quote {
-	font-size: .9em;
-	opacity: .8;
-	padding-top: 65px;
+  font-size: .9em;
+  opacity: .8;
+  padding-top: 65px;
 }
 
 .sigla {
-	background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
-	background-repeat: no-repeat;
-	background-color: transparent;
-	background-size: cover;
-    color: #fff;
+  background-image: url(http://climatefeedback.org/wp-content/uploads/2015/07/copyright_2013_EUMETSAT_optimized.jpg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  color: #fff;
 }
 
 .page-header.myfull {
@@ -104,48 +104,48 @@ h3 {
 }
 
 .tagline {
-	margin-top: -20px;
-	margin-bottom: 100px;
+  margin-top: -20px;
+  margin-bottom: 100px;
 }
 
 .half-black{
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
-	background-color: transparent;
-	margin-bottom: 0px;
-    padding: 14px;
+  background-color: transparent;
+  margin-bottom: 0px;
+  padding: 14px;
 }
 
 .fig {
-	width: 100%;
-	padding-top: 2em;
-	padding-bottom: 0.5em;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
 }
 
 .spaceup{
-    padding-top: 2em;
+  padding-top: 2em;
 }
 
 .spaceup1{
-    padding-top: 1em;
+  padding-top: 1em;
 }
 
 .spaceup05{
-    padding-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 .sci-fig {
-    height: 140px;
- 	padding-top: 2em;
- 	padding-bottom: 0.5em;
- }
+  height: 140px;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+}
 
 .valign{
-    display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
 
 .logo {
@@ -153,16 +153,16 @@ h3 {
   font-size: 24px;
 
   img {
-      height: 64px;
-      float: left;
-      position: relative;
-      top: -20px;
-      right: 13px;
+    height: 64px;
+    float: left;
+    position: relative;
+    top: -20px;
+    right: 13px;
   }
 }
 
 .caption {
-	font-size: .7em;
+  font-size: .7em;
 }
 
 footer {
@@ -177,6 +177,7 @@ footer {
 
   a {
     color: #3AAFCB;
+    word-wrap: break-word;
 
     &:hover {
       color: #5DB3C1;
@@ -194,11 +195,11 @@ footer {
 
 /* Spacing between sections */
 section {
-	padding: 1em 1em;
+  padding: 1em 1em;
 }
 
 .grey {
-	background-color: #EEE;
+  background-color: #EEE;
 }
 
 .social-media {
@@ -275,52 +276,58 @@ section {
 }
 
 .camp-left {
-    float: left;
-    background:transparent;
-    padding-right: 3em;
+  float: left;
+  background:transparent;
+  padding-right: 3em;
 }
 
 .camp-body {
-    display: table-cell;
-    width: 10000px;
-    overflow: hidden;
-    float: none;
-    padding-left: 16px;
-    line-height: 130%;
+  display: table-cell;
+  width: 10000px;
+  overflow: hidden;
+  float: none;
+  padding-left: 16px;
+  line-height: 130%;
 }
 
 .camp-fig {
-    height: 120px;
- 	padding-bottom: 0.5em;
- }
+  //    height: 120px;
+  width: 100%;
+  padding-bottom: 0.5em;
+}
 
 .nospaceup{
-margin-top: 1em;
+  margin-top: 1em;
 }
 
 .med-left {
-    float: left;
-    background:transparent;
-    padding-right: 10px;
+  float: left;
+  background:transparent;
+  padding-right: 10px;
 }
 
 .med-body {
-    display: table-cell;
-    vertical-align: top;
-    width: 10000px;
-    overflow: hidden;
-    float: none;
-    padding-left: 5px;
-    line-height: 130%;
+  display: table-cell;
+  vertical-align: top;
+  width: 10000px;
+  overflow: hidden;
+  float: none;
+  padding-left: 5px;
+  line-height: 130%;
 }
 
 // PRESS /////////////////////////////
-.press-fig {
-  height: 80px;
-  padding-top: 0.5em;
-  padding-right: 40px;
-  padding-bottom: 0.5em;
+.col-4{
+  line-height: 80px;
+  img.press-fig {
+    //  padding-top: 0.5em;
+    //  padding-right: 40px;
+    //  padding-bottom: 0.5em;
+    //  width: 55%;
+    height: 80px;
+  }
 }
+
 
 .press {
   margin-top: 25px;
@@ -379,6 +386,10 @@ margin-top: 1em;
 
 .press-show {
   background: #DBDBDB;
+  .col-4{
+    width: 25%;
+    float: left;
+  }
 }
 
 /*==============================*/
@@ -470,16 +481,16 @@ section.widget{
 /* =============== */
 /* page-header.php */
 /* =============== */
-.campaign-header.myfull {
-  position: relative;
-  margin: 0;
-  padding: 9.5rem 30px;
-  background-image: url('../../img/campaign-splash.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
-  width: 100%;
-}
+//.campaign-header.myfull {
+//  position: relative;
+//  margin: 0;
+//  padding: 9.5rem 30px;
+//  background-image: url('../../img/campaign-splash.png');
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  color: #fff;
+//  width: 100%;
+//}
 
 /* ================= */
 /* campaign-page.php */
@@ -506,7 +517,7 @@ main.campaign-container{
     p {
       text-align: left;
       font-size: 20px;
-      margin: 40px 0px;
+      margin: 35px 0px;
     }
   }
   .progress-bar {
@@ -516,14 +527,29 @@ main.campaign-container{
   }
   .step {
     text-align: center;
-//    margin-bottom: 50px;
+    //    margin-bottom: 50px;
     p {
       text-align: center;
     }
     i{
-      margin: 30px 0px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    img{
+      width: 44px;
+      margin: 10px 0px;
     }
   }
+  .bottom-social{
+    margin-bottom: 30px;
+    a {
+      padding: 0px 10px;
+    }
+    i{
+      margin: 10px 0px;
+    }
+  }
+
   .one-third {
     width: 33.33%;
   }
@@ -531,6 +557,9 @@ main.campaign-container{
     width: 66.66%;
   }
   .three-third {
+    width: 100%;
+  }
+  img{
     width: 100%;
   }
 }
@@ -541,6 +570,52 @@ main.campaign-container{
 
 // RESPONSIVE STUFF /////////////////////////
 /* Extra small devices*/
+@media (max-width: 500px) {
+  .press-show{
+    .col-4{
+      width: 50%;
+    }
+    .forbes{
+      clear: both;
+    }
+    img.press-fig {
+      width: 50%;
+    }
+  }
+}
+@media (min-width: 0px) and (max-width: 400px) {
+  .col-4{
+    line-height: 25px;
+    img.press-fig {
+      height: 25px;
+    }
+  }
+}
+@media (min-width: 401px) and (max-width: 700px) {
+  .col-4{
+    line-height: 35px;
+    img.press-fig {
+      height: 35px;
+    }
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .col-4{
+    line-height: 50px;
+    img.press-fig {
+      height: 50px;
+    }
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .col-4{
+    line-height: 60px;
+    img.press-fig {
+      height: 60px;
+    }
+  }
+}
+
 @media (max-width: $screen-sm-max) {
   .sd-content ul li.share-email,
   .sd-content ul li.share-facebook,
@@ -558,6 +633,13 @@ main.campaign-container{
   .sd-social-icon .sd-content ul li a.sd-button.share-more {
     position: static;
     left: 0;
+  }
+  .campaign-inner {
+    .support {
+      h1 {
+        font-size: 20px;
+      }
+    }
   }
 }
 
@@ -585,6 +667,13 @@ main.campaign-container{
       margin-bottom: 1em;
     }
   }
+  .campaign-inner {
+    .support {
+      h1 {
+        font-size: 35px;
+      }
+    }
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -599,7 +688,7 @@ main.campaign-container{
   }
 
   img {
-  height: auto;
+    height: auto;
 
     &.fig {
       width: 100%;

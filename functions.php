@@ -60,7 +60,7 @@ class wpb_widget extends WP_Widget {
     echo $args['before_widget'];
     if ( is_single() ) {
       echo '<img src="' . $imgURL . '/img/campaign-splash-sm.png" class="img-responsive campaign-img hidden-xs">'; // smaller img
-      echo '<img src="' . $imgURL . '/img/campaign-splash.png" class="img-responsive campaign-img visible-xs">'; // larger img
+      echo '<img src="' . $imgURL . '/img/campaign-splash.jpg" class="img-responsive campaign-img visible-xs">'; // larger img
 
       echo "<div class='campaign-content'>";
       echo $args['before_title'] . $title . $args['after_title'];

@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
         <?php if ( ! is_page_template( 'template-campaign.php' ) ) { ?>
         <main class="main" role="main">
         <?php } else{ ?>
-        <main class="campaign-container">
+        <main class="">
         <?php } ?>
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
