@@ -24,7 +24,7 @@
           <a href="https://twitter.com/ClimateFdbk" target="_blank"><i class="fa fa-twitter"></i></a>
 <!--          <a href="https://github.com/climatefeedback" target="_blank"><i class="fa fa-github"></i></a>-->
           <!-- Include hypothes.is stream link -->
-           <a href="http://climatefeedback.org/evaluation/feed" title="RSS Feed"><i class="fa fa-rss"></i></a>
+           <a href="<?php bloginfo('rss2_url'); ?>" title="RSS Feed"><i class="fa fa-rss"></i></a>
       </div>
       <!-- / Social media -->
     </nav>
