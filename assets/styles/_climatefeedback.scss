@@ -2,10 +2,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:500,400,300,800,700);
 
-html, body, p, li {
+html, body {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
-  //    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ol, ul {
@@ -399,6 +399,9 @@ section {
 .inside input.eval-meta {
   width: 100%;
 }
+.eval-update{
+  color: #6e0b14;
+}
 
 //article
 article header {
@@ -503,7 +506,7 @@ main.campaign-container{
 .campaign-inner{
   .support {
     height: 80px;
-    background-color: #046380;
+    background-color: #006699;
     h1{
       color: #ffffff;
       text-align: center;
@@ -539,10 +542,14 @@ main.campaign-container{
       width: 44px;
       margin: 10px 0px;
     }
+    a {
+      color: #006699;
+    }
   }
   .bottom-social{
     margin-bottom: 30px;
     a {
+      color: #006699;
       padding: 0px 10px;
     }
     i{
@@ -613,6 +620,13 @@ main.campaign-container{
     img.press-fig {
       height: 60px;
     }
+  }
+}
+@media (max-width: 992px) {
+  .camp-fig {
+    //    height: 120px;
+    width: 336px;
+    padding-bottom: 0.5em;
   }
 }
 

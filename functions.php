@@ -138,3 +138,11 @@ function jptweak_remove_share() {
 }
 
 add_action( 'loop_start', 'jptweak_remove_share' );
+
+// Adds evaluations post types to the rss feed
+function myfeed_request($qv) {
+    if (isset($qv['feed']) && !isset($qv['post_type']))
+        $qv['post_type'] = array('post', 'evaluation');
+    return $qv;
+}
+add_filter('request', 'myfeed_request');
