@@ -26,8 +26,8 @@ Template Name: Homepage
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="camp-body">
-          <h4 class="nospaceup">Crowd-funding campaign coming soon</h4>
-          <a target="_blank" href="http://eepurl.com/buIIXv" class="btn btn-primary btn-lg">Stay tuned</a>
+          <h4 class="nospaceup">Support our efforts to improve the accuracy of climate change media coverage</h4>
+          <a target="_blank" href="http://giving.ucmerced.edu/snri-climate-feedback" class="btn btn-primary btn-lg">Donate</a>
         </div>
       </div>
 
