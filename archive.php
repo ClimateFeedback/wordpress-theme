@@ -20,28 +20,23 @@ Template Name: Archives
 ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
-  <article>
-    <header>
-    <?php if ( 'press' == get_post_type() ) : ?>
-        <h4 class="headline">
-            <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
-                if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>"><?php the_title(); ?>
+  
+  <div class="row">
+        <div class="media-left hidden-xs">
+            <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail() ?>
             </a>
-        </h4>
-    <?php endif; ?>
-    <?php if ( 'press' != get_post_type() ) : ?>
-        <h4 class="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    <?php endif; ?>
-    </header>
-    <div class="media-left hidden-xs">
-        <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail() ?>
-        </a>
+        </div>
+        <div class="media-body">
+            <a class="strong" href="<?php the_permalink(); ?>">
+               <h3 class="noborder"> <?php the_title(); ?></h3></a>
+              </a>
+              <p class="small">
+                <h4 class="noborder"><?php echo get_the_date( 'Y-m-d' ); ?></h4>
+            <?php the_excerpt(); ?></p>
+        </div>
     </div>
-    <div class="media-body small">
-        <?php the_excerpt(); ?>
-    </div>
-	</article>
+	
 	<hr/>
 <?php endwhile; ?>
 
