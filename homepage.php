@@ -167,7 +167,7 @@ Template Name: Homepage
           <hr/>
         <?php endwhile; ?>
 
-        <!-- / <a href="news-feed/" class="btn btn-primary">More News</a> -->
+         <a href="blog-posts/" class="btn btn-primary">More Posts</a> 
       </div>
 
     </div>
