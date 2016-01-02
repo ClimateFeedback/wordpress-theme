@@ -14,7 +14,7 @@ Template Name: Homepage
     </div>
   </div>
 </div>
-
+<!-- 
 <section class="campaign">
   <div class="container">
     <div class="row">
@@ -34,7 +34,7 @@ Template Name: Homepage
     </div>
   </div>
 </section>
-
+ -->
 <div class="container">
 
   <section class="highlevel-overview">
