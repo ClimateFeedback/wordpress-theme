@@ -7,11 +7,14 @@ Template Name: Archives
 <div id="container">
 	<div id="content" role="main">
 
+        <p>Tag: <?php single_tag_title(); ?></p>
+        
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'sage'); ?>
   </div>
-  <?php get_search_form(); ?>
+  <!-- <?php get_search_form(); ?> -->
+        
 <?php endif; ?>
 
 <?php

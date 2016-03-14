@@ -5,15 +5,14 @@
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry-meta'); ?>
       <!--      <h4>-->
-      <!--        <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank">--> <!-- THIS 'echo' IS CAUSING THE ERROR -->
+      <!--        <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank">--> 
       <!--          --><?php //echo get_post_meta( get_the_ID(), 'outlet', true ); ?>
       <!--        </a>-->
       <!--      </h4>-->
     </header>
 
     <div class="entry-content">
-      <p><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?></p>
-
+    
       <div class="sharing-icons">
         <?php if ( function_exists( 'sharing_display' ) ) {
           sharing_display( '', true );
@@ -25,8 +24,10 @@
         } ?>
       </div>
 
+        <p><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?></p>
+        
       <center>
-        <?php the_post_thumbnail(array(550, 300), array( 'class' => 'img-responsive' )); ?>
+        <?php the_post_thumbnail(array(800, 500), array( 'class' => 'img-responsive' )); ?>
       </center>
       <p><?php the_content(); ?></p>
       <!--      <button>-->
@@ -39,6 +40,10 @@
     </footer>
 
   </article>
+
+<!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> -->
+
+<p> Outlet: <a href="/ "> </a><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></p>
 
   <div class="foot-notes">
     <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
