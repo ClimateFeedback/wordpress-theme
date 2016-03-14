@@ -41,9 +41,9 @@
 
   </article>
 
-<!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> -->
+<!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> 
 
-<p> Outlet: <a href="/ "> </a><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></p>
+<p> Outlet: <a href="/ "> </a><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></p> -->
 
   <div class="foot-notes">
     <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
