@@ -32,7 +32,7 @@ unset($file, $filepath);
 
 
 
-// Creating the widget
+// Creating the campaign widget
 class wpb_widget extends WP_Widget {
 
   function __construct() {

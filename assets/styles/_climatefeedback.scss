@@ -700,6 +700,33 @@ main.campaign-container{
   }
 }
 
+@media (min-width: $screen-sm-min) {
+  .sd-content ul li.share-email,
+  .sd-content ul li.share-facebook,
+  .sd-content ul li.share-twitter {
+    display: inline-block;
+    margin: 0 !important;
+    padding: 10px 0px;
+  }
+
+  .sharedaddy.sd-sharing-enabled {
+    position: static;
+    top: 0;
+    left: 0;
+  }
+  .sd-social-icon .sd-content ul li a.sd-button.share-more {
+    position: static;
+    left: 0;
+  }
+  .campaign-inner {
+    .support {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
   .frontpagepostpic {
