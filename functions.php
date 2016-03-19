@@ -146,3 +146,62 @@ function myfeed_request($qv) {
     return $qv;
 }
 add_filter('request', 'myfeed_request');
+
+// shortcode for adding tags in post
+function tags_in_post($atts) {    // [tags] outputs post's tags in a span
+global $post;
+$tags = '<span class="post-tags">';
+ob_start();
+the_tags( '<span class="post-tags">', ', ', '</span>' );
+$tags = ob_get_contents();
+ob_end_clean();
+return $tags;
+}
+add_shortcode ('tags', 'tags_in_post');
+
+// Custom Taxonomies
+
+add_action( 'init', 'create_my_taxonomies', 0 );
+
+function create_my_taxonomies() {
+	register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'authors', 'evaluation', array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
+}
+
+
+// shortcode for adding articles outlet in post
+function art_outlet($atts) {    
+global $post;
+$outlet = '<span class="art-outlet">';
+ob_start();
+echo get_the_term_list( $post->ID, 'outlet', 'Outlet: ', ', ', '' ); 
+$outlet = ob_get_contents();
+ob_end_clean();
+return $outlet;
+}
+add_shortcode ('outlet', 'art_outlet');
+
+// shortcode for adding articles authors in post
+function art_author($atts) {    
+global $post;
+$auths = '<span class="art-author">';
+ob_start();
+echo get_the_term_list( $post->ID, 'authors', 'Author: ', ', ', '' ); 
+$auths = ob_get_contents();
+ob_end_clean();
+return $auths;
+}
+add_shortcode ('author', 'art_author');
+
+// shortcode for adding article-level tags in post
+function art_tags($atts) {    
+global $post;
+$atags = '<span class="art-tags">';
+ob_start();
+echo get_the_term_list( $post->ID, 'article-tag', '', ', ', '' ); 
+$atags = ob_get_contents();
+ob_end_clean();
+return $atags;
+}
+add_shortcode ('article-tags', 'art_tags');
