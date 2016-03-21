@@ -402,8 +402,12 @@ section {
   }
 }
 
+.widget h3 {
+  font-size: 20px;
+}
+
 /*==============================*/
-//    MADE THESE CSS CHANGES
+//    Vanessa MADE THESE CSS CHANGES
 /*==============================*/
 //admin panel
 .inside input.eval-meta {
@@ -698,6 +702,9 @@ main.campaign-container{
       }
     }
   }
+    .text-2 {
+    padding-top: 17em;
+    }
 }
 
 @media (min-width: $screen-sm-min) {

@@ -29,10 +29,14 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
+// styling shortcodes
+function section_shortcode( $atts, $content = null ) {
+    return '<section class="separator"><h3 class="inseparator">' . $content . '</h3> </section>';
+}
+add_shortcode( 'eval-separator', 'section_shortcode' );
 
 
-
-// Creating the campaign widget
+// Creating the CAMPAIGN WIDGET
 class wpb_widget extends WP_Widget {
 
   function __construct() {
@@ -128,6 +132,10 @@ function wpb_load_widget() {
 add_action( 'widgets_init', 'wpb_load_widget' );
 
 
+// Allowing to use shortcode in WIDGETS 
+add_filter('widget_text', 'do_shortcode');
+
+
 //repositioning the jetpack sharing icons
 function jptweak_remove_share() {
   remove_filter( 'the_content', 'sharing_display',19 );
@@ -146,6 +154,9 @@ function myfeed_request($qv) {
     return $qv;
 }
 add_filter('request', 'myfeed_request');
+
+// shortcode for STYLING sections in Feedbacks
+
 
 // shortcode for adding tags in post
 function tags_in_post($atts) {    // [tags] outputs post's tags in a span
@@ -167,6 +178,7 @@ function create_my_taxonomies() {
 	register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'authors', 'evaluation', array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'reviewers', 'evaluation', array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
 }
 
 
@@ -175,7 +187,7 @@ function art_outlet($atts) {
 global $post;
 $outlet = '<span class="art-outlet">';
 ob_start();
-echo get_the_term_list( $post->ID, 'outlet', 'Outlet: ', ', ', '' ); 
+echo get_the_term_list( $post->ID, 'outlet', '', ', ', '' ); 
 $outlet = ob_get_contents();
 ob_end_clean();
 return $outlet;
@@ -187,7 +199,7 @@ function art_author($atts) {
 global $post;
 $auths = '<span class="art-author">';
 ob_start();
-echo get_the_term_list( $post->ID, 'authors', 'Author: ', ', ', '' ); 
+echo get_the_term_list( $post->ID, 'authors', '', ', ', '' ); 
 $auths = ob_get_contents();
 ob_end_clean();
 return $auths;
@@ -205,3 +217,62 @@ ob_end_clean();
 return $atags;
 }
 add_shortcode ('article-tags', 'art_tags');
+
+//  [quote_sci user="username"]
+function quote_sci( $atts ) {
+    $a = shortcode_atts( array(
+        'user' => '',
+    ), $atts );
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a['user'] ) );
+foreach ( $blogusers as $user ) {   
+     $output .= '<strong> <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).':</strong>';
+}    
+    //Close and return markup
+    return $output;
+}
+add_shortcode( 'quote_sci', 'quote_sci' );
+
+
+// shortcode for adding reviewers list in post
+function art_revsl($atts) {    
+global $post;
+$arevs = '<span class="art-revs">';
+ob_start();
+echo get_the_term_list( $post->ID, 'reviewers', '', ', ', '' ); 
+$arevs = ob_get_contents();
+ob_end_clean();
+return $arevs;
+}
+add_shortcode ('reviewers-list', 'art_revsl');
+
+// shortcode for adding reviewers list in widget
+function art_revs($atts) {    
+global $post;
+$arevs = '<span class="art-revs">';
+ob_start();
+$terms = wp_get_object_terms( $post->ID, 'reviewers' );
+    foreach ( $terms as $term ) {   
+     $term_names[] = $term->name;
+     //echo $term->name;
+     
+     echo quote_sci2( $term->name );
+     echo '<br /> ';
+} 
+$arevs = ob_get_contents();
+ob_end_clean();
+return $arevs;
+}
+add_shortcode ('reviewers', 'art_revs');
+
+function quote_sci2( $a ) {
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a ) );
+foreach ( $blogusers as $user ) {   
+     $output .= ' <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'';
+}    
+    //Close and return markup
+    return $output;
+}
+
+

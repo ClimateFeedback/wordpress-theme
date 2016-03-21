@@ -3,8 +3,14 @@
 
     <header>
       <div class="page-header myfull">
-          <h1 class="entry-title half-black"><?php the_title(); ?></h1> 
+          <h2  style="color:#000"> . </h2> 
       </div>
+        <h1 class="entry-title"><?php the_title(); ?></h1> 
+        
+      <p >  
+         Published in <?php echo do_shortcode('[outlet]'); ?>, by <?php echo do_shortcode('[author]'); ?>
+          - <time class="updated"><?php echo get_post_meta( get_the_ID(), 'date', true ); ?></time>
+      </p>
       
       
       <!--  <?php // get_template_part('templates/entry-meta'); ?>    --> 
@@ -28,11 +34,12 @@
         } ?>
       </div>
 
-       
+       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> </p>
       <center>
         <?php the_post_thumbnail(array(800, 500), array( 'class' => 'img-responsive' )); ?>
       </center>
         <br />
+         
         
       <p><?php the_content(); ?></p>
       <!--      <button>-->
