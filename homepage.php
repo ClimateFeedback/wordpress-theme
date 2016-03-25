@@ -118,9 +118,16 @@ Template Name: Homepage
               <?php endif; ?>
             </header>
             <div class="media-left hidden-xs">
+              <?php if ( 'press' == get_post_type() ) : ?>
+                    <a href="<?php $key_1_value = get_post_meta( get_the_ID(), 'link', true );
+                    if( ! empty( $key_1_value ) ) { echo $key_1_value; } ?>" class="frontpagepostpic" ><?php the_post_thumbnail() ?>
+                    </a>              
+              <?php endif; ?>
+              <?php if ( 'press' != get_post_type() ) : ?>
               <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail() ?>
               </a>
+              <?php endif; ?>
             </div>
             <div class="media-body small">
               <h4 style="margin-bottom:-1em;"><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></h4>
