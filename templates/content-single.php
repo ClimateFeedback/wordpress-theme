@@ -3,8 +3,10 @@
 
     <header>
       <div class="page-header myfull">
-          <h1 class="entry-title half-black"><?php the_title(); ?></h1> 
+          <h2  style="color:#000"> . </h2> 
       </div>
+        <h1 class="entry-title"><?php the_title(); ?></h1> 
+        
       
       
       <!--  <?php // get_template_part('templates/entry-meta'); ?>    --> 

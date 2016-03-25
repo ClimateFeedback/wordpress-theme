@@ -6,8 +6,10 @@ Template Name: Archives
 
 <div id="container">
 	<div id="content" role="main">
-
-        <p>Tag: <?php single_tag_title(); ?></p>
+        <div class="page-header myfull">
+          <h2  style="color:#000"> . </h2> 
+        </div>
+        <p> <?php single_tag_title(); ?></p>
         
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">

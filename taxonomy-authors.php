@@ -10,8 +10,11 @@ Template Name: Archives
         <?php 
 $taxonomy = get_queried_object();
         ?>
+        <div class="page-header myfull">
+          <h2  style="color:#000"> . </h2> 
+      </div>
+        <h2>Articles by: <?php single_tag_title(); ?></h2> 
         
-        <p>Tag: <?php single_tag_title(); ?></p>
         
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
@@ -29,11 +32,13 @@ $taxonomy = get_queried_object();
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
   
   <div class="row">
-        <div class="media-left hidden-xs">
-            <a class="frontpagepostpic" href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail() ?>
-            </a>
-        </div>
+
+      <div class="media-left hidden-xs">
+                <a class="postpic" href=" <?php the_permalink(); ?>  ">
+                    <?php echo types_render_field( "front-image", array( "width" => "275", "height" => "176", "proportional" => "true" ) ); ?>
+                </a>
+            </div>
+      
         <div class="media-body">
             <a class="strong" href="<?php the_permalink(); ?>">
                <h3 class="noborder"> <?php the_title(); ?></h3></a>

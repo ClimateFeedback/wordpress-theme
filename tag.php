@@ -11,7 +11,9 @@ Template Name: Tag page
      <?php 
 $taxonomy = get_queried_object();
         ?>
-        
+        <div class="page-header myfull">
+          <h2  style="color:#000"> . </h2> 
+        </div>
         <p>Tag: <?php single_tag_title(); ?></p>
         
   <?php
