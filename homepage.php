@@ -27,7 +27,7 @@ Template Name: Homepage
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="camp-body">
-         <img alt="" class="img-responsive camp-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Istandwithscience.png">
+         <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png">
             
           <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg">Support our crowdfunding campaign</a>
         </div>
