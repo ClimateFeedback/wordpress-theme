@@ -14,27 +14,29 @@ Template Name: Homepage
     </div>
   </div>
 </div>
-<!-- 
+
 <section class="campaign">
   <div class="container">
     <div class="row">
 
       <div class="col-xs-12 col-md-6">
-        <div class="camp-left">
-          <img alt="" class="camp-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Istandwithscience.png">
+        <div class="camp-left">            
+           <center> <iframe width="460" height="259" src="https://www.youtube.com/embed/GYsNYvO6uVk" frameborder="0" allowfullscreen></iframe> </center>
+            
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="camp-body">
-          <h4 class="nospaceup">Support our efforts to improve the accuracy of climate change media coverage</h4>
-          <a target="_blank" href="http://giving.ucmerced.edu/snri-climate-feedback" class="btn btn-primary btn-lg">Donate</a>
+         <img alt="" class="img-responsive camp-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Istandwithscience.png">
+            
+          <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg">Support our crowdfunding campaign</a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
- -->
+
 <div class="container">
 
   <section class="highlevel-overview">
