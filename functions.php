@@ -275,4 +275,11 @@ foreach ( $blogusers as $user ) {
     return $output;
 }
 
-
+// Kill pingbacks
+// from http://blog.carlesmateo.com/2014/08/30/stopping-and-investigating-a-wordpress-xmlrpc-php-attack/
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
+function remove_xmlrpc_pingback_ping( $methods ) {
+    unset( $methods['pingback.ping'] );
+    
+    return $methods;
+}
