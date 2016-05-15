@@ -10,7 +10,7 @@ Template Name: Homepage
 <div class="sigla jumbotron">
   <div class="container">
     <div class="row">
-      <h3 class="tagline half-black">A voice for science in climate change media coverage</h3>
+      <h3 class="tagline half-black">A Scientific Reference to Reliable Information on Climate Change</h3>
     </div>
   </div>
 </div>
@@ -27,9 +27,14 @@ Template Name: Homepage
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="camp-body">
-         <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png">
-            
-          <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Support our crowdfunding campaign</a>
+        <!--   <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png"> 
+    <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Support our crowdfunding campaign</a>
+        -->
+            <p class="spaceup1"><strong>Want to bring more accuracy and accountability to climate change reporting?</strong> </p> 
+            <p>Support our fundraising campaign on <a href="https://igg.me/at/Stand-with-Science" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/IGG_Logo.png" alt="Indiegogo" align="top" width="150px"></a></p>
+        
+           <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Donate Today!</a>
+          
         </div>
       </div>
 
