@@ -44,6 +44,10 @@ a.bott {
   overflow: hidden;
 }
 
+.btn-resp{
+      background-color: #EB1478 !important;
+    }
+
 h3 {
   font-weight: 400;
 }
@@ -301,8 +305,9 @@ section {
 
 .camp-fig {
   //    height: 120px;
-  width: 100%;
-  padding-bottom: 0.5em;
+  // width: 100%;
+    width: 450px;
+  // padding-bottom: 0.5em;
 }
 
 .nospaceup{
@@ -616,6 +621,7 @@ main.campaign-container{
     .btn-resp{
       margin-left: 0 !important;
       max-width: 219px !important;
+      background-color: #EB1478;
      // font-size: .7em !important;
     }
 }
