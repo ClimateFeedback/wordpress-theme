@@ -603,6 +603,21 @@ main.campaign-container{
       width: 50%;
     }
   }
+    .resp-vid{  
+      max-width: 100%;
+        height: auto;
+    }
+    .camp-left{
+        padding-right: 0em;
+    }
+    .camp-fig {
+      width: 225px !important;
+    }
+    .btn-resp{
+      margin-left: 0 !important;
+      max-width: 219px !important;
+      font-size: .7em !important;
+    }
 }
 @media (min-width: 0px) and (max-width: 400px) {
   .col-4{

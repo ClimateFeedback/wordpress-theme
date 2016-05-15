@@ -21,7 +21,7 @@ Template Name: Homepage
 
       <div class="col-xs-12 col-md-6">
         <div class="camp-left">            
-           <center> <iframe width="460" height="259" src="https://www.youtube.com/embed/GYsNYvO6uVk" frameborder="0" allowfullscreen></iframe> </center>
+           <center> <iframe class="resp-vid" width="460" height="259" src="https://www.youtube.com/embed/GYsNYvO6uVk" frameborder="0" allowfullscreen ></iframe> </center>
             
         </div>
       </div>
@@ -29,7 +29,7 @@ Template Name: Homepage
         <div class="camp-body">
          <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png">
             
-          <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg">Support our crowdfunding campaign</a>
+          <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Support our crowdfunding campaign</a>
         </div>
       </div>
 
