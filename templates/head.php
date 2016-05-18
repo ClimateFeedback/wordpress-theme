@@ -19,7 +19,7 @@
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php the_title(); ?>" />
     <meta property="og:description"        content="<?php echo get_the_excerpt(); ?>" />
-    <meta property="og:image"              content="<?php echo $url; ?>" />
+ <!--   <meta property="og:image"              content="<?php echo $url; ?>" />     --> 
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
