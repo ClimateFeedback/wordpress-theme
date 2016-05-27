@@ -33,9 +33,11 @@ Template Name: Homepage
         <!--    <p class="spaceup1"><strong>Want to bring more accuracy and accountability to climate change reporting?</strong> </p> 
         -->
             <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png">
-            <p style="padding-left: 1.3em;">Support our fundraising campaign on <a href="https://igg.me/at/Stand-with-Science" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/IGG_Logo_s.png" alt="Indiegogo" align="top" width="130px"></a></p>
+            <p style="padding-left: 1.3em; padding-bottom: 0.8em;">Climate Feedback relies on your support. <br /> Our crowdfunding campaign is more than 95% funded. <br /> Last day to make it happen!  
+                
+                </p>
         
-           <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Donate Today!</a>
+           <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Donate Today</a>
           
         </div>
       </div>
