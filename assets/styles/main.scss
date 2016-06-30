@@ -1,21 +1,21 @@
-@import "common/variables";
+@import "common/_variables.scss";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import "common/global";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/grid";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+@import "common/_global.scss";
+@import "components/_buttons.scss";
+@import "components/_comments.scss";
+@import "components/_forms.scss";
+@import "components/_grid.scss";
+@import "components/_wp-classes.scss";
+@import "layouts/_header.scss";
+@import "layouts/_sidebar.scss";
+@import "layouts/_footer.scss";
+@import "layouts/_pages.scss";
+@import "layouts/_posts.scss";
+@import "layouts/_tinymce.scss";
 
 @import "_climatefeedback.scss";
