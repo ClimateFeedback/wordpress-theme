@@ -15,7 +15,6 @@ $taxonomy = get_queried_object();
       </div>
         <h2>Articles from: <?php single_tag_title(); ?></h2> 
         
-        
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'sage'); ?>
