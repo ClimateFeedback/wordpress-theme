@@ -13,28 +13,47 @@ $taxonomy = get_queried_object();
         <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h2>Articles reviewed by: <?php single_tag_title(); ?></h2> 
+        <!-- <h2>Articles reviewed by: <?php single_tag_title(); ?></h2>  -->
      
         
         <?php 
             $usrname = single_tag_title("", false);
             $rev = get_users( array( 'search' => $usrname  ) );
-            // var_dump($rev);
             $output = '';
             foreach ( $rev as $usr ) {
-               $usermeta = get_user_meta($usr->get('ID'));
-               // var_dump($usermeta);
-               $output .= '<div class="row">'.get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ).
+              $usermeta = get_user_meta($usr->get('ID'));
+               
+              $output .= 
+                '<div class="row">
+                  <div class="media">
+                    <div class="media-left">'
+                      .get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' )
+                    .'</div>'
+                  .'<div class="media-body">'
+                    .'<h2 class="media-heading">
+                      <a target="_blank" href="'.esc_html($usr->user_url).'">'.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name )
+                    .'</a></h2>'
 
-               '<h2><a target="_blank" href="'.esc_html($usr->user_url).'">'.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name ).'</a></h2>'
+                    .'<h3>'.esc_html( $usr->title ).', '.esc_html( $usr->affiliation ).'</h3>'
+               // .'</div></div>'
+                    .'</div>'
 
-               .'<h3>'.esc_html( $usr->title ).', '.esc_html( $usr->affiliation ).'</h3></div>'
+               // .'<div class="row">'
+               // .'<div class="col-lg-12>'
+               .'<h3>Details</h3>'
+               .'<p><a href="'.esc_html( $usr->user_url ).'">Website</a></p>'
+               .'<p>Hypothes.is handle: '.esc_html( $usermeta['hypothesis'][0] ).'</p>'
+               
+               .'<p><a href="'.esc_html( $usermeta['orcid'][0] ).'">Orcid</a></p>'
 
+               .'<h3>Expertise</h3>'
+               .'<p>'.esc_html( $usermeta['expertise'][0] ).'</p>'
 
-               .esc_html( $usermeta->hypothesis )
-               .esc_html( $usermeta->expertise )
-               .esc_html( $usermeta->publicationone )
-               .esc_html( $usermeta->publicationone );
+               .'<h3>Qualifying articles</h3>'
+               .'<p>'.esc_html( $usermeta['publicationone'][0] ).'</p>'
+               .'<p>'.esc_html( $usermeta['publicationtwo'][0] ).'</p>'
+               .'</div>'
+               .'</div>';
               echo $output;
             } 
         ?>
