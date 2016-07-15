@@ -218,7 +218,7 @@ return $atags;
 }
 add_shortcode ('article-tags', 'art_tags');
 
-//  [quote_sci user="username"]
+//  [quote_sci user="username"] or [quote_sci user="first last"]
 function quote_sci( $atts ) {
     $a = shortcode_atts( array(
         'user' => '',

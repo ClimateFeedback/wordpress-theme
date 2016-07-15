@@ -14,24 +14,19 @@ Template Name: Homepage
     </div>
   </div>
 </div>
-
+<!-- IGG CAMPAIGN BANNER
 <section class="campaign">
   <div class="container">
     <div class="row">
 
       <div class="col-xs-12 col-md-6">
         <div class="camp-left">            
-           <center> <iframe class="resp-vid" width="460" height="259" src="https://www.youtube.com/embed/GYsNYvO6uVk" frameborder="0" allowfullscreen ></iframe> </center>
+           <center> <iframe class="resp-vid" width="460" height="259" src="https://www.youtube.com/embed/GYsNYvO6uVk" frameborder="0" allowfullscreen ></iframe>                  </center>
             
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="camp-body">
-        <!--   <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png"> 
-    <a target="_blank" href="https://www.indiegogo.com/projects/climate-feedback-a-guide-to-reliable-climate-news--2/#/" style="margin-left: 1em;" class="btn btn-primary btn-lg btn-resp">Support our crowdfunding campaign</a>
-        -->
-        <!--    <p class="spaceup1"><strong>Want to bring more accuracy and accountability to climate change reporting?</strong> </p> 
-        -->
             <img alt="" class="img-responsive camp-fig" src="http://climatefeedback.org/wp-content/uploads/2016/04/standwithscience.png">
             <p style="padding-left: 1.3em; padding-bottom: 0.8em;">Climate Feedback relies on your support. <br /> Our crowdfunding campaign successfully raised $30k. <br /> Join hundreds supporting our work on INDIEGOGO!
                 </p>
@@ -44,6 +39,7 @@ Template Name: Homepage
     </div>
   </div>
 </section>
+/  -->
 
 <div class="container">
 
