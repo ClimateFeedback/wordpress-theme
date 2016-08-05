@@ -19,7 +19,7 @@
 
       <!-- Social Media -->
       <div class="social-media pull-right">
-          <a data-tooltip="Subscribe to our email news feed" class="tooltip-bottom" href="http://eepurl.com/buIIXv"><i class="fa fa-envelope"></i></a>
+          <a data-tooltip="Subscribe to our email news feed" class="tooltip-bottom" href="http://eepurl.com/bwqJtz"><i class="fa fa-envelope"></i></a>
           <a href="https://www.facebook.com/pages/Climate-Feedback/1547593572151463" target="_blank"><i class="fa fa-facebook"></i></a>
           <a href="https://twitter.com/ClimateFdbk" target="_blank"><i class="fa fa-twitter"></i></a>
 <!--          <a href="https://github.com/climatefeedback" target="_blank"><i class="fa fa-github"></i></a>-->
