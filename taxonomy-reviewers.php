@@ -37,7 +37,7 @@ $taxonomy = get_queried_object();
                     .'<h3>'.esc_html( $usr->title ).', '.esc_html( $usr->affiliation ).'</h3>'
                     .'</div>'
 
-                   .'<h3>Details</h3>'
+                   .'<h3 class="separator">Details</h3>'
                    .'<p><a href="'.esc_html( $usr->user_url ).'">Website</a></p>'
                    .'<p>Hypothes.is handle: '.esc_html( $usermeta['hypothesis'][0] ).'</p>'
                    
@@ -59,7 +59,7 @@ $taxonomy = get_queried_object();
               echo $output;
             } 
         ?>
-          <h2>Article reviews</h2>
+          <h2 class="separator">Article reviews</h2>
           <hr/>
         </div>
         </div>
