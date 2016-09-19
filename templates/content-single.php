@@ -18,7 +18,7 @@
     </header>
 
     <div class="entry-content">
-    
+    <!--      <button>
       <div class="sharing-icons">
         <?php if ( function_exists( 'sharing_display' ) ) {
           sharing_display( '', true );
@@ -29,8 +29,8 @@
           echo $custom_likes->post_likes( '' );
         } ?>
       </div>
-
-       
+    -->
+       <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>
       <center>
         <?php the_post_thumbnail(array(800, 500), array( 'class' => 'img-responsive' )); ?>
       </center>
