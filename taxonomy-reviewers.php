@@ -24,7 +24,20 @@ $usrname = single_tag_title("", false);
 // echo $rev;
 $output = '';
 foreach ( $rev as $usr ) {   
-     $output .= get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ).' <a target="_blank" href="'.esc_html($usr->user_url).'">'.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name ).'</a>, '.esc_html( $usr->title ).', '.esc_html( $usr->affiliation ).'';
+  
+    $output .='<div class="row expert">
+          <div class="med-left">
+            '.get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ).'
+          </div>
+          <div class="med-body">
+            <h3 class="noborder"> <a target="_blank" href="'.esc_html($usr->user_url).'">'.esc_html( $usr->first_name ).' '.$last_name.'</a></h3>
+            <p>'.$title.', '.$affiliation.'</p>
+            <p><small>Expertise:</small> '.$expertise.'</p>
+            <p><small>Hypothesis:</small> <a target="_blank" href="https://hypothes.is/stream?q=user:'.$hypothesis.'" class="">'.$hypothesis.'</a></p>
+          </div>
+        </div>';
+    
+  
     echo $output;
 } 
         ?>
