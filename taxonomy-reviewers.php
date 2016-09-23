@@ -13,7 +13,7 @@ $taxonomy = get_queried_object();
         <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h2>Articles reviewed by: <?php single_tag_title(); ?></h2> 
+        <p class="spaceup"></p> 
      
         
         <?php 
@@ -30,15 +30,25 @@ foreach ( $rev as $usr ) {
             '.get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ).'
           </div>
           <div class="med-body">
-            <h3 class="noborder"> <a target="_blank" href="'.esc_html($usr->user_url).'">'.esc_html( $usr->first_name ).' '.$last_name.'</a></h3>
-            <p>'.$title.', '.$affiliation.'</p>
-            <p><small>Expertise:</small> '.$expertise.'</p>
-            <p><small>Hypothesis:</small> <a target="_blank" href="https://hypothes.is/stream?q=user:'.$hypothesis.'" class="">'.$hypothesis.'</a></p>
+            <h2 class="noborder"> '.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name ).' </h2>
+            <p>'.esc_html( $usr->title ).'</p>
+            <p>'.esc_html( $usr->affiliation ).'</p>
+            <p><small>Expertise:</small> '.esc_html( $usr->expertise ).'</p>
+            
           </div>
+        </div>
+        <p class="spaceup"></p>
+        <div class="row"><section class="separator"><h3 class="inseparator"> DETAILS </h3> </section>
+        <p class="spaceup1"><i class="fa fa-link" aria-hidden="true" style="font-size: 1.5em;"></i><a target="_blank" href="'.esc_html($usr->user_url).'">&nbsp; Website</a>
+        </p>
+        <p>
+        <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:'.esc_html( $usr->hypothesis ).'" class="">'.esc_html( $usr->hypothesis ).'</a></p>
+        <h4 style="padding-top: 20px; margin-bottom: 0px;">Expertise</h4>
+        <p class="spaceup1"><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/scientist_black_w_m.png" alt="xp" width="25" align="left" /> &nbsp; '.esc_html( $usr->expertise ).'</p>
         </div>';
-    
-  
+
     echo $output;
+    
 } 
         ?>
         
@@ -56,6 +66,10 @@ foreach ( $rev as $usr ) {
   <?php
     $args = array( 'post_type' => 'evaluation' , 'reviewers' => $taxonomy->slug ) ; 
     $loop = new WP_Query( $args );
+?>
+
+<?php 
+echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> ARTICLE REVIEWS </h3> </section></div>';
 ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
