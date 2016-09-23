@@ -54,12 +54,13 @@ foreach ( $rev as $usr ) {
         
         
 <?php if (!have_posts()) : ?>
-  <!-- 
+  &nbsp;
+    <!-- 
     <div class="alert alert-warning">
         <?php _e('Sorry, no results were found.', 'sage'); ?>
     </div>
   -->
-  <!-- <?php get_search_form(); ?> 
+  <!-- <?php get_search_form(); ?>  
         
 <?php endif; ?>
 
@@ -87,7 +88,10 @@ echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 cla
                <h3 class="noborder"> <?php the_title(); ?></h3></a>
               </a>
               <p class="small">
-                <h4 class="noborder"><?php echo get_the_date( 'Y-m-d' ); ?></h4>
+                <h4 class="noborder"><span style="font-weight:normal; font-size-adjust: 0.5;">in</span> <?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?>, <span style="font-weight:normal; font-size-adjust: 0.5;">by</span> <?php echo get_post_meta( get_the_ID(), 'author', true ); ?></h4>
+                <p class="small">
+                    <span> <?php echo get_post_meta( get_the_ID(), 'date', true ); ?> </span>
+                </p>
             <?php the_excerpt(); ?></p>
         </div>
     </div>
