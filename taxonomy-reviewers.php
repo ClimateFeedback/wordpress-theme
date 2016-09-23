@@ -33,7 +33,6 @@ foreach ( $rev as $usr ) {
             <h2 class="noborder"> '.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name ).' </h2>
             <p>'.esc_html( $usr->title ).'</p>
             <p>'.esc_html( $usr->affiliation ).'</p>
-            <p><small>Expertise:</small> '.esc_html( $usr->expertise ).'</p>
             
           </div>
         </div>
