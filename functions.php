@@ -283,3 +283,18 @@ function remove_xmlrpc_pingback_ping( $methods ) {
     
     return $methods;
 }
+
+// Add subscript/superscript buttons
+function my_mce_buttons_2( $buttons ) {	
+	/**
+	 * Add in a core button that's disabled by default
+	 */
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
+
+	return $buttons;
+}
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
+
+
+
