@@ -14,7 +14,7 @@
 	  		<a target="_blank" href="http://citris-uc.org/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/citris-logo.png" class="sponser" style="float:left; margin-right:1em;"></a>
 	  		<p class="small">The Center for Information Technology Research in the Interest of Society:</p>
         <p class="small"> 'Data &amp; Democracy' grant</p>
-	  		<p class="small">Generous support from the public. <a href="contribute/">Donate today</a>!</p>
+	  		<p class="small">Generous support from the public. <a href="/contribute/">Donate today</a>!</p>
 <!--	  		</ul>-->
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">

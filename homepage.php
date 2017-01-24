@@ -90,7 +90,7 @@ Template Name: Homepage
         <div class="media-body">
           <h3>SCIENTISTS!</h3>
           <h4>Help us create a better informed society. Join our community today!</h4>
-          <a href="for-scientists/" class="btn btn-primary btn-lg">Apply Now</a>
+          <a href="/for-scientists/" class="btn btn-primary btn-lg">Apply Now</a>
         </div>
       </div>
     </div>
