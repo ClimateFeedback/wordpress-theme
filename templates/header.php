@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand logo" href="<?= esc_url(home_url('/')); ?>"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Climate_Feedback_logo_s.png"> Climate Feedback</a>
+      <a class="navbar-brand logo" href="<?= esc_url(home_url('/')); ?>"> <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><img itemprop="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/Climate_Feedback_logo_s.png"> <span itemprop="name">Climate Feedback</span></span></a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <?php

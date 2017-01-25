@@ -1,11 +1,11 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-
+      <span itemscope itemtype="http://schema.org/Article">
     <header>
       <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h1 class="entry-title"><?php the_title(); ?></h1> 
+        <h1 itemprop="name" class="entry-title"><?php the_title(); ?></h1> 
         
       <p >  
          Published in <?php echo do_shortcode('[outlet]'); ?>, by <?php echo do_shortcode('[author]'); ?>
@@ -24,24 +24,13 @@
       
       
     <div class="entry-content">
-    <!--      <button>
-      <div class="sharing-icons">
-        <?php if ( function_exists( 'sharing_display' ) ) {
-          sharing_display( '', true );
-        }
-
-        if ( class_exists( 'Jetpack_Likes' ) ) {
-          $custom_likes = new Jetpack_Likes;
-          echo $custom_likes->post_likes( '' );
-        } ?>
-      </div>
-     --> 
         
-       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> </p>
+       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> </p>
+        <!--<p>A majority of reviewers tagged the article as: <i class="fa fa-tag"></i> <?php echo do_shortcode('[article-tags]'); ?></p> -->
+         
         <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>
        
       <center>
-      
         <?php the_post_thumbnail(array(800, 500), array( 'class' => 'img-responsive' )); ?>
       </center>
         <br />
@@ -56,7 +45,7 @@
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
-
+      </span>
   </article>
 
 <!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> 

@@ -10,10 +10,31 @@ Template Name: Archives
         <?php 
 $taxonomy = get_queried_object();
         ?>
+        
+        <?php 
+$url = $_SERVER["REQUEST_URI"];
+
+$isItAcc = strpos($url, 'accurate');
+$isItIns = strpos($url, 'insightful');
+
+        ?>
+        
+        
         <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
         <h2>Articles tagged as: <?php single_tag_title(); ?></h2> 
+        
+        <?php if ($isItAcc!==false) : ?>
+        <p>
+            
+        </p>
+        <?php endif; ?>
+        <?php if ($isItIns!==false) : ?>
+        <p>
+            
+        </p>
+        <?php endif; ?>
         
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
