@@ -21,7 +21,7 @@
           <div class="col-sm-6">
             <div class="fact-check-card__row__title"> CLAIM </div>
             <div>
-              <?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?>
+              "<?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?>"
             </div>
           </div>
           <div>
@@ -40,16 +40,24 @@
           <div class="fact-check-card__row__title">
             ISSUES
           </div>
-          <div>
+          <div class="fact-check-card__details__text">
             <?php echo get_post_meta( get_the_ID(), 'details', true) ?>
           </div>
         </div>
-        <div class="fact-check-card__takeaway">
+        <div>
           <div class="fact-check-card__row__title">
             KEY TAKE AWAY
           </div>
-          <div>
-            <?php echo get_post_meta( get_the_ID(), 'takeaway', true) ?>
+          <div class="fact-check-card__takeaway row">
+            <div class="fact-check-card__takeaway__icon col-sm-3">
+              <img
+                class="fact-check-card__takeaway__icon__img"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/grey_bulb.png"
+              >
+            </div>
+            <div class="fact-check-card__takeaway__text col-sm-9">
+              <?php echo get_post_meta( get_the_ID(), 'takeaway', true) ?>
+            </div>
           </div>
         </div>
       </div>
