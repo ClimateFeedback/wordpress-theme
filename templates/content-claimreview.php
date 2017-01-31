@@ -1,6 +1,3 @@
-<!--
-  Template Name: Claim Review
--->
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <header>
@@ -12,10 +9,49 @@
 
     <div class="entry-content">
       <div class="fact-check-card">
-          <p>CLAIM <br /><?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?></p>
-          <p>VERDICT <br /><?php echo get_post_meta( get_the_ID(), 'verdict', true) ?></p>
-          <p>DETAILS <br /><?php echo get_post_meta( get_the_ID(), 'details', true) ?></p>
-          <p>TAKEAWAY <br /><?php echo get_post_meta( get_the_ID(), 'takeaway', true) ?></p>
+        <div class="fact-check-card__row row">
+          <div class="col-sm-3">
+            <a src=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?>>
+              <img
+                class="fact-check-card__row__screenshot"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>.png"
+              >
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <div class="fact-check-card__row__title"> CLAIM </div>
+            <div>
+              <?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?>
+            </div>
+          </div>
+          <div>
+            <div class="fact-check-card__row__title">
+              VERDICT
+            </div>
+            <div>
+              <img
+                class="fact-check-card__row__verdict"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="fact-check-card__details">
+          <div class="fact-check-card__row__title">
+            ISSUES
+          </div>
+          <div>
+            <?php echo get_post_meta( get_the_ID(), 'details', true) ?>
+          </div>
+        </div>
+        <div class="fact-check-card__takeaway">
+          <div class="fact-check-card__row__title">
+            KEY TAKE AWAY
+          </div>
+          <div>
+            <?php echo get_post_meta( get_the_ID(), 'takeaway', true) ?>
+          </div>
+        </div>
       </div>
         <br />
         <h3>SCIENTISTS' REVIEW</h3>
