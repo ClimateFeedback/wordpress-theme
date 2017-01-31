@@ -794,34 +794,62 @@ main.campaign-container{
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+  }
+  &-title {
+    color: grey;
+  }
   &__row {
-    margin-bottom: 20px;
     &__screenshot {
-      height: 110px;
-      width: 110px;
-    }
-    &__title {
-      color: grey;
-      margin-bottom: 20px;
+      height: 250px;
+      margin-bottom: 30px;
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 0;
+        height: auto;
+      }
+      &__img {
+        height: 250px;
+        width: 250px;
+        @media (min-width: $screen-sm-min) {
+          height: 110px;
+          width: 110px;
+        }
+        @media (min-width: $screen-md-min) {
+          height: 150px;
+          width: 150px;
+        }
+        @media (min-width: $screen-lg-min) {
+          height: 180px;
+          width: 180px;
+        }
+      }
     }
     &__verdict {
-      height: 30px;
-      width: 110px;
+      &__img {
+        height: 50px;
+        width: 160px;
+        @media (min-width: $screen-sm-min) {
+          height: 30px;
+          width: 120px;
+        }
+        @media (min-width: $screen-md-min) {
+          height: 50px;
+          width: 150px;
+        }
+      }
     }
   }
   &__details {
     &__text {
-      margin-bottom: 20px;
+      text-align: left;
     }
   }
   &__takeaway {
     background-color: #01579B;
     padding: 10px;
     &__icon {
-      padding-top: 5px;
-      padding-left: 15px;
-      padding-right: 5px;
-      padding-bottom: 5px;
+      padding: 5px;
       &__img {
         height: 50px;
         width: 50px;
