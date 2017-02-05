@@ -802,39 +802,39 @@ main.campaign-container{
   }
   &__row {
     &__screenshot {
-      height: 250px;
+     // height: 250px;
       margin-bottom: 30px;
       @media (min-width: $screen-sm-min) {
         margin-bottom: 0;
         height: auto;
       }
       &__img {
-        height: 250px;
+      //  height: 250px;
         width: 250px;
         @media (min-width: $screen-sm-min) {
-          height: 110px;
+      //    height: 110px;
           width: 110px;
         }
         @media (min-width: $screen-md-min) {
-          height: 150px;
+        //  height: 150px;
           width: 150px;
         }
         @media (min-width: $screen-lg-min) {
-          height: 180px;
+        //  height: 180px;
           width: 180px;
         }
       }
     }
     &__verdict {
       &__img {
-        height: 50px;
+       // height: 50px;
         width: 160px;
         @media (min-width: $screen-sm-min) {
-          height: 30px;
+        //  height: 30px;
           width: 120px;
         }
         @media (min-width: $screen-md-min) {
-          height: 50px;
+        //  height: 50px;
           width: 150px;
         }
       }
