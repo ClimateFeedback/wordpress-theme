@@ -14,9 +14,9 @@
             <a class="fact-check-card__row__screenshot__link"
               href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?>
             >
-              <img
+            <img
                 class="fact-check-card__row__screenshot__img"
-                src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>.png"
+                src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
               >
             </a>
           </div>
@@ -66,7 +66,13 @@
         </div>
       </div>
         <br />
+        
+        <div>
+            <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"   
+            </blockquote>
+        </div>
         <h3>SCIENTISTS' REVIEW</h3>
+
         <p><?php the_content(); ?></p>
         <!--      <button>-->
         <!--        <a href="--><?php //echo get_post_meta( get_the_ID(), 'annotationsLink', true ); ?><!--" target="_blank">See all the scientists' annotation in context</a>-->
