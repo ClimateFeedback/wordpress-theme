@@ -16,7 +16,7 @@
             >
               <img
                 class="fact-check-card__row__screenshot__img"
-                src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>.png"
+                src="<?php echo site_url(); ?>/wp-content/uploads/2017/02/<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>.png"
               >
             </a>
           </div>
