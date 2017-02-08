@@ -136,7 +136,7 @@ add_action( 'widgets_init', 'wpb_load_widget' );
 add_filter('widget_text', 'do_shortcode');
 
 
-//repositioning the jetpack sharing icons
+//repositioning the jetpack sharing icons OLD
 function jptweak_remove_share() {
   remove_filter( 'the_content', 'sharing_display',19 );
   remove_filter( 'the_excerpt', 'sharing_display',19 );
@@ -217,6 +217,16 @@ ob_end_clean();
 return $atags;
 }
 add_shortcode ('article-tags', 'art_tags');
+
+// add link to reference explanation in the pitfalls list
+function section_pitfall( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      'ref' => 1,
+   ), $atts));
+    return '<b>' . $content . ' </b>';
+    // return  '<a href="http://climatefeedback.org/process/#' .$ref. '"><b>' . $content . ' </b></a>';
+}
+add_shortcode( 'pitfall', 'section_pitfall' );
 
 //  [quote_sci user="username"] or [quote_sci user="first last"]
 function quote_sci( $atts ) {
