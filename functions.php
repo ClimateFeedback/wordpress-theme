@@ -307,4 +307,10 @@ function my_mce_buttons_2( $buttons ) {
 add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 
 
+// Register ShareTheFacts oEmbed provider
+function sharethefacts_oembed_provider() {
 
+wp_oembed_add_provider( 'https://*.sharethefacts.co/*', 'http://www.sharethefacts.co/services/oembed', false );
+
+}
+add_action( 'init', 'sharethefacts_oembed_provider' );
