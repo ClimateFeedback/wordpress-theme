@@ -811,6 +811,7 @@ main.campaign-container{
       &__img {
       //  height: 250px;
         width: 250px;
+        border:1px solid #888888;
         @media (min-width: $screen-sm-min) {
       //    height: 110px;
           width: 110px;
@@ -835,7 +836,7 @@ main.campaign-container{
         }
         @media (min-width: $screen-md-min) {
         //  height: 50px;
-          width: 150px;
+          width: 170px;
         }
       }
     }
@@ -846,7 +847,7 @@ main.campaign-container{
     }
   }
   &__takeaway {
-    background-color: #01579B;
+    background-color: #046380;
     padding: 10px;
     &__icon {
       padding: 5px;
