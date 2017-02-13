@@ -279,7 +279,15 @@ function quote_sci2( $a ) {
     $output = '';
     $blogusers = get_users( array( 'search' => $a ) );
 foreach ( $blogusers as $user ) {   
-     $output .= ' <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'';
+     $output .= '
+     <div class="row expert-widget"> 
+        <div class="wid-left">
+            '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
+        </div>
+        <div class="wid-body">
+            <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->Affiliation ).'
+        </div>
+     </div>';
 }    
     //Close and return markup
     return $output;
