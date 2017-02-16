@@ -38,21 +38,20 @@
         </div>
         <div >
           <div class="mb2">
-           <p > <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>  &nbsp; <a target="_blank" title="See the claim in context" href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?> ><i class="fa fa-external-link" aria-hidden="true"></i></span></a>
- </p>
-              
-              
-              
+            <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>  &nbsp; <a target="_blank" title="See the claim in context" href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?> ><i class="fa fa-external-link" aria-hidden="true"></i></span></a>
+            </p> 
           </div>
         </div>
-        <div class="mb3">
-          <div class="fact-check-card-title mb1">
-            DETAILS
-          </div>
-          <div class="fact-check-card__details__text">
-            <?php echo do_shortcode( get_post_meta( get_the_ID(), 'details', true) ) ?>
-          </div>
-        </div>
+          <?php if( get_post_meta( get_the_ID(), 'details', true) ): ?>
+            <div class="mb3">
+                <div class="fact-check-card-title mb1">
+                DETAILS
+                </div>
+                <div class="fact-check-card__details__text">
+                    <?php echo do_shortcode( get_post_meta( get_the_ID(), 'details', true) ) ?>
+                </div>
+            </div>
+          <?php endif; ?>
         <div>
           <div class="fact-check-card-title mb2">
             KEY TAKE AWAY
