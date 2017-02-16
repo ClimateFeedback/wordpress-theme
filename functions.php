@@ -176,7 +176,7 @@ add_action( 'init', 'create_my_taxonomies', 0 );
 
 function create_my_taxonomies() {
 	register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
-    register_taxonomy( 'authors', 'evaluation', array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'authors', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'reviewers', 'evaluation', array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
 }
@@ -285,7 +285,7 @@ foreach ( $blogusers as $user ) {
             '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
         </div>
         <div class="wid-body">
-            <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->Affiliation ).'
+            <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
         </div>
      </div>';
 }    

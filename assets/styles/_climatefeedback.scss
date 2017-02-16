@@ -44,6 +44,18 @@ a.bott {
   overflow: hidden;
 }
 
+.widget-btn{
+  background-color: #d3d3d3;
+  padding: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
 .btn-resp{
       background-color: #EB1478 !important;
     }
@@ -453,6 +465,9 @@ section {
   }
 }
 
+.sidebar section {
+  padding: 0 1em;
+}
 .widget a {
   font-weight: 500;
 }
@@ -489,8 +504,10 @@ section {
   width: 10000px;
   overflow: hidden;
   float: none;
-  padding-left: 5px;
-  line-height: 130%;
+  padding-left: 3px;
+  padding-top: 3px;
+  line-height: 110%;
+  font-size: 90%;
 }
 
 /*==============================*/
@@ -805,8 +822,8 @@ main.campaign-container{
       }
     }
   }
-    .text-2 {
-    padding-top: 17em;
+    .first-widget-v-align {
+    padding-top: 10em;
     }
 }
 
