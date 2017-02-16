@@ -9,23 +9,14 @@
         
       <p >  
          Published in <?php echo do_shortcode('[outlet]'); ?>, by <?php echo do_shortcode('[author]'); ?>
-          - <time class="updated"><?php echo get_post_meta( get_the_ID(), 'date', true ); ?></time>
+          on <time class="updated"><?php echo get_post_meta( get_the_ID(), 'date', true ); ?></time>
       </p>
-      
-      
-      <!--  <?php // get_template_part('templates/entry-meta'); ?>    --> 
-       <!-- <h4>-->
-      <!--        <a href="<?php // echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank">--> 
-      <!--          --><?php //echo get_post_meta( get_the_ID(), 'outlet', true ); ?>
-      <!--        </a>-->
-      <!--      </h4>-->
     </header>
 
       
-      
     <div class="entry-content">
         
-       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> </p>
+       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span></p>
         <!--<p>A majority of reviewers tagged the article as: <i class="fa fa-tag"></i> <?php echo do_shortcode('[article-tags]'); ?></p> -->
          
         <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>

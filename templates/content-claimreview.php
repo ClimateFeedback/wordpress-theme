@@ -26,13 +26,13 @@
           </div>
           <div class="col-sm-4 p1">
             <div class="fact-check-card-title mb2">
-              VERDICT
+              VERDICT <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/claim-reviews-framework">more about the rating framework</a></span></span>
             </div>
             <div>
               <img
                 class="fact-check-card__row__verdict__img"
-                src="<?php echo get_stylesheet_directory_uri(); ?>/img/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-              >
+                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+              >  
             </div>
           </div>
         </div>

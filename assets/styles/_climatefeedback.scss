@@ -258,8 +258,8 @@ section {
   img {
     width: 160px !important;
     height: auto !important;
-    margin-top: 1.7em;
-    margin-right: 2em;
+    margin-top: 2.5em;
+    margin-right: 1em;
   }
 }
 
@@ -270,6 +270,43 @@ section {
   }
 }
 
+.infolink::before {
+    content: '?';
+    text-align: center;
+    width: 2ex;
+    height: 2ex;
+    font-size: 75%;
+    font-family: sans-serif;
+    vertical-align: top;
+    font-weight: 600;
+    line-height: 1.1;
+    display: inline-block;
+    border-radius: 50%;
+    color: grey;
+    border: thin solid grey;
+    opacity: 0.6;
+}
+
+.infobox {
+    position: relative;
+    display: inline-block;
+}
+
+.infobox .infoboxtext {
+    visibility: hidden;
+    background: rgba(204, 204, 204, 0.5);
+    text-align: center;
+    padding: 3px;
+    border-radius: 4px;
+    width: 120px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.infobox:hover .infoboxtext {
+    visibility: visible;
+}
 
 // People and Expert loops ///////////////
 .responsive-modal-image {
