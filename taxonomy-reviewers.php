@@ -56,7 +56,7 @@ foreach ( $rev as $usr ) {
                         echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationtwo ).'">'. esc_html( $usr->publicationtwo ) .'</a>
                     </p> ';
                  }
-                 if (!empty($pub2)) {
+                 if (!empty($pub3)) {
                         echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationthree ).'">'. esc_html( $usr->publicationthree ) .'</a>
                     </p> ';
                  }
