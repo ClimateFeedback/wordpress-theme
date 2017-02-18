@@ -20,21 +20,11 @@ $isItIns = strpos($url, 'insightful');
         ?>
         
         
-        <div class="page-header myfull">
+      <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h2>Articles tagged as: <?php single_tag_title(); ?></h2> 
-        
-        <?php if ($isItAcc!==false) : ?>
-        <p>
-            
-        </p>
-        <?php endif; ?>
-        <?php if ($isItIns!==false) : ?>
-        <p>
-            
-        </p>
-        <?php endif; ?>
+      <h2>Articles tagged as: <?php single_tag_title(); ?> <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#definition">definition</a></span></span>
+      </h2> 
         
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
@@ -47,27 +37,12 @@ $isItIns = strpos($url, 'insightful');
   <?php
     $args = array( 'post_type' => 'evaluation' , 'article-tag' => $taxonomy->slug ) ; 
     $loop = new WP_Query( $args );
-?>
+  ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
   
-  <div class="row">
-            <div class="media-left hidden-xs">
-                <a class="postpic" href=" <?php the_permalink(); ?>  ">
-                    <?php echo types_render_field( "front-image", array( "width" => "275", "height" => "176", "proportional" => "true" ) ); ?>
-                </a>
-            </div>
-        <div class="media-body">
-            <a class="strong" href="<?php the_permalink(); ?>">
-               <h3 class="noborder"> <?php the_title(); ?></h3></a>
-              </a>
-              <p class="small">
-                <h4 class="noborder"><?php echo get_the_date( 'Y-m-d' ); ?></h4>
-            <?php the_excerpt(); ?></p>
-        </div>
-    </div>
+        <?php get_template_part('templates/loop-feedbacks'); ?>
 	
-	<hr/>
 <?php endwhile; ?>
 
 <?php the_posts_navigation(); ?>

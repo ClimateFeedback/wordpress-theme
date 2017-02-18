@@ -16,8 +16,8 @@
       
     <div class="entry-content">
         
-       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span></p>
-        <!--<p>A majority of reviewers tagged the article as: <i class="fa fa-tag"></i> <?php echo do_shortcode('[article-tags]'); ?></p> -->
+       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span> <br /> A majority of reviewers tagged the article as: <?php echo do_shortcode('[article-tags]'); ?>. </p>
+        
          
         <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>
        

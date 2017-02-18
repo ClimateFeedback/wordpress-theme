@@ -13,7 +13,7 @@ $taxonomy = get_queried_object();
         <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h2>Articles by: <?php single_tag_title(); ?></h2> 
+        <h2>Reviews of articles by: <?php single_tag_title(); ?></h2> 
         
         
 <?php if (!have_posts()) : ?>
@@ -30,31 +30,21 @@ $taxonomy = get_queried_object();
 ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
-  
-  <div class="row">
-
-      <div class="media-left hidden-xs">
-                <a class="postpic" href=" <?php the_permalink(); ?>  ">
-                    <?php echo types_render_field( "front-image", array( "width" => "275", "height" => "176", "proportional" => "true" ) ); ?>
-                </a>
-            </div>
-      
-        <div class="media-body">
-            <a class="strong" href="<?php the_permalink(); ?>">
-               <h3 class="noborder"> <?php the_title(); ?></h3></a>
-              </a>
-              <p class="small">
-                <h4 class="noborder"><?php echo get_the_date( 'Y-m-d' ); ?></h4>
-            <?php the_excerpt(); ?></p>
-        </div>
-    </div>
-	
-	<hr/>
+        <?php get_template_part('templates/loop-feedbacks', get_post_type()); ?>
 <?php endwhile; ?>
 
+        <!-- CLAIM REVIEWS Listing 
+<?php
+    $args = array( 'post_type' => 'claimreview' , 'authors' => $taxonomy->slug ) ; 
+    $loop = new WP_Query( $args );
+?>
+
+<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
+        <?php get_template_part('templates/loop-feedbacks'); ?>
+<?php endwhile; ?>
+		-->
+        
 <?php the_posts_navigation(); ?>
-
-		
-
+        
 	</div><!-- #content -->
 </div><!-- #container -->
