@@ -322,3 +322,76 @@ wp_oembed_add_provider( 'https://*.sharethefacts.co/*', 'http://www.sharethefact
 
 }
 add_action( 'init', 'sharethefacts_oembed_provider' );
+
+
+// auto create reviewer tag when adding or updating a People item
+function update_custom_terms($post_id) {
+    // only update terms if it's a People post
+    if ( 'people' != get_post_type($post_id)) {
+        return;
+    }
+    // don't create or update terms for system generated posts
+    if (get_post_status($post_id) == 'auto-draft') {
+        return;
+    }
+    /*
+    * Grab the post title and slug to use as the new 
+    * or updated term name and slug
+    */
+    $term_title = get_the_title($post_id);
+    $term_slug = get_post( $post_id )->post_name;
+    
+    // Check if a corresponding term already exists 
+    $existing_terms = get_terms('reviewers', array(
+        'hide_empty' => false
+        )
+    );
+    foreach($existing_terms as $term) {
+        if ($term->description == $post_id) {
+            //term already exists, so update it and we're done
+            wp_update_term($term->term_id, 'reviewers', array(
+                'name' => $term_title,
+                'slug' => $term_slug
+                )
+            );
+            return;
+        }
+    }
+
+    // If this is a new post, create a new term
+
+    wp_insert_term($term_title, 'reviewers', array(
+        'slug' => $term_slug,
+        'description' => $post_id
+        )
+    );
+}
+add_action('save_post', 'update_custom_terms');
+
+function create_user_custom_terms( $user_id ){
+    // Get user info
+    $user_info = get_userdata( $user_id );
+
+    // Create a new post
+    $user_post = array(
+        // 'post_title'   => $user_info->nickname, // $result = ;
+        'post_title'   => $user_info->first_name . ' ' . $user_info->last_name ,
+        'post_type'    => 'people',
+    );
+    // Insert the post into the database
+    $post_id = wp_insert_post( $user_post );
+
+    // Add custom company info as custom fields
+    // add_post_meta( $post_id, 'company_id', $user_info->ID ); //add user_image ?
+     add_post_meta( $post_id, 'last_name', $user_info->last_name );
+     add_post_meta( $post_id, 'hypothesis', $user_info->hypothesis );
+     add_post_meta( $post_id, 'expertise', $user_info->expertise );
+     add_post_meta( $post_id, 'affiliation', $user_info->affiliation );
+     add_post_meta( $post_id, 'title', $user_info->title );
+     add_post_meta( $post_id, 'website', $user_info->user_url );
+
+}
+ // add_action( 'user_register', 'create_user_custom_terms', 10, 1 ); //temporary
+add_action( 'wppb_after_user_approval', 'create_user_custom_terms', 20 );
+
+

@@ -22,35 +22,49 @@ $usrname = single_tag_title("", false);
             // $rev = get_users( array( 'search' => $taxonomy->slug  ) );
             $rev = get_users( array( 'search' => $usrname  ) );
 // echo $rev;
-$output = '';
+//$output = '';
 foreach ( $rev as $usr ) {   
-  
-    $output .='<div class="row expert">
-          <div class="med-left">
-            '.get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ).'
-          </div>
-          <div class="med-body">
-            <h2 class="noborder"> '.esc_html( $usr->first_name ).' '.esc_html( $usr->last_name ).' </h2>
-            <p>'.esc_html( $usr->title ).'</p>
-            <p>'.esc_html( $usr->affiliation ).'</p>
-            
-          </div>
-        </div>
-        <p class="spaceup"></p>
-        <div class="row"><section class="separator"><h3 class="inseparator"> DETAILS </h3> </section>
-        <p class="spaceup1"><i class="fa fa-link" aria-hidden="true" style="font-size: 1.5em;"></i><a target="_blank" href="'.esc_html($usr->user_url).'">&nbsp; Website</a>
-        </p>
-        <p>
-        <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:'.esc_html( $usr->hypothesis ).'" class="">'.esc_html( $usr->hypothesis ).'</a></p>
-        <h4 style="padding-top: 20px; margin-bottom: 0px;">Expertise</h4>
-        <p class="spaceup1"><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/scientist_black_w_m.png" alt="xp" width="25" align="left" /> &nbsp; '.esc_html( $usr->expertise ).'</p>
-        </div>';
-
-    echo $output;
-    
+  //  $output .=''
+//        ;   
 } 
         ?>
-        
+
+        <div class="row">
+          <div class="med-left expert">
+            <?php echo get_avatar( $usr->get('ID'), $size = '256', $default = '<path_to_url>' ); ?>
+              
+          </div>
+          <div class="med-body">
+            <h2 class="noborder"> <?php echo esc_html( $usr->first_name ); ?> <?php echo esc_html( $usr->last_name ); ?>  </h2>
+            <p><?php echo esc_html( $usr->title ); ?>, <?php echo esc_html( $usr->affiliation ); ?></p>
+            <p><small>Expertise:</small> <?php echo esc_html( $usr->expertise ); ?></p>
+            <h4 class="spaceup">Details:</h4>
+            <p> &nbsp;<i class="fa fa-globe fa-lg" style="color: grey;" aria-hidden="true"></i> &nbsp;<a target="_blank" href="<?php echo esc_html( $usr->user_url ); ?>">Website</a>
+            </p>
+            <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:<?php echo esc_html( $usr->hypothesis ); ?>" class=""><?php echo esc_html( $usr->hypothesis ); ?></a>
+            </p>
+              <?php
+                 $var = $usr->publicationone;
+                 $pub2 = $usr->publicationtwo;
+                 $pub3 = $usr->publicationthree;
+                 if (!empty($var)) {                 
+                    echo '<h4 class="spaceup1">Qualifying publication(s):</h4>
+                    <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationone ).'">'. esc_html( $usr->publicationone ) .'</a>
+                    </p> ';
+                 }
+                 if (!empty($pub2)) {
+                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationtwo ).'">'. esc_html( $usr->publicationtwo ) .'</a>
+                    </p> ';
+                 }
+                 if (!empty($pub2)) {
+                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationthree ).'">'. esc_html( $usr->publicationthree ) .'</a>
+                    </p> ';
+                 }
+              ?>
+          </div>
+        </div>
+                 
+
         
 <?php if (!have_posts()) : ?>
   &nbsp;
