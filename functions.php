@@ -136,6 +136,7 @@ add_action( 'widgets_init', 'wpb_load_widget' );
 add_filter('widget_text', 'do_shortcode');
 
 
+
 //repositioning the jetpack sharing icons OLD
 function jptweak_remove_share() {
   remove_filter( 'the_content', 'sharing_display',19 );
@@ -285,7 +286,7 @@ foreach ( $blogusers as $user ) {
             '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
         </div>
         <div class="wid-body">
-            <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
+            <a href="/reviewers/'.format_uri(esc_html($user->first_name)).'-'.format_uri(esc_html($user->last_name)).'">'.format_uri(esc_html($user->first_name)).' '.format_uri(esc_html($user->last_name)).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
         </div>
      </div>';
 }    

@@ -83,7 +83,7 @@ foreach ( $rev as $usr ) {
 ?>
 
 <?php 
-echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> ARTICLE REVIEWS </h3> </section></div>';
+echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> ARTICLES REVIEWED </h3> </section></div>';
 ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
