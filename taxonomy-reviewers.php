@@ -87,29 +87,7 @@ echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 cla
 ?>
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
-  
-  <div class="row">
-
-      <div class="media-left hidden-xs">
-                <a class="postpic" href=" <?php the_permalink(); ?>  ">
-                    <?php echo types_render_field( "front-image", array( "width" => "275", "height" => "176", "proportional" => "true" ) ); ?>
-                </a>
-            </div>
-      
-        <div class="media-body">
-            <a class="strong" href="<?php the_permalink(); ?>">
-               <h3 class="noborder"> <?php the_title(); ?></h3></a>
-              </a>
-              <p class="small">
-                <h4 class="noborder"><span style="font-weight:normal; font-size-adjust: 0.5;">in</span> <?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?>, <span style="font-weight:normal; font-size-adjust: 0.5;">by</span> <?php echo get_post_meta( get_the_ID(), 'author', true ); ?></h4>
-                <p class="small">
-                    <span> <?php echo get_post_meta( get_the_ID(), 'date', true ); ?> </span>
-                </p>
-            <?php the_excerpt(); ?></p>
-        </div>
-    </div>
-	
-	<hr/>
+        <?php get_template_part('templates/loop-feedbacks-noex', get_post_type()); ?>
 <?php endwhile; ?>
 
 <?php the_posts_navigation(); ?>

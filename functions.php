@@ -286,7 +286,7 @@ foreach ( $blogusers as $user ) {
             '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
         </div>
         <div class="wid-body">
-            <a href="/reviewers/'.format_uri(esc_html($user->first_name)).'-'.format_uri(esc_html($user->last_name)).'">'.format_uri(esc_html($user->first_name)).' '.format_uri(esc_html($user->last_name)).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
+            <a href="/reviewers/'.format_uri(esc_html($user->first_name)).'-'.format_uri(esc_html($user->last_name)).'">'.esc_html($user->first_name).' '.esc_html($user->last_name).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
         </div>
      </div>';
 }    
@@ -392,7 +392,7 @@ function create_user_custom_terms( $user_id ){
      add_post_meta( $post_id, 'website', $user_info->user_url );
 
 }
- // add_action( 'user_register', 'create_user_custom_terms', 10, 1 ); //temporary
-add_action( 'wppb_after_user_approval', 'create_user_custom_terms', 20 );
-
+// add_action( 'user_register', 'create_user_custom_terms', 10, 1 ); //
+// add_action( 'wppb_after_user_approval', 'create_user_custom_terms', 20 );
+add_action( 'edit_user_profile_update', 'create_user_custom_terms', 20 ); //temporary for update
 
