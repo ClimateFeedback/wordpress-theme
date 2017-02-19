@@ -393,6 +393,6 @@ function create_user_custom_terms( $user_id ){
 
 }
 // add_action( 'user_register', 'create_user_custom_terms', 10, 1 ); //
-// add_action( 'wppb_after_user_approval', 'create_user_custom_terms', 20 );
-add_action( 'edit_user_profile_update', 'create_user_custom_terms', 20 ); //temporary for update
+add_action( 'wppb_after_user_approval', 'create_user_custom_terms', 20 );
+// add_action( 'edit_user_profile_update', 'create_user_custom_terms', 20 ); //temporary for update
 
