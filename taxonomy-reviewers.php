@@ -68,6 +68,18 @@ foreach ( $rev as $usr ) {
           </div>
         </div>
 
+                
+<?php if (!have_posts()) : ?>
+  &nbsp;
+    <!-- 
+    <div class="alert alert-warning">
+        <?php _e('Sorry, no results were found.', 'sage'); ?>
+    </div>
+  -->
+  <!-- <?php get_search_form(); ?>  
+        
+<?php endif; ?>
+
   <?php
     $args = array( 'post_type' => 'evaluation' , 'reviewers' => $taxonomy->slug ) ; 
     $loop = new WP_Query( $args );
