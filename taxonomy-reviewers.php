@@ -49,7 +49,7 @@ foreach ( $rev as $usr ) {
               } ?>
               
               
-              <?php $user_info = get_userdata(1);
+              <?php $user_info = get_userdata($usr->get('ID'));
               echo 'role: ' . implode(', ', $user_info->roles) . "\n";
                 if (in_array('Scientist', $user_info->roles)) {
               
