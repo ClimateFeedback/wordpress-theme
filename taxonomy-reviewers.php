@@ -50,8 +50,10 @@ foreach ( $rev as $usr ) {
               
               
               <?php $user_info = get_userdata(1);
-              if (in_array('Scientist', $user_info->roles)) {
-              // echo 'its a scientist!';
+              echo 'role: ' . implode(', ', $user_info->roles) . "\n";
+                if (in_array('Scientist', $user_info->roles)) {
+              
+                  // echo 'its a scientist!';
                  $var = $usr->publicationone;
                  $pub2 = $usr->publicationtwo;
                  $pub3 = $usr->publicationthree;
