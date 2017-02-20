@@ -50,7 +50,7 @@ foreach ( $rev as $usr ) {
               
               
               <?php $user_info = get_userdata($usr->get('ID'));
-              echo 'role: ' . implode(', ', $user_info->roles) . "\n";
+              // echo 'role: ' . implode(', ', $user_info->roles) . "\n";
                 if (in_array('scientist', $user_info->roles)) {
               
                   // echo 'its a scientist!';
