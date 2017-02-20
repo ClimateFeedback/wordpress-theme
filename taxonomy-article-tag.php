@@ -23,7 +23,7 @@ $isItIns = strpos($url, 'insightful');
       <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-      <h2>Articles tagged as: <?php single_tag_title(); ?> <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#definition">definition</a></span></span>
+      <h2>Articles tagged as: <?php single_tag_title(); ?> <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small" style="width:auto"><a target="_blank" href="http://climatefeedback.org/process/#definition">definition</a></span></span>
       </h2> 
         
 <?php if (!have_posts()) : ?>

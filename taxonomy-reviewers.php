@@ -47,12 +47,16 @@ foreach ( $rev as $usr ) {
                 echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:'. esc_html( $usr->hypothesis ) .'" class="">'. esc_html( $usr->hypothesis ) .'</a>
                 </p>';
               } ?>
-              <?php
+              
+              
+              <?php $user_info = get_userdata(1);
+              if (in_array('Scientist', $user_info->roles)) {
+              // echo 'its a scientist!';
                  $var = $usr->publicationone;
                  $pub2 = $usr->publicationtwo;
                  $pub3 = $usr->publicationthree;
                  if (!empty($var)) {                 
-                    echo '<h4 class="spaceup1">Qualifying publication(s): <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small" style="width:auto"><a target="_blank" href="http://climatefeedback.org/for-scientists/#ref">see criteria</a></span></span></h4>
+                     echo '<h4 class="spaceup1">Qualifying publication(s): <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small" style="width:auto"><a href="http://climatefeedback.org/for-scientists/#ref">see criteria</a></span></span></h4>
                     <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationone ).'">'. substr( esc_html( $usr->publicationone ), 0, 50) .'</a>
                     </p> ';
                  }
@@ -64,6 +68,7 @@ foreach ( $rev as $usr ) {
                         echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationthree ).'">'. substr( esc_html( $usr->publicationthree ), 0, 50) .'</a>
                     </p> ';
                  }
+               }
               ?>
           </div>
         </div>

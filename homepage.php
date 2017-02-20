@@ -200,7 +200,7 @@ Template Name: Homepage
         <a href="http://www.theguardian.com/environment/planet-oz/2015/aug/14/scientists-get-tool-to-mark-online-climate-science-media-coverage-and-its-not-a-rusty-teaspoon" target="_blank">   <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/the-guardian-logo_grey.png"></a>
       </div>
       <div class="col-4 forbes" style="padding-left: 2em">
-        <a href="http://www.forbes.com/sites/tomzeller/2015/02/24/policing-the-online-climate-conversation/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
+        <a href="http://www.forbes.com/sites/jeffmcmahon/2017/01/27/climate-scientists-launch-brainy-war-on-fake-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
       </div>
       <div class="col-4">
         <a href="press/" class="btn btn-primary">More Press</a>
