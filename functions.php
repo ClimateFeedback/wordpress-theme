@@ -369,6 +369,7 @@ function update_custom_terms($post_id) {
 }
 add_action('save_post', 'update_custom_terms');
 
+// When new User added, create a People's entry for him/her
 function create_user_custom_terms( $user_id ){
     // Get user info
     $user_info = get_userdata( $user_id );

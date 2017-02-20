@@ -17,11 +17,9 @@ $taxonomy = get_queried_object();
      
         
         <?php 
-$usrname = single_tag_title("", false);
-// echo $usrname;
-            // $rev = get_users( array( 'search' => $taxonomy->slug  ) );
-            $rev = get_users( array( 'search' => $usrname  ) );
-// echo $rev;
+    $usrname = single_tag_title("", false);
+    $rev = get_users( array( 'search' => $usrname  ) );
+
 //$output = '';
 foreach ( $rev as $usr ) {   
   //  $output .=''
@@ -41,41 +39,34 @@ foreach ( $rev as $usr ) {
             <h4 class="spaceup">Details:</h4>
             <p> &nbsp;<i class="fa fa-globe fa-lg" style="color: grey;" aria-hidden="true"></i> &nbsp;<a target="_blank" href="<?php echo esc_html( $usr->user_url ); ?>">Website</a>
             </p>
-            <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:<?php echo esc_html( $usr->hypothesis ); ?>" class=""><?php echo esc_html( $usr->hypothesis ); ?></a>
-            </p>
+            <?php if (!empty($usr->orchid)) {
+                echo '<p>&nbsp;<img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/orcid.gif" alt="hypothesis" width="20" />&nbsp; <a target="_blank" href="https://orcid.org/'. esc_html( $usr->orchid ) .'">Orcid ID </a>
+                </p>';
+              } ?>
+              <?php if (!empty($usr->hypothesis)) {
+                echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/2016/09/Hypothesis.png" alt="hypothesis" width="25" align="left" /> &nbsp; Hypothesis handle: <a target="_blank" href="https://hypothes.is/stream?q=user:'. esc_html( $usr->hypothesis ) .'" class="">'. esc_html( $usr->hypothesis ) .'</a>
+                </p>';
+              } ?>
               <?php
                  $var = $usr->publicationone;
                  $pub2 = $usr->publicationtwo;
                  $pub3 = $usr->publicationthree;
                  if (!empty($var)) {                 
-                    echo '<h4 class="spaceup1">Qualifying publication(s):</h4>
-                    <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationone ).'">'. esc_html( $usr->publicationone ) .'</a>
+                    echo '<h4 class="spaceup1">Qualifying publication(s): <span class="infobox small"><span class="infolink"></span><span class="infoboxtext small" style="width:auto"><a target="_blank" href="http://climatefeedback.org/for-scientists/#ref">see criteria</a></span></span></h4>
+                    <p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationone ).'">'. substr( esc_html( $usr->publicationone ), 0, 50) .'</a>
                     </p> ';
                  }
                  if (!empty($pub2)) {
-                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationtwo ).'">'. esc_html( $usr->publicationtwo ) .'</a>
+                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationtwo ).'">'. substr( esc_html( $usr->publicationtwo ), 0, 50) .'</a>
                     </p> ';
                  }
                  if (!empty($pub3)) {
-                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationthree ).'">'. esc_html( $usr->publicationthree ) .'</a>
+                        echo '<p><img class="alignnone size-full wp-image-4610" src="http://climatefeedback.org/wp-content/uploads/icons/publi_black_w.png" alt="publication" width="20" align="left" /> &nbsp; <a target="_blank" href="'.esc_html( $usr->publicationthree ).'">'. substr( esc_html( $usr->publicationthree ), 0, 50) .'</a>
                     </p> ';
                  }
               ?>
           </div>
         </div>
-                 
-
-        
-<?php if (!have_posts()) : ?>
-  &nbsp;
-    <!-- 
-    <div class="alert alert-warning">
-        <?php _e('Sorry, no results were found.', 'sage'); ?>
-    </div>
-  -->
-  <!-- <?php get_search_form(); ?>  
-        
-<?php endif; ?>
 
   <?php
     $args = array( 'post_type' => 'evaluation' , 'reviewers' => $taxonomy->slug ) ; 
@@ -90,8 +81,9 @@ echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 cla
         <?php get_template_part('templates/loop-feedbacks-noex', get_post_type()); ?>
 <?php endwhile; ?>
 
+        <!-- #content 
 <?php the_posts_navigation(); ?>
-
+        -->  
 		
 
 	</div><!-- #content -->
