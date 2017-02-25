@@ -122,3 +122,13 @@ If your local development URL looks like `http://localhost:8888/project-name/` y
   }
 ...
 ```
+
+## Tips
+
+If you want a quick screenshot on the fly based on a url
+```
+<img
+  class="fact-check-card__row__verdict__img"
+  src="http://s.wordpress.com/mshots/v1/<?php echo get_post_meta( get_the_ID(), 'link', true)?>?w=400&h=400"
+/>
+```
