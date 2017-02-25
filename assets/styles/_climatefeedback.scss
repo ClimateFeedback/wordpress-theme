@@ -465,7 +465,7 @@ section {
   }
 }
 
-.widget{ 
+.widget{
   .a {
     font-weight: 500;
   }
@@ -876,5 +876,26 @@ section.widget {
       padding-top: 7px;
       padding-bottom: 7px;
     }
+  }
+}
+
+.feeds {
+  &__articles {
+    height: 300px;
+    width: 200px;
+    &__screenshot {
+      height: 100px;
+      width: 100px;
+    }
+    &__evaluation {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  &__claims {
+
+  }
+  &__perspective {
+
   }
 }

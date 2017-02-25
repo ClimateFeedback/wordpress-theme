@@ -13,8 +13,21 @@ Template Name: FeedsPage
   $loop = new WP_Query( $args );
 ?>
 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-  <div>
-    <?php echo get_permalink( get_the_ID() ) ?>
+  <div class='feeds__articles mb3'>
+    <div class='flex' />
+      <div class="feeds__articles__screenshot">
+        <img
+          class="feeds__articles__screenshot"
+          src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
+        />
+      </div>
+      <div class="feeds__articles__evaluation">
+        <img
+          class="feeds__articles__screenshot"
+          src="<?php echo types_render_field( 'front-image', array('output' => 'raw'))?>"
+        />
+      </div>
+    </div>
   </div>
 <?php endwhile; ?>
 
