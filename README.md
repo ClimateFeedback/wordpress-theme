@@ -1,17 +1,57 @@
-# [Sage](https://roots.io/sage/)
-[![Build Status](https://travis-ci.org/roots/sage.svg)](https://travis-ci.org/roots/sage)
-[![devDependency Status](https://david-dm.org/roots/sage/dev-status.svg)](https://david-dm.org/roots/sage#info=devDependencies)
+# Climate Feedback Wordpress Theme
 
-Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, Bower, and Bootstrap Sass, that will help you make better themes.
+## Install a Wordpress app first
 
-* Source: [https://github.com/roots/sage](https://github.com/roots/sage)
-* Homepage: [https://roots.io/sage/](https://roots.io/sage/)
-* Documentation: [https://roots.io/sage/docs/](https://roots.io/sage/docs/)
-* Twitter: [@rootswp](https://twitter.com/rootswp), [@retlehs](https://twitter.com/retlehs), [@swalkinshaw](https://twitter.com/swalkinshaw), [@Foxaii](https://twitter.com/Foxaii), [@c2foryou](https://twitter.com/c2foryou), [@austinpray](https://twitter.com/austinpray)
-* Newsletter: [Subscribe](http://roots.io/subscribe/)
-* Forum: [https://discourse.roots.io/](https://discourse.roots.io/)
+1. Download a wordpress boilerplate [here](https://wordpress.org/)
 
-## Requirements
+2. Use [MAMP](https://www.mamp.info/en/) and don't forget to start Start Servers at each new use.
+
+3. Install the [Climate Feedback wordpress-theme](https://github.com/ClimateFeedback/wordpress-theme):
+
+```
+cd wp-content/themes && git clone git@github.com:ClimateFeedback/wordpress-theme.git
+```
+
+In the admin, don't forget to activate the theme.
+
+3. Install these Plugins in the wp-content/plugins
+
+  [Database Sync](https://wordpress.org/plugins/database-sync/developers/)
+  [Media Library Plus](https://wordpress.org/plugins/media-library-plus/)
+  [Claim-Reviews](https://github.com/ClimateFeedback/Claim-Reviews)
+  [Evaluation_Plugin](https://github.com/ClimateFeedback/Evaluation_Plugin)
+  [Toolset Types](https://wordpress.org/plugins/types/)
+  [People](https://github.com/ClimateFeedback/people)
+
+4. Synchronize with the database of the prod website
+
+  - Make sure you have activate the Database Sync plugin.
+  - Go to Settings/Database Sync and copy paste the token found [there](http://climatefeedback.org/wp-admin/tools.php?page=dbs_options)
+  - Press the Sync button and then the Pull button
+
+N.B.: Make sure that Emmanuel made you admin if you want to have access to the Media Library and Page editing rights.
+
+5. Synchronize your media library:
+
+Make sure first that you generated an ssh key for that
+```
+gcloud compute --project "climatefeedback-web" ssh --zone "us-central1-f" "wordpress-4j1a"
+```
+
+Inside your wordpress folder, gcloud compute copy-files
+```
+mkdir -p uploads
+gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/tags ./uploads/tags --zone "us-central1-f"
+gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/2017 ./uploads/2017 --zone "us-central1-f"
+gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/2016 ./uploads/2016 --zone "us-central1-f"
+rsync -av ./uploads ./wp-content
+```
+
+## Develop the wordpress theme
+
+Made with [Sage](https://roots.io/sage/)
+
+### Requirements
 
 | Prerequisite    | How to check | How to install
 | --------------- | ------------ | ------------- |
@@ -22,7 +62,7 @@ Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, Bower, and B
 
 For more installation notes, refer to the [Install gulp and Bower](#install-gulp-and-bower) section in this document.
 
-## Features
+### Features
 
 * [gulp](http://gulpjs.com/) build script that compiles both Sass and Less, checks for JavaScript errors, optimizes images, and concatenates and minifies files
 * [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
@@ -34,36 +74,17 @@ For more installation notes, refer to the [Install gulp and Bower](#install-gulp
 * Posts use the [hNews](http://microformats.org/wiki/hnews) microformat
 * [Multilingual ready](https://roots.io/wpml/) and over 30 available [community translations](https://github.com/roots/sage-translations)
 
-Install the [Soil](https://github.com/roots/soil) plugin to enable additional features:
-
-* Cleaner output of `wp_head` and enqueued assets
-* Cleaner HTML output of navigation menus
-* Root relative URLs
-* Nice search (`/search/query/`)
-* Google CDN jQuery snippet from [HTML5 Boilerplate](http://html5boilerplate.com/)
-* Google Analytics snippet from [HTML5 Boilerplate](http://html5boilerplate.com/)
-
-## Installation
-
-Clone the git repo - `git clone https://github.com/roots/sage.git` and then rename the directory to the name of your theme or website.
-
-If you don't use [Bedrock](https://github.com/roots/bedrock), you'll need to add the following to your `wp-config.php` on your development installation:
-
-```php
-define('WP_ENV', 'development');
-```
-
-## Configuration
+### Configuration
 
 Edit `lib/config.php` to enable or disable theme features
 
 Edit `lib/init.php` to setup navigation menus, post thumbnail sizes, post formats, and sidebars.
 
-## Theme development
+### Theme development
 
 Sage uses [gulp](http://gulpjs.com/) as its build system and [Bower](http://bower.io/) to manage front-end packages.
 
-### Install gulp and Bower
+#### Install gulp and Bower
 
 Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
 
@@ -101,20 +122,3 @@ If your local development URL looks like `http://localhost:8888/project-name/` y
   }
 ...
 ```
-
-## Documentation
-
-Sage documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
-
-## Community
-
-Keep track of development and community news.
-
-* Participate on the [Roots Discourse](https://discourse.roots.io/)
-* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
