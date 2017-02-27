@@ -894,6 +894,28 @@ section.widget {
     &-first {
       &__screenshot {
         height: 100%;
+        @media (min-width: $screen-lg-min) {
+          padding: 1.5rem;
+        }
+        &__img {
+          width: 100%;
+          @media (min-width: $screen-lg-min) {
+            height: 275px;
+            width: 425px;
+          }
+        }
+      }
+    }
+    &-next {
+      &__screenshot {
+        height: 100%;
+        &__img {
+          width: 100%;
+          @media (min-width: $screen-lg-min) {
+            height: 275px;
+            width: 425px;
+          }
+        }
       }
     }
   }
@@ -903,41 +925,28 @@ section.widget {
       min-height: 150px;
     }
     &__screenshot {
-      width: 250px;
-      border:1px solid #888888;
-      @media (min-width: $screen-sm-min) {
-    //    height: 110px;
-        width: 110px;
-      }
-      @media (min-width: $screen-md-min) {
-      //  height: 150px;
-        width: 150px;
-      }
-      @media (min-width: $screen-lg-min) {
-      //  height: 180px;
-        width: 180px;
+      &__img {
+        width: 100%;
+        @media (min-width: $screen-lg-min) {
+          height: 200px;
+          width: 300px;
+        }
       }
     }
     &__verdict {
-      // height: 50px;
-       width: 160px;
-       @media (min-width: $screen-sm-min) {
-       //  height: 30px;
-         width: 120px;
-       }
-       @media (min-width: $screen-md-min) {
-       //  height: 50px;
-         width: 170px;
-       }
+       width: 200px;
     }
   }
   &__perspective {
-    min-height: 450px;
-    @media (min-width: $screen-lg-min) {
-      min-height: 450px;
-    }
-    &__thumbnail {
-      min-height: 175px;
+    &__screenshot {
+      height: 100%;
+      &__img {
+        width: 100%;
+        @media (min-width: $screen-lg-min) {
+          height: 275px;
+          width: 425px;
+        }
+      }
     }
   }
   &-excerpt {

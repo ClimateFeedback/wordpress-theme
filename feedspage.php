@@ -30,10 +30,13 @@ Template Name: FeedsPage
     <?php if( $loop->current_post == 0 && !is_paged() ) : ?>
       <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
         <div class='feed feed__article mb1 p2'>
-          <div class='feed__article-first__screenshot col col-7 p3'>
-            <?php echo the_post_thumbnail(array(400, 300)); ?>
+          <div class='feed__article-first__screenshot col col-lg-7'>
+            <img
+              class='feed__article-first__screenshot__img'
+              src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
+            >
           </div>
-          <div class="col col-5">
+          <div class="col col-lg-5">
             <div class='h3'>
               <?php echo get_the_title(); ?>
             </div>
@@ -52,8 +55,11 @@ Template Name: FeedsPage
     <?php else : ?>
       <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
         <div class='feed feed__article mb1 p2'>
-          <div class='feed__article__screenshot mb1'>
-            <?php echo the_post_thumbnail(array(325, 300)); ?>
+          <div class='feed__article-next__screenshot mb1'>
+            <img
+              class='feed__article-next__screenshot__img'
+              src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
+            >
           </div>
           <div class='h3'>
             <?php echo get_the_title(); ?>
@@ -94,21 +100,21 @@ Template Name: FeedsPage
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class="feed feed__claim mb1 p2 mr1">
-        <div class="col col-4">
+        <div class="feed__claim__screenshot col col-md-5 p2">
           <img
-            class="feed__claim__screenshot"
+            class="feed__claim__screenshot__img"
             src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
           >
         </div>
-        <div class="col col-8">
+        <div class="col col-md-7 p2">
           <div class="feed-excerpt mb1">
             "<?php echo get_post_meta( get_the_ID(), 'claimfull', true); ?>"
           </div>
           <div>
-            <div class="feed-outlet col col-7 h4">
+            <div class="feed-outlet h4 mb3">
               <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
             </div>
-            <div class="col col-3">
+            <div>
               <img
                 class="feed__claim__verdict"
                 src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
@@ -142,8 +148,11 @@ Template Name: FeedsPage
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class='feed feed__perspective mb1 p2'>
-        <div class='feed__perspective__thumbnail mb1'>
-          <?php echo the_post_thumbnail(array(325, 300)); ?>
+        <div class='feed__perspective__screenshot mb1'>
+          <img
+            class='feed__perspective__screenshot__img'
+            src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
+          >
         </div>
         <div class='mb1 h3'>
           <?php echo get_the_title(); ?>
