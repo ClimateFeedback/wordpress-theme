@@ -4,36 +4,81 @@ Template Name: FeedsPage
 */
 ?>
 
+<?php function get_trim_text ($string) {
+  $maxlen = 180;
+  $excerpt = $string;
+  $excerptlen = strlen($excerpt);
+  if ($excerptlen > $maxlen) {
+    $excerpt = substr($excerpt, 0, $maxlen).'...';
+    $excerptlen = $maxlen + 3;
+  }
+  if ($excerpt[0] == '"')
+    $excerpt = substr($excerpt, 1, $excerptlen-1);
+  return $excerpt;
+}?>
+
 <h2>Latest Article Reviews</h2>
 <?php
   $args = array(
     'post_type' => array('evaluation'),
-    'posts_per_page' => 2
+    'posts_per_page' => 3
   );
   $loop = new WP_Query( $args );
 ?>
-<div class="feeds mb1 p2">
+<div class="feeds p2">
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
-      <div class='feed feed__article mb1 p2'>
-        <div class='feed__article__screenshot mb1'>
-          <?php echo the_post_thumbnail('medium'); ?>
+    <?php if( $loop->current_post == 0 && !is_paged() ) : ?>
+      <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
+        <div class='feed feed__article mb1 p2'>
+          <div class='feed__article-first__screenshot col col-7 p3'>
+            <?php echo the_post_thumbnail(array(400, 300)); ?>
+          </div>
+          <div class="col col-5">
+            <div class='h3'>
+              <?php echo get_the_title(); ?>
+            </div>
+            <div class='feed-outlet h4'>
+              <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
+            </div>
+            <div class='feed-excerpt mb1'>
+              <?php echo get_trim_text(get_the_excerpt());?>
+            </div>
+            <div>
+              - <?php echo get_post_meta( get_the_ID(), 'date', true); ?>
+            </div>
+          </div>
         </div>
-        <div class='mb2 h3'>
-          <?php echo get_the_title(); ?>
+      </a>
+    <?php else : ?>
+      <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
+        <div class='feed feed__article mb1 p2'>
+          <div class='feed__article__screenshot mb1'>
+            <?php echo the_post_thumbnail(array(325, 300)); ?>
+          </div>
+          <div class='h3'>
+            <?php echo get_the_title(); ?>
+          </div>
+          <div class='feed-outlet h4'>
+            <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
+          </div>
+          <div class='feed-excerpt mb1'>
+            <?php echo get_trim_text(get_the_excerpt());?>
+          </div>
+          <div>
+            - <?php echo get_post_meta( get_the_ID(), 'date', true); ?>
+          </div>
         </div>
-        <div class='feed-outlet mb1 h3'>
-          <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
-        </div>
-        <div class='mb1'>
-          <?php echo get_the_excerpt(); ?>
-        </div>
-        <div class='mb1'>
-          - <?php echo get_post_meta( get_the_ID(), 'date', true); ?>
-        </div>
-      </div>
-    </a>
+      </a>
+    <?php endif; ?>
   <?php endwhile; ?>
+</div>
+<div class="feed-more mb1 p1">
+  <a
+    class="h3"
+    href="<?php echo get_site_url(); ?>/evaluations"
+  >
+    > More Article Reviews
+  </a>
 </div>
 
 
@@ -56,11 +101,11 @@ Template Name: FeedsPage
           >
         </div>
         <div class="col col-8">
-          <div class="feed-outlet mb1">
+          <div class="feed-excerpt mb1">
             "<?php echo get_post_meta( get_the_ID(), 'claimfull', true); ?>"
           </div>
           <div>
-            <div class="col col-7 feed-outlet h3">
+            <div class="feed-outlet col col-7 h4">
               <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
             </div>
             <div class="col col-3">
@@ -74,6 +119,14 @@ Template Name: FeedsPage
       </div>
     </a>
   <?php endwhile; ?>
+</div>
+<div class="feed-more mb1 p1">
+  <a
+    class="h3"
+    href="<?php echo get_site_url(); ?>/claim-reviews"
+  >
+    > More Claim Reviews
+  </a>
 </div>
 
 <h2>Perspectives</h2>
@@ -89,14 +142,14 @@ Template Name: FeedsPage
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class='feed feed__perspective mb1 p2'>
-        <div class='mb1'>
-          <?php echo the_post_thumbnail('medium'); ?>
+        <div class='feed__perspective__thumbnail mb1'>
+          <?php echo the_post_thumbnail(array(325, 300)); ?>
         </div>
         <div class='mb1 h3'>
           <?php echo get_the_title(); ?>
         </div>
-        <div class='mb1'>
-          <?php echo get_the_excerpt(); ?>
+        <div class='feed-excerpt mb1'>
+          <?php echo get_trim_text(get_the_excerpt());?>
         </div>
         <div>
           - <?php the_date(); ?>
@@ -104,4 +157,12 @@ Template Name: FeedsPage
       </div>
     </a>
   <?php endwhile; ?>
+</div>
+<div class="feed-more p1">
+  <a
+    class="h3"
+    href="<?php echo get_site_url(); ?>/blog-posts"
+  >
+    > More Perspectives
+  </a>
 </div>

@@ -6,5 +6,6 @@
   }
 }
 .sidebar {
+  background-color: #F5F5F5;
   @include make-sm-column($sidebar-sm-columns);
 }
