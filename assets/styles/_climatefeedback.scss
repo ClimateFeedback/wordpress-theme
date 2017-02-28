@@ -872,12 +872,31 @@ section.widget {
 }
 
 .feeds {
+  &-hero {
+    margin-bottom: 0;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    &__row {
+      width: 100%;
+    }
+  }
+  &-aim {
+    color: white;
+    background-color: #046380;
+    &__img {
+      height: 80px;
+      width: 80px;
+    }
+    &__text {
+      font-size: 20px;
+    }
+  }
   &-title {
     color: black;
     font-weight: bold;
   }
   &-container {
-    border-top: 1px solid black;
+    border-top: 1px solid #e7e7e7;
     a:hover {
       text-decoration: none;
     }
@@ -891,6 +910,13 @@ section.widget {
       text-decoration: none !important;
     }
   }
+  &__sign-up {
+    padding: 5px;
+    &__icon {
+      text-align: center;
+    }
+  }
+
 }
 
 .feed {
