@@ -47,6 +47,19 @@ gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/2016
 rsync -av ./uploads ./wp-content
 ```
 
+6. Use the WP Rest API
+Available with Wordpress 7.3 !
+Get your post with the route
+```
+/wp-json/wp/v2/posts
+```
+NOTE: maybe you injected some plugins that disabled this kind of permalink to work (then you see an automatic redirect to the main page instead), in that case you have just to go
+in the wp-admin interface Settings/Permalinks and refresh
+permalinks to Post Type.
+
+Now if you want to add some custom posts in the rest api,
+follow these [rules](http://v2.wp-api.org/extending/custom-content-types/)
+
 ## Develop the wordpress theme
 
 Made with [Sage](https://roots.io/sage/)
