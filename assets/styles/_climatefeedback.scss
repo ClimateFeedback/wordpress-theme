@@ -1049,21 +1049,26 @@ section.widget {
       background-color: #F5F5F5;
       padding: 0.1rem;
       @media (min-width: $screen-md-min) {
-        padding: 2rem;
+        padding: 1rem;
       }
       overflow: hidden;
       &__illustration {
         text-align: center;
         overflow-y: hidden;
         height: 100%;
-        padding-top: 30%;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+        padding-top: 5%;
+        @media (min-width: $screen-sm-min) {
+          padding-top: 3%;
+        }
         @media (min-width: $screen-md-min) {
-          padding-top: 15%;
+          padding-top: 0;
+        }
+        @media (min-width: $screen-lg-min) {
+          padding-top: 8%;
         }
         &__screenshot {
-          margin-top: 10%;
           &__img {
             width: 100%;
           }
@@ -1079,7 +1084,17 @@ section.widget {
            margin-left: 5%;
            margin-right: 5%;
            width: 90%;
+           @media (min-width: $screen-sm-min) {
+             margin-left: 20%;
+             margin-right: 20%;
+             width: 60%;
+           }
            @media (min-width: $screen-md-min) {
+             margin-left: 30%;
+             margin-right: 30%;
+             width: 40%;
+           }
+           @media (min-width: $screen-lg-min) {
              margin-left: 20%;
              margin-right: 20%;
              width: 60%;
@@ -1090,8 +1105,10 @@ section.widget {
           padding: 0.1rem;
           font-size: 14px;
           @media (min-width: $screen-sm-min) {
-            padding: 0.5rem;
-            font-size: 20px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 18px;
+            margin-bottom: 1rem;
           }
         }
         &__outlet {
@@ -1099,8 +1116,9 @@ section.widget {
           padding: 0.1rem;
           font-size: 14px;
           @media (min-width: $screen-sm-min) {
-            padding: 0.5rem;
-            font-size: 20px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 16px;
           }
         }
       }

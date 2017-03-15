@@ -20,22 +20,24 @@ Template Name: FeedsPage
 }?>
 
 <div class="sigla feeds-hero">
-  <div class="container">
-    <div class="row feeds-hero__row">
-      <h3 class="tagline half-black">A Scientific Reference to Reliable Information on Climate Change</h3>
-    </div>
+  <div class="row feeds-hero__row">
+    <h3 class="half-black">
+      A Scientific Reference to Reliable Information on Climate Change
+    </h3>
   </div>
 </div>
-<div class="feeds-aim p3 overflow-hidden">
-  <img
-    class="feeds-aim__img col col-2 p2"
-    src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
-  >
-  <p class="feeds-aim__text col col-10 p2">
-    We aim to help Internet users - from the general public to key policymakers -
-    distinguish inacurate climate change narratives from scientifically sound
-    and trustworthy information.
-  </p>
+<div class="feeds-aim overflow-hidden">
+  <div class="feeds-aim__container">
+    <img
+      class="feeds-aim__container__img col col-2"
+      src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
+    >
+    <p class="feeds-aim__container__text col col-10">
+      We aim to help Internet users - from the general public to key policymakers -
+      distinguish inacurate climate change narratives from scientifically sound
+      and trustworthy information.
+    </p>
+  </div>
 </div>
 
 <div class="container">
@@ -47,7 +49,7 @@ Template Name: FeedsPage
   );
   $loop = new WP_Query( $args );
 ?>
-<div class="feeds-container p2">
+<div class="feeds-container">
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <?php if( $loop->current_post == 0 && !is_paged() ) : ?>
       <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
@@ -127,36 +129,37 @@ Template Name: FeedsPage
     <div class="overflow-hidden p2">
       <div class="feeds__sign-up__icon col col-md-2 p2">
         <img
+          class="feeds__sign-up__icon__img"
           src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
-          style="width:60px;height:60px;"
         >
       </div>
-      <div class="feeds__sign-up__text col col-md-6 p2" style="color:#424242;line-height:1.3px;">
+      <div class="feeds__sign-up__text col col-md-6 p2">
         <label class="mt2 mb2" for="mce-EMAIL">Sign up for updates</label>
         <p class="feeds__sign-up__text">
           Help us create a better informed society. Join our community today!
         </p>
       </div>
        <div
-        class="col col-md-4 feeds-inputs"
+        class="col col-md-4 feeds__sign-up__inputs"
         id="mc_embed_signup_scroll"
       >
          <div style="width:100%;">
-           <input type="email"
+           <input
+            class="feeds__sign-up__inputs__input mb1"
+            type="email"
             value=""
             name="EMAIL"
             class="email"
             id="mce-EMAIL"
             placeholder="enter your email address"
             required
-            style="width:300px;"
           >
-           <input type="submit"
+           <input
+            class="button feeds-submit feeds__sign-up__inputs__input forceblue"
+            type="submit"
             value="Sign Up"
             name="subscribe"
             id="mc-embedded-subscribe"
-            class="button feeds-submit forceblue"
-            style="display:initial;width:300px;"
           >
          </div>
          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -177,30 +180,28 @@ Template Name: FeedsPage
   );
   $loop = new WP_Query( $args );
 ?>
-<div class="feeds-container mb1 p2">
+<div class="feeds-container feeds-container__claim mb1">
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class="feed feed__claim col col-lg-6 mb1">
-        <div class="feed__claim__container relative p1">
-          <div class="feed__claim__container__illustration col col-md-4 p2">
-
-            <div>
+        <div class="feed__claim__container relative">
+          <div class="feed__claim__container__illustration col col-4">
+            <div class="feed__claim__container__illustration__screenshot">
               <img
                 class="feed__claim__container__illustration__screenshot__img"
                 src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
               >
             </div>
           </div>
-          <div class="feed__claim__container__text col col-md-8 p2">
-                        <div class="mb2">
-              <img
-                class="feed__claim__container__illustration__verdict__img"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-              >
-            </div><div class="feed-excerpt mb1">
+          <div class="feed__claim__container__content col col-8">
+            <img
+              class="feed__claim__container__content__verdict__img mb1"
+              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+            >
+            <div class="feed-excerpt feed__claim__container__content__text mb1">
               "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>"
             </div>
-            <div class="feed__claim__container__text__outlet h4">
+            <div class="feed__claim__container__content__outlet">
               <?php echo get_post_meta( get_the_ID(), 'author', true); ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
             </div>
           </div>
