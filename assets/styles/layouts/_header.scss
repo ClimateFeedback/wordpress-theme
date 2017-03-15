@@ -1,0 +1,8 @@
+.navbar-default {
+  .navbar-brand__logo {
+    margin-bottom: 2rem;
+    @media (min-width: $screen-sm-min) {
+      margin-bottom: 0;
+    }
+  }
+}
