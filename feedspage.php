@@ -3,6 +3,8 @@
 Template Name: FeedsPage
 */
 ?>
+</div><!-- / .row -->
+</div><!-- / .container -->
 
 <?php function get_trim_text ($string) {
   $maxlen = 180;
@@ -13,7 +15,7 @@ Template Name: FeedsPage
     $excerptlen = $maxlen + 3;
   }
   if ($excerpt[0] == '"')
-    $excerpt = substr($excerpt, 1, $excerptlen-1);
+    $excerpt = substr($excerpt, 0, $excerptlen-1);
   return $excerpt;
 }?>
 
@@ -27,15 +29,16 @@ Template Name: FeedsPage
 <div class="feeds-aim p3 overflow-hidden">
   <img
     class="feeds-aim__img col col-2 p2"
-    src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/02/cf_photoicons_logo.png"
+    src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
   >
   <p class="feeds-aim__text col col-10 p2">
     We aim to help Internet users - from the general public to key policymakers -
-    distinguish inacuurate climate change narratives from scientifically sound
-    and trustworthy information web.
+    distinguish inacurate climate change narratives from scientifically sound
+    and trustworthy information.
   </p>
 </div>
 
+<div class="container">
 <div class="feeds-title h3">Latest Article Reviews</div>
 <?php
   $args = array(
@@ -124,13 +127,13 @@ Template Name: FeedsPage
     <div class="overflow-hidden p2">
       <div class="feeds__sign-up__icon col col-md-2 p2">
         <img
-          src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/02/paper-plane-xxl.png"
+          src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
           style="width:60px;height:60px;"
         >
       </div>
-      <div class="col col-md-6 p2" style="color:#424242;line-height:1.3px;">
+      <div class="feeds__sign-up__text col col-md-6 p2" style="color:#424242;line-height:1.3px;">
         <label class="mt2 mb2" for="mce-EMAIL">Sign up for updates</label>
-        <p>
+        <p class="feeds__sign-up__text">
           Help us create a better informed society. Join our community today!
         </p>
       </div>
@@ -152,7 +155,7 @@ Template Name: FeedsPage
             value="Sign Up"
             name="subscribe"
             id="mc-embedded-subscribe"
-            class="button feeds-submit"
+            class="button feeds-submit forceblue"
             style="display:initial;width:300px;"
           >
          </div>
@@ -180,12 +183,7 @@ Template Name: FeedsPage
       <div class="feed feed__claim col col-lg-6 mb1">
         <div class="feed__claim__container relative p1">
           <div class="feed__claim__container__illustration col col-md-4 p2">
-            <div class="mb2">
-              <img
-                class="feed__claim__container__illustration__verdict__img"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-              >
-            </div>
+
             <div>
               <img
                 class="feed__claim__container__illustration__screenshot__img"
@@ -194,11 +192,16 @@ Template Name: FeedsPage
             </div>
           </div>
           <div class="feed__claim__container__text col col-md-8 p2">
-            <div class="feed-excerpt mb1">
-              "<?php echo get_post_meta( get_the_ID(), 'claimfull', true); ?>"
+                        <div class="mb2">
+              <img
+                class="feed__claim__container__illustration__verdict__img"
+                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+              >
+            </div><div class="feed-excerpt mb1">
+              "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>"
             </div>
             <div class="feed__claim__container__text__outlet h4">
-              <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
+              <?php echo get_post_meta( get_the_ID(), 'author', true); ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
             </div>
           </div>
         </div>
@@ -255,3 +258,5 @@ Template Name: FeedsPage
     More Insights
   </a>
 </div>
+
+</div><!-- / .container -->

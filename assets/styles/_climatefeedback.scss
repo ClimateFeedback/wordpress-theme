@@ -884,17 +884,17 @@ section.widget {
     color: white;
     background-color: #046380;
     &__img {
-      height: 80px;
-      width: 80px;
+      height: 90px;
+      width: 90px;
     }
     &__text {
       font-size: 20px;
     }
   }
   &-title {
-    color: black;
+    color: grey;
     font-weight: bold;
-  }
+  }   
   &-container {
     border-top: 1px solid #e7e7e7;
     a:hover {
@@ -907,6 +907,7 @@ section.widget {
     text-align: right;
     &__link {
       background-color: #F5F5F5;
+      color: slategrey;
       text-decoration: none !important;
     }
   }
@@ -915,10 +916,14 @@ section.widget {
     &__icon {
       text-align: center;
     }
+    &__text {
+      font-family: 'Raleway', sans-serif;
+    }  
   }
-
 }
-
+.forceblue {
+  background-color: #066481 !important;
+}
 .feed {
   color: black;
   overflow-y: hidden;
@@ -930,7 +935,7 @@ section.widget {
       &__screenshot {
         height: 100%;
         @media (min-width: $screen-lg-min) {
-          padding: 1.5rem;
+        padding: 1.0rem;
         }
         &__img {
           object-fit: cover;
@@ -961,43 +966,43 @@ section.widget {
     &__container {
       background-color: #F5F5F5;
       overflow: hidden;
-      @media (min-width: $screen-md-min) {
-        width: 75%;
-      }
-      @media (min-width: $screen-lg-min) {
-        width: 100%;
-      }
+     // @media (min-width: $screen-md-min) {
+      //  width: 75%;
+      //}
+      //@media (min-width: $screen-lg-min) {
+        //width: 100%;
+      //}
       &__illustration {
         text-align: center;
         overflow-y: hidden;
         &__verdict {
           &__img {
-           width: 30%;
-           @media (min-width: $screen-md-min) {
-             width: 75%;
-           }
-           @media (min-width: $screen-lg-min) {
-             width: 100%;
-           }
+           width: 170px;
+           //@media (min-width: $screen-md-min) {
+        //     width: 75%;
+          // }
+           //@media (min-width: $screen-lg-min) {
+            // width: 100%;
+           //}
          }
         }
         &__screenshot {
           &__img {
-            width: 50%;
-            @media (min-width: $screen-md-min) {
-              width: 75%;
-            }
-            @media (min-width: $screen-lg-min) {
-              width: 100%;
-            }
+            width: 100%;
+          //  @media (min-width: $screen-md-min) {
+            //  width: 75%;
+            //}
+            //@media (min-width: $screen-lg-min) {
+            //  width: 100%;
+            //}
           }
         }
       }
       &__text {
         padding: 1.5rem;
-        @media (min-width: $screen-lg-min) {
-          padding: 1rem;
-        }
+       // @media (min-width: $screen-lg-min) {
+        //  padding: 1rem;
+        //}
         &__outlet {
           font-weight: bold;
           padding: 0;
