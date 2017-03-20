@@ -29,7 +29,7 @@ Template Name: FeedsPage
 <div class="feeds-aim overflow-hidden">
   <div class="feeds-aim__container">
     <img
-      class="feeds-aim__container__img col col-2"
+      class="feeds-aim__container__img col col-2 hidden-xs"
       src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
     >
     <p class="feeds-aim__container__text col col-10">
@@ -41,7 +41,7 @@ Template Name: FeedsPage
 </div>
 
 <div class="container">
-<div class="feeds-title h3">Latest Article Reviews</div>
+
 <?php
   $args = array(
     'post_type' => array('evaluation'),
@@ -50,10 +50,11 @@ Template Name: FeedsPage
   $loop = new WP_Query( $args );
 ?>
 <div class="feeds-container">
+    <div class="feeds-title h3">Latest Article Reviews</div>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <?php if( $loop->current_post == 0 && !is_paged() ) : ?>
       <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
-        <div class='feed feed__article mb1 p2'>
+        <div class='feed feed__article mb3'>
           <div class='feed__article-first__screenshot col col-lg-8'>
             <img
               class='feed__article-first__screenshot__img'
@@ -78,7 +79,7 @@ Template Name: FeedsPage
       </a>
     <?php else : ?>
       <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
-        <div class='feed feed__article mb1 p2'>
+        <div class='feed feed__article mb3'>
           <div class='feed__article-next__screenshot mb1'>
             <img
               class='feed__article-next__screenshot__img'
@@ -115,9 +116,11 @@ Template Name: FeedsPage
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
     #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+
     /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
+    <div class="mc_embed_bar">
 <div id="mc_embed_signup" style="background-color: #F5F5F5;overflow-y:hidden;">
   <form action="//climatefeedback.us9.list-manage.com/subscribe/post?u=e33d7323df2327db90438153a&amp;id=e4773425e1"
     method="post" id="mc-embedded-subscribe-form"
@@ -126,7 +129,7 @@ Template Name: FeedsPage
     target="_blank"
     style="padding:5px;"
   novalidate>
-    <div class="overflow-hidden p2">
+    <div class="overflow-hidden p1">
       <div class="feeds__sign-up__icon col col-md-2 p2">
         <img
           class="feeds__sign-up__icon__img"
@@ -170,6 +173,7 @@ Template Name: FeedsPage
      </div>
   </form>
 </div>
+        </div>
 <!--End mc_embed_signup-->
 
 <div class="feeds-title h3">Latest Claim Reviews</div>
