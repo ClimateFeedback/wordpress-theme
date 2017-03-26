@@ -909,7 +909,7 @@ section.widget {
           margin-bottom: 0;
           margin-left: 0;
           margin-right: 0;
-          width: 60px; 
+          width: 60px;
           opacity: 0.4;
           padding-top: 0.8rem;
       }
@@ -936,7 +936,7 @@ section.widget {
   }
   &-title {
     color: grey;
-    font-weight: 500;    
+    font-weight: 500;
   }
   &-title:after {
     content:' ';
@@ -1024,7 +1024,7 @@ section.widget {
         height: 100%;
         border: 1px solid #999;
         @media (min-width: $screen-lg-min) {
-        } 
+        }
         &__img {
           object-fit: cover;
           width: 100%;
@@ -1135,6 +1135,7 @@ section.widget {
   }
   &__perspective {
     &__screenshot {
+      min-height: 250px;
       height: 100%;
       &__img {
         object-fit: cover;
@@ -1146,13 +1147,30 @@ section.widget {
     }
   }
   &-excerpt {
+    @media (min-width: $screen-lg-min) {
+      margin-top: 5px;
+    }
     font-style: italic;
+  }
+  &-title {
+    @media (min-width: $screen-lg-min) {
+      min-height: 40px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
+
   }
   &-outlet {
     color: grey;
+    @media (min-width: $screen-lg-min) {
+      min-height: 15px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
   }
   &-link {
     text-decoration: none;
+    min-height: 50px;
   }
 }
 
