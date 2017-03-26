@@ -62,7 +62,7 @@ Template Name: FeedsPage
             >
           </div>
           <div class="feed__article-first__text col col-lg-4">
-            <div class='h3'>
+            <div class='feed-title h3'>
               <?php echo get_the_title(); ?>
             </div>
             <div class='feed-outlet h3'>
@@ -86,7 +86,7 @@ Template Name: FeedsPage
               src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
             >
           </div>
-          <div class='h3'>
+          <div class='feed-title h3'>
             <?php echo get_the_title(); ?>
           </div>
           <div class='feed-outlet h3'>
@@ -242,7 +242,7 @@ Template Name: FeedsPage
             src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
           >
         </div>
-        <div class='mb1 h3'>
+        <div class='feed-title h3'>
           <?php echo get_the_title(); ?>
         </div>
         <div class='feed-excerpt mb1'>
