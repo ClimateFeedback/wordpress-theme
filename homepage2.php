@@ -21,23 +21,20 @@ Template Name: Homepage 2
 }?>
 
 <div class="sigla feeds-hero">
+    <div class="container">
   <div class="row feeds-hero__row">
     <h3 class="half-black">
-      A Scientific Reference to Reliable Information on Climate Change
+      Accurate information: the foundation of a functioning democracy
     </h3>
   </div>
+        </div>
 </div>
 <div class="feeds-aim overflow-hidden">
-  <div class="feeds-aim__container">
-    <img
-      class="feeds-aim__container__img col col-2 hidden-xs"
-      src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
-    >
-    <p class="feeds-aim__container__text col col-10">
-      <b>Accurate information: the foundation of a functioning democracy </b><br/>
-      Our scientific reviews aim to help Internet users distinguish inacurate climate change narratives from scientifically sound and trustworthy information.
-    </p>
-  </div>
+  <div class="container"><div class="feeds-container">
+      <p class="feeds-aim__container__img col col-2"> WHAT WE DO </p>
+      <p class="feeds-aim__container__text col col-10">
+Climate Feedback is a worldwide network of scientists sorting fact from fiction in climate change media coverage. Our reviews help the public know which climate news to trust. </p>
+  </div></div>
 </div>
 
 <div class="container">
@@ -55,12 +52,14 @@ Template Name: Homepage 2
     <?php if( $loop->current_post == 0 && !is_paged() ) : ?>
       <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
         <div class='feed feed__article mb3'>
-          <div class='feed__article-first__screenshot col col-lg-8'>
+          <div class='col col-lg-8'>
+              <div class='feed__article-first__screenshot' style='padding-left: 0px !important;  padding-right: 0px !important;'>
             <img
               class='feed__article-first__screenshot__img'
               src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
             >
           </div>
+              </div>
           <div class="feed__article-first__text col col-lg-4">
             <div class='feed-title h3'>
               <?php echo get_the_title(); ?>
@@ -137,10 +136,7 @@ Template Name: Homepage 2
         >
       </div>
       <div class="feeds__sign-up__text col col-md-6 p2">
-        <label class="mt2 mb2" for="mce-EMAIL">Sign up for updates</label>
-        <p class="feeds__sign-up__text">
-          Help us create a better informed society. Join Climate Feedback today!
-        </p>
+        <h3>Get scientists’ reviews delivered directly to your inbox</h3>
       </div>
        <div
         class="col col-md-4 feeds__sign-up__inputs"
@@ -236,8 +232,8 @@ Template Name: Homepage 2
           <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
         </div>
         <div class="media-body">
-          <h3>SCIENTISTS!</h3>
-          <h4>Help us create a better informed society. Join Climate Feedback today! <br />See <a class="wht" href="/community/">who is already contributing</a>.</h4>
+          <h3>Scientists</h3>
+          <p>You can help create a better informed society. Become a reviewer today! <br />See <a class="wht" href="/community/">who is already contributing</a>.</p>
           <a href="/for-scientists/" class="btn btn-primary btn-lg">Apply here</a>
         </div>
       </div>
@@ -291,27 +287,22 @@ Template Name: Homepage 2
 
 
 
-
-
-
-
-
 <section class="press-show">
   <div class="container">
 
-    <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>
+      <h3 style="font-size: 1.25rem;">Hear what they are saying about us</h3>
     <div class="row">
-      <div class="col-4" style="padding-left: 2em">
-        <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
+      <div class="col-4" style="padding-left: 1em; padding-right: 1em">
+        <a href="/press/annotation-might-future-fact-checking/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ps-Poynter.png"> </a>
       </div>
       <div class="col-4">
-        <a href="http://www.theguardian.com/environment/planet-oz/2015/aug/14/scientists-get-tool-to-mark-online-climate-science-media-coverage-and-its-not-a-rusty-teaspoon" target="_blank">   <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/the-guardian-logo_grey.png"></a>
+        <a href="/press/scientists-get-tool-to-mark-online-climate-science-media-coverage-and-its-not-a-rusty-teaspoon/" target="_blank">   <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/the-guardian-logo_grey.png"></a>
       </div>
       <div class="col-4 forbes" style="padding-left: 2em">
-        <a href="http://www.forbes.com/sites/jeffmcmahon/2017/01/27/climate-scientists-launch-brainy-war-on-fake-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
+        <a href="/press/climate-scientists-launch-brainy-attack-inaccurate-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ps-Forbes.png"></a>
       </div>
       <div class="col-4">
-        <a href="press/" class="btn btn-primary">More Press</a>
+        <a href="/press-coverage/" class="btn btn-primary">More Press</a>
       </div>
     </div>
       

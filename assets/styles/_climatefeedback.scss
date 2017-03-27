@@ -882,7 +882,7 @@ section.widget {
 .feeds {
   &-hero {
     padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     height: 100%;
     @media (min-width: $screen-sm-min) {
       height: 200px;
@@ -892,13 +892,13 @@ section.widget {
       margin-left: 15%;
       margin-right: 15%;
       text-align: center;
-      @media (min-width: $screen-sm-min) {
+     // @media (min-width: $screen-sm-min) {
         text-align: left;
-        padding-left: 3rem;
+        padding-left: 0.8rem;
         width: auto;
         margin-left: 0;
         margin-right: 0;
-      }
+      //}
     }
   }
   &-aim {
@@ -917,16 +917,16 @@ section.widget {
           margin-bottom: 0;
           margin-left: 0;
           margin-right: 0;
-          width: 60px; 
-          opacity: 0.4;
-          padding-top: 0.8rem;
+          width: 200px; 
+         // opacity: 0.4;
+          padding-top: 0.6rem;
+          font-size: 1.5rem;
       }
       &__text {
-        font-size: 18px;
+        font-size: 1.2rem;
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
-          padding: 1rem;
           margin-left: 0;
           margin-right: 0;
       }
@@ -942,7 +942,7 @@ section.widget {
   }
   &-title {
     color: grey;
-    font-weight: 500;    
+    font-weight: 400;    
   }
   &-title:after {
     content:' ';
@@ -1018,6 +1018,10 @@ section.widget {
 .forceblue {
   background-color: #066481 !important;
 }
+.nopad {
+  padding-left: 0px !important;  
+  padding-right: 0px !important; 
+}
 .feed {
   color: black;
   overflow-y: hidden;
@@ -1029,8 +1033,8 @@ section.widget {
       &__screenshot {
         height: 100%;
         border: 1px solid #999;
-          padding-left: 0px !important;  
-          padding-right: 0px !important; 
+        //  padding-left: 0px !important;  
+        //  padding-right: 0px !important; 
         @media (min-width: $screen-lg-min) {
         } 
         &__img {
