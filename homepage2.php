@@ -34,7 +34,7 @@ Template Name: Homepage 2
       src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/cf_photoicons_logo.png"
     >
     <p class="feeds-aim__container__text col col-10">
-      Accurate information: the foundation of a functioning democracy <br/>
+      <b>Accurate information: the foundation of a functioning democracy </b><br/>
       Our scientific reviews aim to help Internet users distinguish inacurate climate change narratives from scientifically sound and trustworthy information.
     </p>
   </div>
@@ -62,7 +62,7 @@ Template Name: Homepage 2
             >
           </div>
           <div class="feed__article-first__text col col-lg-4">
-            <div class='h3'>
+            <div class='feed-title h3'>
               <?php echo get_the_title(); ?>
             </div>
             <div class='feed-outlet h3'>
@@ -86,7 +86,7 @@ Template Name: Homepage 2
               src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
             >
           </div>
-          <div class='h3'>
+          <div class='feed-title h3'>
             <?php echo get_the_title(); ?>
           </div>
           <div class='feed-outlet h3'>
@@ -139,7 +139,7 @@ Template Name: Homepage 2
       <div class="feeds__sign-up__text col col-md-6 p2">
         <label class="mt2 mb2" for="mce-EMAIL">Sign up for updates</label>
         <p class="feeds__sign-up__text">
-          Help us create a better informed society. Join our community today!
+          Help us create a better informed society. Join Climate Feedback today!
         </p>
       </div>
        <div
@@ -176,7 +176,7 @@ Template Name: Homepage 2
         </div>
 <!--End mc_embed_signup-->
 
-<div class="feeds-title h3">Latest Claim Reviews</div>
+
 <?php
   $args = array(
     'post_type' => array('claimreview'),
@@ -184,7 +184,8 @@ Template Name: Homepage 2
   );
   $loop = new WP_Query( $args );
 ?>
-<div class="feeds-container feeds-container__claim mb1">
+<div class="feeds-container feeds-container__claim ">
+    <div class="feeds-title h3">Latest Claim Reviews</div>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class="feed feed__claim col col-lg-6 mb1">
@@ -224,6 +225,9 @@ Template Name: Homepage 2
 </div>
 
     
+</div><!-- / .container -->
+
+   
 <section class="scientist-signup">
   <div class="container">
     <div class="row">
@@ -233,14 +237,15 @@ Template Name: Homepage 2
         </div>
         <div class="media-body">
           <h3>SCIENTISTS!</h3>
-          <h4>Help us create a better informed society. Join our community today!</h4>
-          <a href="/for-scientists/" class="btn btn-primary btn-lg">Apply Now</a>
+          <h4>Help us create a better informed society. Join Climate Feedback today! <br />See <a class="wht" href="/community/">who is already contributing</a>.</h4>
+          <a href="/for-scientists/" class="btn btn-primary btn-lg">Apply here</a>
         </div>
       </div>
     </div>
   </div>
 </section>
     
+ <div class="container">
 <div class="feeds-title h3">Insights</div>
 <?php
   $args = array(
@@ -260,7 +265,7 @@ Template Name: Homepage 2
             src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
           >
         </div>
-        <div class='mb1 h3'>
+        <div class='feed-title h3'>
           <?php echo get_the_title(); ?>
         </div>
         <div class='feed-excerpt mb1'>

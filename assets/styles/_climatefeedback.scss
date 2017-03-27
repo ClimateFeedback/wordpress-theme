@@ -33,6 +33,14 @@ a.bott {
   }
 }
 
+a.wht {
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: #fff;
+  }
+}
+
 .inline-btn{
   background-color: #d3d3d3;
   padding: 4px;
@@ -953,7 +961,7 @@ section.widget {
     }
     padding: 0.1rem;
     @media (min-width: $screen-sm-min) {
-      padding: 1rem;
+    padding: 1rem;
     }
     overflow-y: hidden;
     &__claim {
@@ -1021,6 +1029,8 @@ section.widget {
       &__screenshot {
         height: 100%;
         border: 1px solid #999;
+          padding-left: 0px !important;  
+          padding-right: 0px !important; 
         @media (min-width: $screen-lg-min) {
         } 
         &__img {
@@ -1040,6 +1050,8 @@ section.widget {
         border: 1px solid #999;
         padding-bottom: 56.25%; // 16/9
         width: 100%;
+        direction: rtl;
+        overflow-x: hidden;
         &__img {
           position: absolute;
           max-height: 100%;
@@ -1133,6 +1145,7 @@ section.widget {
   }
   &__perspective {
     &__screenshot {
+      min-height: 250px;
       height: 100%;
       &__img {
         object-fit: cover;
@@ -1144,13 +1157,29 @@ section.widget {
     }
   }
   &-excerpt {
+      @media (min-width: $screen-lg-min) {
+      margin-top: 5px;
+     }
     font-style: italic;
   }
+  &-title {
+     @media (min-width: $screen-lg-min) {
+       min-height: 40px;
+       margin-top: 7px;
+       margin-bottom: 7px;
+     }
+   }
   &-outlet {
     color: grey;
+       @media (min-width: $screen-lg-min) {
+       min-height: 15px;
+       margin-top: 7px;
+       margin-bottom: 7px;
+     }
   }
   &-link {
     text-decoration: none;
+    min-height: 50px;
   }
 }
 
