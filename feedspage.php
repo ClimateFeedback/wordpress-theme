@@ -130,20 +130,20 @@ Template Name: FeedsPage
     style="padding:5px;"
   novalidate>
     <div class="overflow-hidden p1">
-      <div class="feeds__sign-up__icon col col-md-2 p2">
+      <div class="feeds__sign-up__icon col lg-col-4 p2">
         <img
           class="feeds__sign-up__icon__img"
           src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
         >
       </div>
-      <div class="feeds__sign-up__text col col-md-6 p2">
+      <div class="feeds__sign-up__text col lg-col-4 p2">
         <label class="mt2 mb2" for="mce-EMAIL">Sign up for updates</label>
         <p class="feeds__sign-up__text">
           Help us create a better informed society. Join our community today!
         </p>
       </div>
        <div
-        class="col col-md-4 feeds__sign-up__inputs"
+        class="col lg-col-4 feeds__sign-up__inputs"
         id="mc_embed_signup_scroll"
       >
          <div style="width:100%;">
@@ -157,13 +157,15 @@ Template Name: FeedsPage
             placeholder="enter your email address"
             required
           >
-           <input
-            class="button feeds-submit feeds__sign-up__inputs__input forceblue"
-            type="submit"
-            value="Sign Up"
-            name="subscribe"
-            id="mc-embedded-subscribe"
-          >
+            <div class="feeds__sign-up__button"> 
+             <input
+              class="button feeds-submit feeds__sign-up__inputs__input feeds__sign-up__inputs__input__button forceblue"
+              type="submit"
+              value="Sign Up"
+              name="subscribe"
+              id="mc-embedded-subscribe"
+            >
+          </div>
          </div>
          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
          <div style="position: absolute; left: -5000px;" aria-hidden="true">

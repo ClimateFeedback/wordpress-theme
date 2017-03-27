@@ -909,7 +909,7 @@ section.widget {
           margin-bottom: 0;
           margin-left: 0;
           margin-right: 0;
-          width: 60px; 
+          width: 60px;
           opacity: 0.4;
           padding-top: 0.8rem;
       }
@@ -936,7 +936,7 @@ section.widget {
   }
   &-title {
     color: grey;
-    font-weight: 500;    
+    font-weight: 500;
   }
   &-title:after {
     content:' ';
@@ -976,37 +976,77 @@ section.widget {
   }
   &__sign-up {
     padding: 5px;
+    text-align: center;
+    @media (min-width: $screen-lg-min) {
+      text-align: left;
+    }
+    &__button {
+      margin-left: 40%;
+      margin-right: 40%;
+      width: 20%;
+      @media (min-width: $screen-lg-min) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
     &__icon {
       padding: 0;
-      @media (min-width: $screen-sm-min) {
-        padding: 2rem;
+      padding-top: 2rem;
+      width: 100%;
+      @media (min-width: $screen-lg-min) {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: auto;
       }
       &__img {
-        margin-left: 35%;
-        margin-right: 35%;
-        width: 30%;
-        @media (min-width: $screen-sm-min) {
-          margin-left: 25%;
-          margin-right: 25%;
-          width: 50%;
+        margin-left: 45%;
+        margin-right: 45%;
+        width: 10%;
+        @media (min-width: $screen-lg-min) {
+          width: 4rem;
         }
       }
     }
     &__text {
       font-family: 'Raleway', sans-serif;
-      @media (min-width: $screen-sm-min) {
+      width: 100%;
+      text-align: center;
+      @media (min-width: $screen-lg-min) {
         font-size: 20px;
+        width: auto;
       }
     }
     &__inputs {
-      @media (min-width: $screen-sm-min) {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      @media (min-width: $screen-lg-min) {
         padding: 2rem;
+        width: auto;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
       }
       &__input {
         height: 30px;
-        width: 100%;
+        width: 70%;
+        @media (min-width: $screen-lg-min) {
+          width: inherit;
+        }
       }
     }
+  }
+}
+#mc_embed_signup {
+  input.button {
+    width: 35%;
+    min-width: 90px;
   }
 }
 .forceblue {
@@ -1024,7 +1064,7 @@ section.widget {
         height: 100%;
         border: 1px solid #999;
         @media (min-width: $screen-lg-min) {
-        } 
+        }
         &__img {
           object-fit: cover;
           width: 100%;
