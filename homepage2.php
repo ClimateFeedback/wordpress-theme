@@ -246,9 +246,53 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
  <div class="container">
 <div class="feeds-title h3">Insights</div>
 <?php
+    //Extract ID from category name
+    $theCatId = get_term_by( 'slug', 'insights', 'category' );
+    $theCatId = $theCatId->term_id;  
   $args = array(
     'post_type' => array('post'),
-    'cat' => array('-claimreview', '-evaluation'),
+    // 'category_name' => array('insights'),
+    'cat' => $theCatId,
+    //'cat' => array('-claimreview', '-evaluation'),
+    'posts_per_page' => 2
+  );
+  $loop = new WP_Query( $args );
+?>
+<div class="feeds-container mr3 p1">
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <a class="col col-lg-6" href="<?php echo get_permalink( get_the_ID() ); ?>" >
+      <div class='feed feed__perspective mb1 p2'>
+        <div class='feed__perspective__screenshot mb1'>
+          <img
+            class='feed__perspective__screenshot__img'
+            src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
+          >
+        </div>
+        <div class='feed-title h3'>
+          <?php echo get_the_title(); ?>
+        </div>
+        <div class='feed-excerpt mb1'>
+          <?php echo get_trim_text(get_the_excerpt());?>
+        </div>
+        <div>
+          - <?php the_date(); ?>
+        </div>
+      </div>
+    </a>
+  <?php endwhile; ?>
+</div>
+
+
+     <div class="feeds-title h3">News &amp; Events</div>
+<?php
+    //Extract ID from category name
+    $theCatId = get_term_by( 'slug', 'news', 'category' );
+    $theCatId = $theCatId->term_id;  
+   $args = array(
+    'post_type' => array( 'post', 'press' ),
+    // 'category_name' => array('insights'),
+    'cat' => $theCatId,
+    //'cat' => array('-claimreview', '-evaluation'),
     'posts_per_page' => 2
   );
   $loop = new WP_Query( $args );
@@ -281,10 +325,10 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     class="feeds-more__link h4 p1"
     href="<?php echo get_site_url(); ?>/blog-posts"
   >
-    More Insights
+    More Insights &amp; News
   </a>
 </div>
-
+     
 </div><!-- / .container -->
 
 
