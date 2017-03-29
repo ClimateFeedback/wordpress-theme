@@ -161,9 +161,9 @@ h3 {
 }
 
 .sci-fig {
-  height: 140px;
-  padding-top: 2em;
-  padding-bottom: 0.5em;
+    height: 120px;
+    padding-top: 1.5em;
+    padding-bottom: 1.0em;
 }
 
 .valign{
@@ -995,6 +995,9 @@ section.widget {
          margin-left: 0;
          margin-right: 0;
        }
+        @media (max-width: $screen-xs-min) {
+         margin-left: 20%;
+       }
      }
     &__icon {
       padding: 0;
@@ -1033,13 +1036,11 @@ section.widget {
       margin-bottom: 0.5rem;
       text-align: center;
       @media (min-width: $screen-lg-min) {
-        padding: 2rem;
+        padding: 2rem 2rem 1rem 1rem;
         width: auto;
         text-align: left;
         margin-left: 0;
         margin-right: 0;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
       }
       &__input {
         height: 30px;
@@ -1191,16 +1192,16 @@ section.widget {
   }
   &__perspective {
     &__screenshot {
-      min-height: 250px;
-      height: 100%;
-      &__img {
-        object-fit: cover;
+        position: relative;
+        padding-bottom: 56.25%; // 16/9
         width: 100%;
-        @media (min-width: $screen-lg-min) {
-          max-height: 250px;
+        direction: rtl;
+        overflow-x: hidden;
+        &__img {
+          position: absolute;
+          max-height: 100%;
         }
       }
-    }
   }
   &-excerpt {
       @media (min-width: $screen-lg-min) {

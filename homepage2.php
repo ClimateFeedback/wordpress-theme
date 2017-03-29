@@ -24,7 +24,7 @@ Template Name: Homepage 2
     <div class="container">
   <div class="row feeds-hero__row">
     <h3 class="half-black">
-      Accurate information: the foundation of a functioning democracy
+      Accurate information is the foundation of a functioning democracy
     </h3>
   </div>
         </div>
@@ -33,7 +33,7 @@ Template Name: Homepage 2
   <div class="container"><div class="feeds-container">
       <p class="feeds-aim__container__img col col-2"> WHAT WE DO </p>
       <p class="feeds-aim__container__text col col-10">
-Climate Feedback is a worldwide network of scientists sorting fact from fiction in climate change media coverage. Our reviews help the public know which climate news to trust. </p>
+Climate Feedback is a worldwide network of scientists sorting fact from fiction in climate change media coverage. Our goal is to help readers know which news to trust. <!-- Our reviews help the public know which climate news to trust. --> </p>
   </div></div>
 </div>
 
@@ -111,38 +111,43 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
   </a>
 </div>
 
+    </div><!-- / .container -->
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    #mc_embed_signup{background:#fff; clear:left; }
 
-    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block. We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-    <div class="mc_embed_bar">
-<div id="mc_embed_signup" style="background-color: #F5F5F5;overflow-y:hidden;">
-  <form action="//climatefeedback.us9.list-manage.com/subscribe/post?u=e33d7323df2327db90438153a&amp;id=e4773425e1"
+    <section class="mc_embed_bar">
+    <div class="container" id="mc_embed_signup" style="background-color: #F5F5F5;overflow-y:hidden;">
+        <form action="//climatefeedback.us9.list-manage.com/subscribe/post?u=e33d7323df2327db90438153a&amp;id=e4773425e1"
     method="post" id="mc-embedded-subscribe-form"
     name="mc-embedded-subscribe-form"
     class="validate overflow-hidden"
     target="_blank"
     style="padding:5px;"
   novalidate>
-    <div class="overflow-hidden p1">
-        <div class="feeds__sign-up__icon col lg-col-4 p2">
-        <img
-          class="feeds__sign-up__icon__img"
+    <div class="row">
+      <div class="col-sm-12 call-to-action">
+        <div class="media-left">
+            <img
+          class="sci-fig" style="padding-bottom: 2.0em;"
           src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
-        >
-      </div>
-      <div class="feeds__sign-up__text col lg-col-4 p2">
-        <h3 class="ml3 mt3">Get scientists’ reviews delivered directly to your inbox</h3>
-      </div>
-       <div
+            >
+        </div>
+        <div class="media-body">
+          <div
         class="col lg-col-4 feeds__sign-up__inputs"
         id="mc_embed_signup_scroll"
       >
-         <div style="width:100%;">
+              <h3 style="font-size: 21px;">Get scientists’ reviews delivered directly to your inbox</h3>
+              </div>
+          <div
+        class="col lg-col-4 feeds__sign-up__inputs"
+        id="mc_embed_signup_scroll"
+      >
+         <div style="width:110%;">
            <input
             class="feeds__sign-up__inputs__input mb1"
             type="email"
@@ -163,18 +168,19 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
              >
            </div>
          </div>
-         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
          <div style="position: absolute; left: -5000px;" aria-hidden="true">
            <input type="text" name="b_e33d7323df2327db90438153a_e4773425e1" tabindex="-1" value="">
         </div>
        </div>
-     </div>
-  </form>
-</div>
         </div>
+      </div>
+    </div>
+  </div>
+    
+        </section>
 <!--End mc_embed_signup-->
 
-
+<div class="container">
 <?php
   $args = array(
     'post_type' => array('claimreview'),
@@ -224,7 +230,6 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 
     
 </div><!-- / .container -->
-
    
 <section class="scientist-signup">
   <div class="container">
@@ -234,8 +239,8 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
           <img alt="" class="sci-fig" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/scientists-logo2.png">
         </div>
         <div class="media-body">
-          <h3>Scientists</h3>
-          <p>You can help create a better informed society. Become a reviewer today! <br />See <a class="wht" href="/community/">who is already contributing</a>.</p>
+          <h3 style="font-size: 21px;">Scientists, you can help create a better informed society. Become a reviewer today!</h3>
+          <p> See <a class="wht" href="/community/">who is already contributing</a>.</p>
           <a href="/for-scientists/" class="btn btn-primary btn-lg">Apply here</a>
         </div>
       </div>
