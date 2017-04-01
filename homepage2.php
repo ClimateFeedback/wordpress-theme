@@ -105,7 +105,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-more mb1 p1">
   <a
     class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/evaluations"
+    href="<?php echo get_site_url(); ?>/feedbacks/"
   >
     More Article Reviews
   </a>
@@ -222,7 +222,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-more mb1 p1">
   <a
     class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/claim-reviews"
+    href="<?php echo get_site_url(); ?>/claim-reviews/"
   >
     More Claim Reviews
   </a>
@@ -328,7 +328,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-more p1 mb3">
   <a
     class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/blog-posts"
+    href="<?php echo get_site_url(); ?>/blog-posts/"
   >
     More Insights &amp; News
   </a>
