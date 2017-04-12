@@ -7,6 +7,8 @@
         <h1 itemprop="name" class="entry-title"><?php the_title(); ?></h1>
     </header>
 
+      <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>
+
     <div class="entry-content">
       <div class="fact-check-card center">
         <div class="fact-check-card__row row p2">
@@ -78,6 +80,7 @@
         <p><?php the_content(); ?></p>
     </div>
 
+      
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
