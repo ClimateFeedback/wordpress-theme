@@ -179,11 +179,15 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     
         </section>
 <!--End mc_embed_signup-->
-
+        
 <div class="container">
 <?php
+//Extract ID from category name
+    $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
+    $theCatId2 = $theCatId2->term_id; 
   $args = array(
     'post_type' => array('claimreview'),
+    'cat' => $theCatId2,
     'posts_per_page' => 2
   );
   $loop = new WP_Query( $args );
