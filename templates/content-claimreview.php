@@ -33,7 +33,7 @@
             <div>
               <img
                 class="fact-check-card__row__verdict__img"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+                src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
               >  
             </div>
           </div>
