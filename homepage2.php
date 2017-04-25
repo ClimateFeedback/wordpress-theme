@@ -209,7 +209,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
           <div class="feed__claim__container__content col col-8">
             <img
               class="feed__claim__container__content__verdict__img mb1"
-              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/TagH_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
             >
             <div class="feed-excerpt feed__claim__container__content__text mb1">
               "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>"
