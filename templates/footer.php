@@ -10,22 +10,25 @@
 	  		<p class="small">Center for Climate Communication, University of California, Merced</p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
-	  		<h4>SUPPORTED BY</h4>
-	  		<a target="_blank" href="http://citris-uc.org/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/citris-logo.png" class="sponser" style="float:left; margin-right:1em;"></a>
-	  		<p class="small">The Center for Information Technology Research in the Interest of Society:</p>
-        <p class="small"> 'Data &amp; Democracy' grant</p>
-	  		<p class="small">Generous support from the public. <a href="/contribute/">Donate today</a>!</p>
-<!--	  		</ul>-->
+	  		<h4>COMMUNITY</h4>   
+            <p class="small"><a href="/community/">Reviewers</a></p>
+            <p class="small"><a href="/community-standards/">Community standards</a></p>
+            <p class="small"><a href="/for-scientists/">Apply to become a reviewer</a></p>
+            <p class="small"><a href="/contact-us/">Submit an item to review</a></p>
+            <p class="small"><a href="/contribute/">Donate</a></p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
-	  		<h4>IN PARTNERSHIP WITH</h4>
-	  		<a target="_blank" href="http://www.climaterapidresponse.org/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/csrrt.png" class="sponser"></a>
-	  		<p class="small">Climate Science Rapid Response Team </p>
+	  		<h4>ORGANIZATION</h4>
+            <p class="small"><a href="/process/">Our method to evaluate articles</a></p>
+            <p class="small"><a href="/claim-reviews-framework/">Our method to evaluate claims</a></p>
+            <p class="small"><a href="/partners-funders-donors/">Partners and funders</a></p>
+            <p class="small"><a href="/team-advisors-contributors/">Team</a></p>
+            <p class="small"><a href="/press-coverage/">Press</a></p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
-			<h4 >CONTACT US</h4>
+			<h4 >GET IN TOUCH</h4>
 			<p class="small">Climate Feedback · Sierra Nevada Research Institute · 5200 N. Lake Road · Merced, CA 95343 · USA</p>
-			<p class="small"><a href="mailto:feedback@climatefeedback.org">feedback@climatefeedback.org</a></p>
+			<p class="small"><a href="/contact-us/">Contact us</a></p>
             <h4 class="spaceup05">FOLLOW US</h4>
             <div class="social-footer">
                 <a href="https://www.facebook.com/ClimateFeedback/" target="_blank"><i class="fa fa-facebook"></i></a>

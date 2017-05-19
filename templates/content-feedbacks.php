@@ -7,7 +7,10 @@
       </div>
         <h1 itemprop="name" class="entry-title"><?php the_title(); ?></h1> 
         
-      <p >  
+      <p>
+        <?php if( get_post_meta( get_the_ID(), 'arttitle', true ) ): ?>
+            Analysis of "<?php echo get_post_meta( get_the_ID(), 'arttitle', true ); ?>"<br />
+        <?php endif; ?>
          Published in <?php echo do_shortcode('[outlet]'); ?>, by <?php echo do_shortcode('[author]'); ?>
           on <time class="updated"><?php echo get_post_meta( get_the_ID(), 'date', true ); ?></time>
       </p>
@@ -42,10 +45,18 @@
       </span>
   </article>
 
-<!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> 
 
-<p> Outlet: <a href="/ "> </a><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></p> -->
-
+      <p class="small spaceup1">
+       <i class="fa fa-tags fa-lg" aria-hidden="true"></i> <?php the_tags( '<span class="bot-tag">', '</span> &nbsp;<span class="bot-tag">', '</span>'); ?>
+      </p>
+      <p class="small">
+        Published on: <?php echo get_the_date( 'd M Y' ); ?>
+      </p>
+  <div class="bot-box">
+      <p class="small spaceup1">
+Climate Feedback is a non-partisan, non-profit organization dedicated to science education. We strive to explain whether and why information is or is not consistent with the science and to help readers know which news to trust.
+      </p>
+  </div>
   <div class="foot-notes">
     <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
   </div>
