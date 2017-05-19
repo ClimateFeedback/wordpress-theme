@@ -45,6 +45,9 @@
       </span>
   </article>
 
+  <div class="foot-notes">
+    <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
+  </div>
 
       <p class="small spaceup1">
        <i class="fa fa-tags fa-lg" aria-hidden="true"></i> <?php the_tags( '<span class="bot-tag">', '</span> &nbsp;<span class="bot-tag">', '</span>'); ?>
@@ -57,9 +60,7 @@
 Climate Feedback is a non-partisan, non-profit organization dedicated to science education. We strive to explain whether and why information is or is not consistent with the science and to help readers know which news to trust.
       </p>
   </div>
-  <div class="foot-notes">
-    <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
-  </div>
+
 
   <!--  <h1>--><?php //echo get_post_meta( get_the_ID(), 'score', true ); ?><!--</h1>-->
 
