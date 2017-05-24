@@ -90,11 +90,18 @@
       <p class="small spaceup1">
         Published on: <?php echo get_the_date( 'd M Y' ); ?>
       </p>
-  <div class="bot-box">
-      <p class="small spaceup1">
+<div class="bot-box">
+      <div class="row spaceup1">
+          <div class="col-sm-9">
+      <p class="small ">
 <em>Climate Feedback is a non-partisan, non-profit organization dedicated to science education. Our reviews are crowdsourced directly from a community of scientists with relevant expertise. We strive to explain whether and why information is or is not consistent with the science and to help readers know which news to trust. <br />
 Please <a href="http://climatefeedback.org/contact-us/">get in touch</a> if you have any comment or think there is an important claim or article that would need to be reviewed.</em>
       </p>
+          </div>
+          <div class="col-sm-3">
+              <a href="http://climatefeedback.org/climate-feedback-accredited-international-fact-checking-network-poynter/"><img class="alignnone size-full wp-image-2168" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ifcn-fact-checkers-code-principles-signatory.png" alt="ifcn-fact-checkers-code-of-principles-signatory" width="140" /></a>
+          </div>
+      </div>
   </div>
 
 <?php endwhile; ?>
