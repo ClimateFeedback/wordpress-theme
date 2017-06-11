@@ -64,7 +64,7 @@ Please <a href="http://climatefeedback.org/contact-us/">get in touch</a> if you 
       </p>
           </div>
           <div class="col-sm-3">
-              <a href="http://climatefeedback.org/climate-feedback-accredited-international-fact-checking-network-poynter/"><img class="alignnone size-full wp-image-2168" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ifcn-fact-checkers-code-principles-signatory.png" alt="ifcn-fact-checkers-code-of-principles-signatory" width="140" /></a>
+              <a href="https://climatefeedback.org/climate-feedback-accredited-international-fact-checking-network-poynter/"><img class="alignnone size-full wp-image-2168" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ifcn-fact-checkers-code-principles-signatory.png" alt="ifcn-fact-checkers-code-of-principles-signatory" width="140" /></a>
           </div>
       </div>
   </div>
