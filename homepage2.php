@@ -158,7 +158,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
             placeholder="enter your email address"
             required
           >
-             <div class="feeds__sign-up__button"> 
+             <div class="feeds__sign-up__button">
               <input
                class="button feeds-submit feeds__sign-up__inputs__input feeds__sign-up__inputs__input__button forceblue"
                type="submit"
@@ -176,15 +176,15 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
       </div>
     </div>
   </div>
-    
+
         </section>
 <!--End mc_embed_signup-->
-        
+
 <div class="container">
 <?php
 //Extract ID from category name
     $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
-    $theCatId2 = $theCatId2->term_id; 
+    $theCatId2 = $theCatId2->term_id;
   $args = array(
     'post_type' => array('claimreview'),
     'cat' => $theCatId2,
@@ -232,9 +232,9 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
   </a>
 </div>
 
-    
+
 </div><!-- / .container -->
-   
+
 <section class="scientist-signup">
   <div class="container">
     <div class="row">
@@ -251,13 +251,13 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     </div>
   </div>
 </section>
-    
+
  <div class="container">
 <div class="feeds-title h3">Insights</div>
 <?php
     //Extract ID from category name
     $theCatId = get_term_by( 'slug', 'insights', 'category' );
-    $theCatId = $theCatId->term_id;  
+    $theCatId = $theCatId->term_id;
   $args = array(
     'post_type' => array('post'),
     // 'category_name' => array('insights'),
@@ -296,7 +296,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <?php
     //Extract ID from category name
     $theCatId = get_term_by( 'slug', 'news', 'category' );
-    $theCatId = $theCatId->term_id;  
+    $theCatId = $theCatId->term_id;
    $args = array(
     'post_type' => array( 'post', 'press' ),
     // 'category_name' => array('insights'),
@@ -337,7 +337,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     More Insights &amp; News
   </a>
 </div>
-     
+
 </div><!-- / .container -->
 
 
@@ -360,9 +360,161 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
         <a href="/press-coverage/" class="btn btn-primary">More Press</a>
       </div>
     </div>
-      
-
-      
   </div>
-      
 </section>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      <?php
+        $args = array(
+          'post_type' => array('evaluation'),
+          'posts_per_page' => 3
+        );
+        $loop = new WP_Query( $args );
+      ?>
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <?php if( $loop->current_post > 0) : ?>
+        ,
+        <?php endif; ?> {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "null"
+          },
+          "itemReviewed": {
+            "@type": "NewsArticle",
+            "author": {
+              "@type": "Person",
+              "name": "null"
+            },
+            "datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+            "headline": "null",
+            "image": {
+              "@type": "ImageObject",
+              "height": "500px",
+              // "url": "https://www.google.fr/search?q=the+attribute+image.itemtype+has+an+invalid+value.)&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjVk72P9MDUAhVJPVAKHfjlAD0Q_AUICigB&biw=1233&bih=477#imgrc=dbF9IEW93CqQBM:",
+              "url": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>",
+              "width": "500px"
+            },
+            "name": "<?php echo get_the_title(); ?>",
+            "publisher": {
+              "@type": "Organization",
+              "logo": {
+                "@type": "ImageObject",
+                "height": "500px",
+                // "url": "https://www.google.fr/search?q=the+attribute+image.itemtype+has+an+invalid+value.)&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjVk72P9MDUAhVJPVAKHfjlAD0Q_AUICigB&biw=1233&bih=477#imgrc=dbF9IEW93CqQBM:",
+                "width": "500px"
+              },
+              "name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
+            },
+            "thumbnailUrl": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>",
+            "url": "<?php echo get_permalink( get_the_ID() ); ?>"
+          },
+          "position": 1,
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "<?php echo esc_attr(get_trim_text(get_the_excerpt()));?>"
+          },
+          "url": "https://climatefeedback.org/"
+        }
+      <?php endwhile; ?>
+      <?php
+        //Extract ID from category name
+        $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
+        $theCatId2 = $theCatId2->term_id;
+        $args = array(
+          'post_type' => array('claimreview'),
+          'cat' => $theCatId2,
+          'posts_per_page' => 2
+        );
+        $loop = new WP_Query( $args );
+      ?>
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        , {
+          "@type": "ClaimReview",
+          "author": {
+            "@type": "Person",
+            "name": "null"
+          },
+          "claimReviewed": "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>",
+          "reviewBody": "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>",
+          "reviewRating": {
+            "@type": "Rating",
+            "alternateName": "null",
+            "ratingValue": "<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>"
+          },
+          "itemReviewed": {
+            "@type": "Article",
+            "author": {
+              "@type": "Person",
+              "name": "<?php echo get_post_meta( get_the_ID(), 'author', true); ?>"
+            },
+            "datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+            "headline": "<?php echo esc_attr(get_trim_text(get_the_excerpt()));?>",
+            "image": "null",
+            "name": "<?php echo get_the_title(); ?>",
+            "publisher": {
+              "@type": "Organization",
+              "logo": {
+                "@type": "ImageObject",
+                "height": "500px",
+                "url": "",
+                "width": "500px"
+              },
+              "name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
+            },
+            "thumbnailUrl": "<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>",
+            "url": "<?php echo get_permalink( get_the_ID() ); ?>"
+          },
+          "url": "https://climatefeedback.org/"
+        }
+      <?php endwhile; ?>
+      <?php
+        //Extract ID from category name
+        $theCatId = get_term_by( 'slug', 'insights', 'category' );
+        $theCatId = $theCatId->term_id;
+        $args = array(
+          'post_type' => array('post'),
+          // 'category_name' => array('insights'),
+          'cat' => $theCatId,
+          //'cat' => array('-claimreview', '-evaluation'),
+          'posts_per_page' => 2
+        );
+        $loop = new WP_Query( $args );
+      ?>
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        , {
+          "@type": "Article",
+          "author": {
+            "@type": "Person",
+            "name": "null"
+          },
+          "datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+          "headline": "<?php echo esc_attr(get_trim_text(get_the_excerpt()));?>",
+          "image": {
+            "@type": "ImageObject",
+            "height": "500px",
+            "url": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>",
+            "width": "500px"
+          },
+          "name": "<?php echo get_the_title(); ?>",
+          "publisher": {
+            "@type": "Organization",
+            "logo": {
+              "@type": "ImageObject",
+              "height": "500px",
+              "url": "",
+              "width": "500px"
+            },
+            "name": "Climate Feedback"
+          },
+          "thumbnailUrl": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>",
+          "url": "<?php echo get_permalink( get_the_ID() ); ?>"
+        }
+      <?php endwhile; ?>
+    ]
+  }
+</script>
