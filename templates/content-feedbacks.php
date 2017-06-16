@@ -1,11 +1,10 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-      <span itemscope itemtype="http://schema.org/Article">
     <header>
       <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
       </div>
-        <h1 itemprop="name" class="entry-title"><?php the_title(); ?></h1> 
+        <h1 class="entry-title"><?php the_title(); ?></h1> 
         
       <p>
         <?php if( get_post_meta( get_the_ID(), 'arttitle', true ) ): ?>
@@ -19,7 +18,7 @@
       
     <div class="entry-content">
         
-       <p itemprop="articleSection" class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>  
+       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>  
         
           <?php if( get_the_term_list( get_the_ID(), 'article-tag', true ) ): ?>
 <br /> A majority of reviewers tagged the article as: <?php echo do_shortcode('[article-tags]'); ?>.
@@ -43,6 +42,86 @@
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
       </span>
+
+	<script type="application/ld+json">
+ 		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"mainEntity": {
+				"@type": "Article",
+				"author": {
+					"@type": "Organization",
+					"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+					"name": "Climate Feedback"
+				},
+				"datePublished": "<?php echo get_the_date('d M Y'); ?>",
+				"image": {
+					"@type": "ImageObject",
+                                        "height": "200px",
+					"url": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src; ?>",
+					"width": "200px"
+                                },
+				"headline": "<?php echo substr(esc_attr(get_the_excerpt()),0,110);?>",
+				"publisher": {
+					"@type": "Organization",
+					"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+					"name": "Climate Feedback"
+				},
+				"review": {
+         				"@type": "Review",
+         				"author": {
+            					"@type": "Organization",
+          			  		"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+            					"name": "Climate Feedback",
+						"url": "<?php echo esc_url(home_url()); ?>"
+         			 	},
+  					"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+					"image": {
+						"@type": "ImageObject",
+						"height": "200px",
+						"url": "<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src; ?>",
+						"width": "200px"
+					},
+					"publisher": {
+						"@type": "Organization",
+						"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+						"name": "Climate Feedback"
+					},
+					"itemReviewed": {
+						"@type": "CreativeWork",
+						"author": {
+							"@type": "Person",
+							"name": "<?php echo get_post_meta( get_the_ID(), 'author', true); ?>"
+						},
+						"headline": "TBD",
+						"image": {
+							"@type": "ImageObject",
+							"height": "200px",
+							"url": "<?php echo get_post_meta( get_the_ID(), 'screenshot', true); ?>",
+							"width": "200px"
+						}, 
+						"publisher": {
+							"@type": "Organization",
+							"logo": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>",
+							"name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
+						},
+						"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+						"url": "TBD"
+					},
+					"reviewRating": {
+						"@type": "Rating",
+						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'score', true); ?>",
+						"bestRating": 2,
+						"ratingValue": <?php echo get_post_meta( get_the_ID(), 'score', true); ?>,
+						"worstRating": -2
+					},
+					"reviewBody": "<?php echo esc_attr(get_post_meta( get_the_ID(), 'details', true)); ?>",
+					"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
+				}
+			}
+		}
+	</script>
+
   </article>
 
   <div class="foot-notes">
