@@ -85,6 +85,57 @@
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
 
+	<?php
+		$rating_array=explode('_', get_post_meta( get_the_ID(), 'verdict', true));
+	?>
+	<script type="application/ld+json">
+ 		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"mainEntity": {
+         			 "@type": "ClaimReview",
+         			 "author": {
+            				"@type": "Organization",
+          			  	"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+            				"name": "Climate Feedback",
+					"url": "<?php echo esc_url(home_url()); ?>"
+         			 },
+          			"claimReviewed": "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>",
+          			"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+				"itemReviewed": {
+					"@type": "CreativeWork",
+					"author": {
+						"@type": "Person",
+						"name": "<?php echo get_post_meta( get_the_ID(), 'author', true); ?>"
+					},
+					"headline": "TBD",
+					"image": {
+						"@type": "ImageObject",
+						"height": "200px",
+						"url": "<?php echo get_post_meta( get_the_ID(), 'screenshot', true); ?>",
+						"width": "200px"
+					}, 
+					"publisher": {
+						"@type": "Organization",
+						"logo": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>",
+						"name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
+					},
+					"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
+					"url": "TBD"
+				},
+				"reviewRating": {
+					"@type": "Rating",
+					"alternateName": "<?php echo $rating_array[0]; ?>",
+					"bestRating": 2,
+					"ratingValue": <?php echo end($rating_array); ?>,
+					"worstRating": -2
+				},
+				"reviewBody": "<?php echo esc_attr(get_post_meta( get_the_ID(), 'details', true)); ?>",
+				"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
+			}
+		}
+	</script>
+
   </article>
 
       <p class="small spaceup1">
