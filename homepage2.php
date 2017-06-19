@@ -158,7 +158,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
             placeholder="enter your email address"
             required
           >
-             <div class="feeds__sign-up__button"> 
+             <div class="feeds__sign-up__button">
               <input
                class="button feeds-submit feeds__sign-up__inputs__input feeds__sign-up__inputs__input__button forceblue"
                type="submit"
@@ -176,15 +176,15 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
       </div>
     </div>
   </div>
-    
+
         </section>
 <!--End mc_embed_signup-->
-        
+
 <div class="container">
 <?php
 //Extract ID from category name
     $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
-    $theCatId2 = $theCatId2->term_id; 
+    $theCatId2 = $theCatId2->term_id;
   $args = array(
     'post_type' => array('claimreview'),
     'cat' => $theCatId2,
@@ -232,9 +232,9 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
   </a>
 </div>
 
-    
+
 </div><!-- / .container -->
-   
+
 <section class="scientist-signup">
   <div class="container">
     <div class="row">
@@ -251,13 +251,13 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     </div>
   </div>
 </section>
-    
+
  <div class="container">
 <div class="feeds-title h3">Insights</div>
 <?php
     //Extract ID from category name
     $theCatId = get_term_by( 'slug', 'insights', 'category' );
-    $theCatId = $theCatId->term_id;  
+    $theCatId = $theCatId->term_id;
   $args = array(
     'post_type' => array('post'),
     // 'category_name' => array('insights'),
@@ -296,7 +296,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <?php
     //Extract ID from category name
     $theCatId = get_term_by( 'slug', 'news', 'category' );
-    $theCatId = $theCatId->term_id;  
+    $theCatId = $theCatId->term_id;
    $args = array(
     'post_type' => array( 'post', 'press' ),
     // 'category_name' => array('insights'),
@@ -337,7 +337,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     More Insights &amp; News
   </a>
 </div>
-     
+
 </div><!-- / .container -->
 
 
@@ -360,9 +360,18 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
         <a href="/press-coverage/" class="btn btn-primary">More Press</a>
       </div>
     </div>
-      
-
-      
   </div>
-      
 </section>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "publisher": {
+      "@type": "Organization",
+      "logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
+      "name": "Climate Feedback",
+      "url": "<?php echo esc_url(home_url()); ?>"
+    }
+  }
+</script>
