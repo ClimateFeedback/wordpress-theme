@@ -101,7 +101,7 @@
 					"url": "<?php echo esc_url(home_url()); ?>"
 				},
 				"datePublished": "<?php echo get_the_date('d-m-Y'); ?>",
-				"headline": "<?php echo substr(get_the_excerpt(),0,110); ?>",
+				"headline": "<?php the_title(); ?>",
 				"publisher": {
 					"@type": "Organization",
 					"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
@@ -147,12 +147,12 @@
 					},
 					"reviewRating": {
 						"@type": "Rating",
-						"alternateName": "<?php echo $rating_array[0]; ?>",
+						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'verdict', true); ?>",
 						"bestRating": 2,
-						"ratingValue": <?php echo end($rating_array); ?>,
+						"ratingValue": <?php echo get_post_meta( get_the_ID(), 'rating', true); ?>,
 						"worstRating": -2
 					},
-					"reviewBody": "<?php echo esc_attr(get_post_meta( get_the_ID(), 'details', true)); ?>",
+					"reviewBody": "<?php the_content(); ?>",
 					"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
 				}
 			}

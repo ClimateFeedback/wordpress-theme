@@ -93,7 +93,7 @@
 							"@type": "Person",
 							"name": "<?php echo get_post_meta( get_the_ID(), 'author', true); ?>"
 						},
-						"headline": "TBD",
+						"headline": "<?php echo get_post_meta( get_the_ID(), 'arttitle', true ); ?>",
 						"image": {
 							"@type": "ImageObject",
 							"height": "200px",
@@ -106,7 +106,7 @@
 							"name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
 						},
 						"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
-						"url": "TBD"
+						"url": "<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>"
 					},
 					"reviewRating": {
 						"@type": "Rating",
