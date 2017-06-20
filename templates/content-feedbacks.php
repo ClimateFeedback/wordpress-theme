@@ -2,10 +2,10 @@
   <article <?php post_class(); ?>>
     <header>
       <div class="page-header myfull">
-          <h2  style="color:#000"> . </h2> 
+          <h2  style="color:#000"> . </h2>
       </div>
-        <h1 class="entry-title"><?php the_title(); ?></h1> 
-        
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+
       <p>
         <?php if( get_post_meta( get_the_ID(), 'arttitle', true ) ): ?>
             Analysis of "<?php echo get_post_meta( get_the_ID(), 'arttitle', true ); ?>"<br />
@@ -15,23 +15,23 @@
       </p>
     </header>
 
-      
+
     <div class="entry-content">
-        
-       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>  
-        
+
+       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>
+
           <?php if( get_the_term_list( get_the_ID(), 'article-tag', true ) ): ?>
 <br /> A majority of reviewers tagged the article as: <?php echo do_shortcode('[article-tags]'); ?>.
           <?php endif; ?>
         </p>
         <aside class="mashsb-stretched">  <?php echo do_shortcode('[mashshare]'); ?></aside>
-       
+
       <center>
         <?php the_post_thumbnail(array(800, 500), array( 'class' => 'img-responsive' )); ?>
       </center>
         <br />
-         
-        
+
+
       <p><?php the_content(); ?></p>
       <!--      <button>-->
       <!--        <a href="--><?php //echo get_post_meta( get_the_ID(), 'annotationsLink', true ); ?><!--" target="_blank">See all the scientists' annotation in context</a>-->
@@ -99,7 +99,7 @@
 							"height": "200px",
 							"url": "<?php echo get_post_meta( get_the_ID(), 'screenshot', true); ?>",
 							"width": "200px"
-						}, 
+						},
 						"publisher": {
 							"@type": "Organization",
 							"logo": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>",
@@ -111,12 +111,12 @@
 					"reviewRating": {
 						"@type": "Rating",
 						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'score', true); ?>",
-						"bestRating": 2,
-						"ratingValue": <?php echo get_post_meta( get_the_ID(), 'score', true); ?>,
-						"worstRating": -2
+						"bestRating": 4,
+						"ratingValue": <?php echo (int)get_post_meta( get_the_ID(), 'score', true) + 2; ?>,
+						"worstRating": 0
 					},
 					"reviewBody": "<?php echo esc_attr(get_post_meta( get_the_ID(), 'details', true)); ?>",
-					"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
+					"url": "<?php echo get_permalink( get_the_ID() ); ?>"
 				}
 			}
 		}
