@@ -145,9 +145,9 @@
 					"reviewRating": {
 						"@type": "Rating",
 						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'verdict', true); ?>",
-						"bestRating": 5,
-						"ratingValue": <?php echo (int)get_post_meta( get_the_ID(), 'rating', true) + 3; ?>,
-						"worstRating": 1
+						"bestRating": "5",
+						"ratingValue": "<?php echo (int)get_post_meta( get_the_ID(), 'rating', true) + 3; ?>",
+						"worstRating": "1"
 					},
 					"url": "<?php echo get_permalink( get_the_ID() ); ?>"
 				}
