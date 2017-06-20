@@ -152,7 +152,6 @@
 						"ratingValue": <?php echo get_post_meta( get_the_ID(), 'rating', true); ?>,
 						"worstRating": -2
 					},
-					"reviewBody": "<?php the_content(); ?>",
 					"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
 				}
 			}
