@@ -34,14 +34,14 @@
               <img
                 class="fact-check-card__row__verdict__img"
                 src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-              >  
+              >
             </div>
           </div>
         </div>
         <div >
           <div class="mb2">
             <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>  &nbsp; <a target="_blank" title="See the claim in context" href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?> ><i class="fa fa-external-link" aria-hidden="true"></i></span></a>
-            </p> 
+            </p>
           </div>
         </div>
           <?php if( get_post_meta( get_the_ID(), 'details', true) ): ?>
@@ -72,22 +72,19 @@
         </div>
       </div>
         <br />
-        
+
 
         <h3>SCIENTISTS' REVIEW</h3>
-            <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"   
+            <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"
             </blockquote>
         <p><?php the_content(); ?></p>
     </div>
 
-      
+
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
 
-	<?php
-		$rating_array=explode('_', get_post_meta( get_the_ID(), 'verdict', true));
-	?>
 	<script type="application/ld+json">
  		{
 			"@context": "http://schema.org",
@@ -136,7 +133,7 @@
 							"height": "200px",
 							"url": "<?php echo get_post_meta( get_the_ID(), 'screenshot', true); ?>",
 							"width": "200px"
-						}, 
+						},
 						"publisher": {
 							"@type": "Organization",
 							"logo": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>",
@@ -148,11 +145,11 @@
 					"reviewRating": {
 						"@type": "Rating",
 						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'verdict', true); ?>",
-						"bestRating": 2,
-						"ratingValue": <?php echo get_post_meta( get_the_ID(), 'rating', true); ?>,
-						"worstRating": -2
+						"bestRating": 4,
+						"ratingValue": <?php echo (int)get_post_meta( get_the_ID(), 'rating', true) + 2; ?>,
+						"worstRating": 0
 					},
-					"url": "<?php echo get_permalink( get_the_ID() ); ?>"	        		
+					"url": "<?php echo get_permalink( get_the_ID() ); ?>"
 				}
 			}
 		}
