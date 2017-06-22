@@ -98,7 +98,7 @@
 					"url": "<?php echo esc_url(home_url()); ?>"
 				},
 				"datePublished": "<?php echo get_the_date('d-m-Y'); ?>",
-				"headline": "<?php echo substr(the_title(), 0, 110); ?>",
+				"headline": "<?php echo substr(get_the_title(), 0, 110); ?>",
 				"publisher": {
 					"@type": "Organization",
 					"logo": "https://climatefeedback.org/wp-content/themes/wordpress-theme/dist/images/Climate_Feedback_logo_s.png",
