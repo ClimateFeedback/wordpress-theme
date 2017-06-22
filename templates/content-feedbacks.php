@@ -112,7 +112,7 @@
 						"@type": "Rating",
 						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'score', true); ?>",
 						"bestRating": 5,
-						"ratingValue": <?php echo (int)get_post_meta( get_the_ID(), 'score', true) + 3; ?>,
+						"ratingValue": <?php echo (float)get_post_meta( get_the_ID(), 'score', true) + 3; ?>,
 						"worstRating": 1
 					},
 					"reviewBody": "<?php echo esc_attr(get_post_meta( get_the_ID(), 'details', true)); ?>",
