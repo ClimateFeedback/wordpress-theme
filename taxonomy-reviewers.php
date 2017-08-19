@@ -3,6 +3,18 @@
 Template Name: Archives
 */
  ?>
+<?php function get_trim_text ($string) {
+  $maxlen = 180;
+  $excerpt = $string;
+  $excerptlen = strlen($excerpt);
+  if ($excerptlen > $maxlen) {
+    $excerpt = substr($excerpt, 0, $maxlen).'...';
+    $excerptlen = $maxlen + 3;
+  }
+  if ($excerpt[0] == '"')
+    $excerpt = substr($excerpt, 0, $excerptlen-1);
+  return $excerpt;
+}?>
 
 <div id="container">
 	<div id="content" role="main">

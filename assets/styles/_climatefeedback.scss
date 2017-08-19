@@ -293,6 +293,24 @@ section {
   }
 }
 
+.postfeatured {
+  img {
+    width: 360px;
+    height: auto !important;
+    margin-top: 1.7em;
+    margin-right: 2em;
+    @media (min-width: $screen-sm-min) {
+        width: 200px;
+        }
+        @media (min-width: $screen-md-min) {
+          width: 320px;
+        }
+        @media (min-width: $screen-lg-min) {
+          width: 360px;
+        }
+  }
+}
+
 .tagpic {
   img {
     width: 160px !important;
@@ -1090,6 +1108,7 @@ section.widget {
   padding-left: 0px !important;  
   padding-right: 0px !important; 
 }
+
 .feed {
   color: black;
   overflow-y: hidden;
@@ -1255,6 +1274,164 @@ section.widget {
   }
 }
 
+.feedpages {
+  color: black;
+  overflow-y: hidden;
+  &__title {
+
+  }
+  &__article {
+    &-first {
+      &__screenshot {
+        height: 100%;
+        border: 1px solid #999;
+        //  padding-left: 0px !important;  
+        //  padding-right: 0px !important; 
+        @media (min-width: $screen-lg-min) {
+        } 
+        &__img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      &__text {
+        @media (min-width: $screen-lg-min) {
+          padding: 2rem;
+        }
+      }
+    }
+    &-next {
+      &__screenshot {
+        position: relative;
+        border: 1px solid #999;
+        padding-bottom: 56.25%; // 16/9
+        width: 100%;
+        direction: rtl;
+        overflow-x: hidden;
+        &__img {
+          position: absolute;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+  &__claim {
+    min-height: 200px;
+    @media (min-width: $screen-lg-min) {
+      min-height: 150px;
+    }
+    &__container {
+      background-color: #F5F5F5;
+      padding: 0.1rem;
+      @media (min-width: $screen-md-min) {
+        padding: 1rem;
+      }
+      overflow: hidden;
+      &__illustration {
+        text-align: center;
+        overflow-y: hidden;
+        height: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 5%;
+        @media (min-width: $screen-sm-min) {
+          padding-top: 3%;
+        }
+        @media (min-width: $screen-md-min) {
+          padding-top: 0;
+        }
+        &__screenshot {
+          &__img {
+            width: 100%;
+          }
+        }
+      }
+      &__content {
+        padding: 1rem;
+        @media (min-width: $screen-md-min) {
+          padding: 0.1rem;
+        }
+        &__verdict {
+          &__img {
+           margin-left: 5%;
+           margin-right: 5%;
+           width: 90%;
+           @media (min-width: $screen-sm-min) {
+             margin-left: 20%;
+             margin-right: 20%;
+             width: 60%;
+           }
+           @media (min-width: $screen-md-min) {
+             margin-left: 30%;
+             margin-right: 30%;
+             width: 40%;
+           }
+           @media (min-width: $screen-lg-min) {
+             margin-left: 20%;
+             margin-right: 20%;
+             width: 60%;
+           }
+          }
+        }
+        &__text {
+          padding: 0.1rem;
+          font-size: 14px;
+          @media (min-width: $screen-sm-min) {
+            padding-right: 0.5rem;
+            font-size: 18px;
+            margin-bottom: 1rem;
+          }
+        }
+        &__outlet {
+          padding: 0.1rem;
+          font-size: 14px;
+          @media (min-width: $screen-sm-min) {
+            padding-right: 0.5rem;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  &__perspective {
+    &__screenshot {
+        position: relative;
+        padding-bottom: 56.25%; // 16/9
+        width: 100%;
+        overflow-x: hidden;
+       // border: 1px solid #999;
+        &__img {
+          position: absolute;
+          max-height: 100%;
+        }
+      }
+  }
+  &-excerpt {
+      @media (min-width: $screen-lg-min) {
+      margin-top: 5px;
+     }
+    font-style: italic;
+  }
+  &-title {
+     @media (min-width: $screen-lg-min) {
+       min-height: 40px;
+       margin-top: 7px;
+       margin-bottom: 7px;
+     }
+   }
+  &-outlet {
+    color: grey;
+       @media (min-width: $screen-lg-min) {
+       min-height: 15px;
+       margin-top: 7px;
+       margin-bottom: 7px;
+     }
+  }
+  &-link {
+    text-decoration: none;
+    min-height: 50px;
+  }
+}
 
 .mc_embed_bar {
   position: relative;

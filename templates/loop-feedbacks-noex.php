@@ -1,9 +1,9 @@
   <div class="row">
             <div class="media-left hidden-xs">
-                <a class="postfeatured" href=" <?php the_permalink(); ?>  ">
+                <a class="postfeatured" href="<?php the_permalink(); ?>">
                     <img 
               src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
-            >
+                         >
                 </a>
             </div>
         <div class="media-body">
@@ -20,4 +20,4 @@
             </div>
         </div>
     </div>
-	<hr/>
+	<hr />
