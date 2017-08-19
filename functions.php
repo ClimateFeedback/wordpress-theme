@@ -53,7 +53,6 @@ class wpb_widget extends WP_Widget {
   }
 
   // Creating widget front-end
-  // This is where the action happens
   public function widget( $args, $instance ) {
     $title = apply_filters( 'widget_title', $instance['title'] );
     $description = apply_filters( 'widget_description', $instance['description'] );
@@ -71,7 +70,6 @@ class wpb_widget extends WP_Widget {
       echo "<p class='large'>" . $args['before_description'] . $description . $args['after_description'] . "</p>";
       echo "</div>";
 
-//    echo "<a class='btn btn-primary btn-lg campaign-button' href='http://tilt.climatefeedback.org' target='_blank'>$title</a>";
       echo "<a class='btn btn-primary btn-lg campaign-button' href='$link' target='_blank'>$button</a>";
 
       // This is where you run the code and display the output
@@ -179,7 +177,7 @@ function create_my_taxonomies() {
 	register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'authors', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
-    register_taxonomy( 'reviewers', 'evaluation', array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
+    register_taxonomy( 'reviewers', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
 }
 
 

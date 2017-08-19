@@ -60,7 +60,7 @@ Template Name: Homepage
       </div>
       <div class="col-sm-6 ">
         <h3 class="spaceup">What if online coverage could be peer-reviewed?</h3>
-        <p>Using the <a href="http://hypothes.is" target="_blank">Hypothesis</a> annotation platform, our community of scientists go through a variety of online media articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
+        <p>Using the <a href="https://hypothes.is" target="_blank">Hypothesis</a> annotation platform, our community of scientists go through a variety of online media articles and provide ‘feedback’ on the scientific accuracy of the information presented. Readers can view these annotations directly alongside the original texts and see exactly where the article’s information is consistent — or inconsistent — with scientific thinking and state-of-the-art knowledge in the field.</p>
       </div>
       <div class="col-sm-6 visible-xs">
         <img alt="A daily mail article annotated by scientists." src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/i2_our-process.png" class="fig" />
@@ -194,13 +194,13 @@ Template Name: Homepage
     <h4>HEAR WHAT THEY’RE SAYING ABOUT US</h4>
     <div class="row">
       <div class="col-4" style="padding-left: 2em">
-        <a href="http://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
+        <a href="https://j.mp/CF_OnTheMedia" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-npr.png"> </a>
       </div>
       <div class="col-4">
-        <a href="http://www.theguardian.com/environment/planet-oz/2015/aug/14/scientists-get-tool-to-mark-online-climate-science-media-coverage-and-its-not-a-rusty-teaspoon" target="_blank">   <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/the-guardian-logo_grey.png"></a>
+        <a href="https://www.theguardian.com/environment/planet-oz/2015/aug/14/scientists-get-tool-to-mark-online-climate-science-media-coverage-and-its-not-a-rusty-teaspoon" target="_blank">   <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/the-guardian-logo_grey.png"></a>
       </div>
       <div class="col-4 forbes" style="padding-left: 2em">
-        <a href="http://www.forbes.com/sites/jeffmcmahon/2017/01/27/climate-scientists-launch-brainy-war-on-fake-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
+        <a href="https://www.forbes.com/sites/jeffmcmahon/2017/01/27/climate-scientists-launch-brainy-war-on-fake-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/press-forbes.png"></a>
       </div>
       <div class="col-4">
         <a href="press/" class="btn btn-primary">More Press</a>

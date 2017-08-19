@@ -365,7 +365,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "WebPage",
     "publisher": {
       "@type": "Organization",
