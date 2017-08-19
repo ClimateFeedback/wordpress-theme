@@ -1,6 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-      <span itemscope itemtype="http://schema.org/Article">
+      <span itemscope itemtype="https://schema.org/Article">
     <header>
       <div class="page-header myfull">
           <h2  style="color:#000"> . </h2> 
@@ -17,17 +17,15 @@
         <br />
         
       <p><?php the_content(); ?></p>
-      <!--      <button>-->
-      <!--        <a href="--><?php //echo get_post_meta( get_the_ID(), 'annotationsLink', true ); ?><!--" target="_blank">See all the scientists' annotation in context</a>-->
-      <!--      </button>-->
     </div>
 
-    <footer>
+    <div>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
         <p class="small">
-        Published on: <?php echo get_the_date( 'Y-m-d' ); ?>
-            </p>
-    </footer>
+            Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
+        </p>
+
+    </div>
       </span>
   </article>
 
