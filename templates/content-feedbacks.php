@@ -17,9 +17,9 @@
 
 
     <div class="entry-content">
-
-       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>
-
+        
+       <p class=""><?php echo get_post_meta( get_the_ID(), 'cred', true ) ?> <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="https://climatefeedback.org/process/#tit4">more about the credibility rating</a></span></span>  
+        
           <?php if( get_the_term_list( get_the_ID(), 'article-tag', true ) ): ?>
 <br /> A majority of reviewers tagged the article as: <?php echo do_shortcode('[article-tags]'); ?>.
           <?php endif; ?>
@@ -45,7 +45,7 @@
 
 	<script type="application/ld+json">
  		{
-			"@context": "http://schema.org",
+			"@context": "https://schema.org",
 			"@type": "WebPage",
 			"mainEntity": {
 				"@type": "Article",
@@ -131,15 +131,15 @@
       <p class="small spaceup1">
        <i class="fa fa-tags fa-lg" aria-hidden="true"></i> <?php the_tags( '<span class="bot-tag">', '</span> &nbsp;<span class="bot-tag">', '</span>'); ?>
       </p>
-      <p class="small">
-        Published on: <?php echo get_the_date( 'd M Y' ); ?>
-      </p>
+        <p class="small">
+            Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
+        </p>
   <div class="bot-box">
       <div class="row spaceup1">
           <div class="col-sm-9">
       <p class="small ">
 <em>Climate Feedback is a non-partisan, non-profit organization dedicated to science education. Our reviews are crowdsourced directly from a community of scientists with relevant expertise. We strive to explain whether and why information is or is not consistent with the science and to help readers know which news to trust. <br />
-Please <a href="http://climatefeedback.org/contact-us/">get in touch</a> if you have any comment or think there is an important claim or article that would need to be reviewed.</em>
+Please <a href="https://climatefeedback.org/contact-us/">get in touch</a> if you have any comment or think there is an important claim or article that would need to be reviewed.</em>
       </p>
           </div>
           <div class="col-sm-3">
