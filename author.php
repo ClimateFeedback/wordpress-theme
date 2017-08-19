@@ -93,7 +93,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <?php
     echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> INSIGHTS </h3> </section></div>';
     while ($loop->have_posts() ) : $loop->the_post(); 
-    get_template_part('templates/loop-feedbacks-noex'); 
+    get_template_part('templates/loop-insights'); 
     endwhile; 
         ?>
         <?php endif; ?>
