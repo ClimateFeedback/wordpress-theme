@@ -28,7 +28,7 @@
           </div>
           <div class="col-sm-4 p1">
             <div class="fact-check-card-title mb2">
-              VERDICT <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="http://climatefeedback.org/claim-reviews-framework">more about the rating framework</a></span></span>
+              VERDICT <span class="infobox"><span class="infolink"></span><span class="infoboxtext small"><a target="_blank" href="https://climatefeedback.org/claim-reviews-framework">more about the rating framework</a></span></span>
             </div>
             <div>
               <img
@@ -87,7 +87,7 @@
 
 	<script type="application/ld+json">
  		{
-			"@context": "http://schema.org",
+			"@context": "https://schema.org",
 			"@type": "WebPage",
 			"mainEntity": {
 				"@type": "Article",
@@ -157,15 +157,15 @@
 
   </article>
 
-      <p class="small spaceup1">
-        Published on: <?php echo get_the_date( 'd M Y' ); ?>
-      </p>
+        <p class="small">
+            Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
+        </p>
 <div class="bot-box">
       <div class="row spaceup1">
           <div class="col-sm-9">
       <p class="small ">
 <em>Climate Feedback is a non-partisan, non-profit organization dedicated to science education. Our reviews are crowdsourced directly from a community of scientists with relevant expertise. We strive to explain whether and why information is or is not consistent with the science and to help readers know which news to trust. <br />
-Please <a href="http://climatefeedback.org/contact-us/">get in touch</a> if you have any comment or think there is an important claim or article that would need to be reviewed.</em>
+Please <a href="https://climatefeedback.org/contact-us/">get in touch</a> if you have any comment or think there is an important claim or article that would need to be reviewed.</em>
       </p>
           </div>
           <div class="col-sm-3">
