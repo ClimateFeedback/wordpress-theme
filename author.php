@@ -40,17 +40,11 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         </div>
         
         
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <!-- <?php get_search_form(); ?> -->
-        
-<?php endif; ?>
+
 
                          <!-- ARTICLE REVIEWS Listing -->
   <?php
-    $args = array( 'post_type' => 'evaluation' , 'authors' => $curauth->slug ) ; 
+    $args = array( 'post_type' => 'evaluation' , 'author' => $curauth->ID ) ; 
     $loop = new WP_Query( $args );
   ?>
         
@@ -67,7 +61,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         
                         <!-- CLAIM REVIEWS Listing -->
 <?php
-    $args = array( 'post_type' => 'claimreview' , 'authors' => $curauth->slug ) ; 
+    $args = array( 'post_type' => 'claimreview' , 'author' => $curauth->ID ) ; 
     $loop = new WP_Query( $args );
 ?>
 
@@ -89,7 +83,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     $args = array(
     'post_type' => array('post'),
     'cat' => $theCatId,
-    'posts_per_page' => 4
+    'author' => $curauth->ID,
+    'posts_per_page' => 10
   );
   $loop = new WP_Query( $args );
 ?>
