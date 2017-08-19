@@ -1,7 +1,9 @@
   <div class="row">
             <div class="media-left hidden-xs">
-                <a class="postpic" href=" <?php the_permalink(); ?>  ">
-                    <?php echo types_render_field( "front-image", array( "width" => "275", "height" => "176", "proportional" => "true" ) ); ?>
+                <a class="postfeatured" href=" <?php the_permalink(); ?>  ">
+                    <img 
+              src="<?php echo simplexml_load_string(get_the_post_thumbnail())->attributes()->src;?>"
+            >
                 </a>
             </div>
         <div class="media-body">
@@ -13,6 +15,9 @@
             <p class="small">
                 <span class="square-btn">— <?php echo get_the_date( 'd M Y' ); ?> </span>
             </p>
+            <div class='feed-excerpt mb1'>
+              <?php echo get_trim_text(get_the_excerpt());?>
+            </div>
         </div>
     </div>
 	<hr/>
