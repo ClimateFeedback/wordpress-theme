@@ -40,7 +40,7 @@
         </div>
         <div >
           <div class="mb2">
-            <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>  &nbsp; <a target="_blank" title="See the claim in context" href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?> ><i class="fa fa-external-link" aria-hidden="true"></i></span></a>
+            <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo do_shortcode('[author]'); ?>, <?php echo do_shortcode('[outlet]'); ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>  &nbsp; <a target="_blank" title="See the claim in context" href=<?php echo get_post_meta( get_the_ID(), 'annotationsLink', true) ?> ><i class="fa fa-external-link" aria-hidden="true"></i></span></a>
             </p>
           </div>
         </div>
@@ -75,15 +75,15 @@
 
 
         <h3>SCIENTISTS' REVIEW</h3>
-            <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"
-            </blockquote>
+        <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"
+        </blockquote>
         <p><?php the_content(); ?></p>
-    </div>
+      </div>
 
 
-    <footer>
+      <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-    </footer>
+      </footer>
 
 	<script type="application/ld+json">
  		{
@@ -153,10 +153,13 @@
 				}
 			}
 		}
-	</script>
+      </script>
 
-  </article>
+</article>
 
+      <p class="small spaceup1">
+       <i class="fa fa-tags fa-lg" aria-hidden="true"></i> <?php the_tags( '<span class="bot-tag">', '</span> &nbsp;<span class="bot-tag">', '</span>'); ?>
+      </p>
         <p class="small">
             Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
         </p>

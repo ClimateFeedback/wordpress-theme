@@ -20,24 +20,42 @@ $taxonomy = get_queried_object();
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'sage'); ?>
   </div>
-  <!-- <?php get_search_form(); ?> -->
-        
+  <!-- <?php get_search_form(); ?> -->     
 <?php endif; ?>
 
-  <?php
+                <!-- ARTICLE REVIEWS Listing -->
+        <?php
     $args = array( 'post_type' => 'evaluation' , 'outlet' => $taxonomy->slug ) ; 
     $loop = new WP_Query( $args );
-?>
-
-<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
-
-    <?php get_template_part('templates/loop-feedbacks'); ?>
-
-<?php endwhile; ?>
-
+        ?>
+        
+        <?php if ($loop->have_posts()) :?>
+        <?php
+    echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> ARTICLE REVIEWS </h3> </section></div>';
+    while ($loop->have_posts() ) : $loop->the_post(); 
+    get_template_part('templates/loop-feedbacks', get_post_type()); 
+    endwhile; 
+        ?>
+        <?php endif; ?>
+        
 <?php the_posts_navigation(); ?>
 
-		
+		 <?php wp_reset_query(); ?>
+
+                <!-- CLAIM REVIEWS Listing -->
+        <?php
+    $args = array( 'post_type' => 'claimreview' , 'outlet' => $taxonomy->slug ) ; 
+    $loop = new WP_Query( $args );
+        ?>
+
+        <?php if ($loop->have_posts()) :?>
+        <?php
+    echo '<p class="spaceup"></p><div class="row"><section class="separator"><h3 class="inseparator"> CLAIM REVIEWS </h3> </section></div>';
+    while ($loop->have_posts() ) : $loop->the_post(); 
+    get_template_part('templates/loop-claimreviews'); 
+    endwhile; 
+        ?>
+        <?php endif; ?>
 
 	</div><!-- #content -->
 </div><!-- #container -->

@@ -21,23 +21,16 @@
 
     <div>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-        <p class="small">
-            Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
-        </p>
 
     </div>
       </span>
   </article>
 
-<!--      add tags list to the post <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?> 
-
-<p> Outlet: <a href="/ "> </a><?php echo get_post_meta( get_the_ID(), 'outlet', true ); ?></p> -->
-
-  <div class="foot-notes">
-    <p class="small"><?php echo get_post_meta( get_the_ID(), 'footNote', true) ?></p>
-  </div>
-
-  <!--  <h1>--><?php //echo get_post_meta( get_the_ID(), 'score', true ); ?><!--</h1>-->
-
+      <p class="small spaceup1">
+       <i class="fa fa-tags fa-lg" aria-hidden="true"></i> <?php the_tags( '<span class="bot-tag">', '</span> &nbsp;<span class="bot-tag">', '</span>'); ?>
+      </p>
+        <p class="small">
+            Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
+        </p>
 
 <?php endwhile; ?>

@@ -174,7 +174,7 @@ add_shortcode ('tags', 'tags_in_post');
 add_action( 'init', 'create_my_taxonomies', 0 );
 
 function create_my_taxonomies() {
-	register_taxonomy( 'outlet', 'evaluation', array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
+	register_taxonomy( 'outlet', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'outlet', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'authors', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'authors', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'article-tag', 'evaluation', array( 'hierarchical' => false, 'label' => 'article-tags', 'query_var' => true, 'rewrite' => true ) );
     register_taxonomy( 'reviewers', array( 'evaluation','claimreview' ), array( 'hierarchical' => false, 'label' => 'reviewers', 'query_var' => true, 'rewrite' => true ) );
