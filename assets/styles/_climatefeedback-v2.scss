@@ -235,6 +235,17 @@ footer {
   }
 }
 
+.donors3 {
+    ul li{
+        float: left;
+        width: 33%; // 33.3% displays 3 columns
+        // padding-left: 15px;
+        padding-top: 1em;
+    }
+    ul{
+        list-style-type: disc;
+    }
+}
 
 /* Spacing between sections */
 section {
