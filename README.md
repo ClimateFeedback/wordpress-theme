@@ -31,21 +31,7 @@ In the admin, don't forget to activate the theme.
 
 N.B.: Make sure that Emmanuel made you admin if you want to have access to the Media Library and Page editing rights.
 
-5. Synchronize your media library:
-
-Make sure first that you generated an ssh key for that
-```
-gcloud compute --project "climatefeedback-web" ssh --zone "us-central1-f" "wordpress-4j1a"
-```
-
-Inside your wordpress folder, gcloud compute copy-files
-```
-mkdir -p uploads
-gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/tags ./uploads/tags --zone "us-central1-f"
-gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/2017 ./uploads/2017 --zone "us-central1-f"
-gcloud compute copy-files wordpress-4j1a:../../wordpress/wp-content/uploads/2016 ./uploads/2016 --zone "us-central1-f"
-rsync -av ./uploads ./wp-content
-```
+5. Synchronize your media library
 
 ## Develop the wordpress theme
 
