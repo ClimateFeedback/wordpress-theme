@@ -78,7 +78,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                         <!-- INSIGHTS Listing -->
         <?php
-    $theCatId = get_term_by( 'slug', 'insights', 'category' );
+    $theCatId = get_term_by( 'slug', 'insight', 'category' );
     $theCatId = $theCatId->term_id;
     $args = array(
     'post_type' => array('post'),
