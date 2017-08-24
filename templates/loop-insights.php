@@ -14,7 +14,7 @@
                 <span class="square-btn">— <?php echo get_the_date( 'd M Y' ); ?> </span>
             </p>
             <div class='feed-excerpt mb1'>
-              <?php echo get_trim_text(get_the_excerpt());?>
+              <?php echo M_trim_text(get_the_excerpt());?>
             </div>
         </div>
     </div>
