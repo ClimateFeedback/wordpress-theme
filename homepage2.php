@@ -256,7 +256,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-title h3">Insights</div>
 <?php
     //Extract ID from category name
-    $theCatId = get_term_by( 'slug', 'insights', 'category' );
+    $theCatId = get_term_by( 'slug', 'insight', 'category' );
     $theCatId = $theCatId->term_id;
   $args = array(
     'post_type' => array('post'),
