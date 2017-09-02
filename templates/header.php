@@ -28,7 +28,7 @@
                         <div class="ddropdown-content">
                             <a href="<?php echo get_site_url(); ?>/feedbacks/">Article Reviews</a>
                             <a href="<?php echo get_site_url(); ?>/claim-reviews/">Claim Reviews</a>
-                            <a href="<?php echo get_site_url(); ?>/Insight/">Insights</a>
+                            <a href="<?php echo get_site_url(); ?>/insight/">Insights</a>
                         </div>
                     </li>
                 </div> 

@@ -405,7 +405,7 @@ function InsightsLoop( $atts ) {
     $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
     $args = array(
         'post_type' => $type,
-        'category_name' => 'Insight',
+        'category_name' => 'insight',
         'sort_column'   => 'menu_order',
         'posts_per_page' => 10,
         'paged' => $paged
@@ -430,7 +430,7 @@ function Insight_pagination( $atts ) {
     $args = array(
         // 'post_parent' => $parent,
         'post_type' => $type,
-        'category_name' => 'Insight',
+        'category_name' => 'insight',
         'sort_column'   => 'menu_order',
         'posts_per_page' => 10,
         'paged' => $paged

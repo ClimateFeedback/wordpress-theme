@@ -290,7 +290,14 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
     </a>
   <?php endwhile; ?>
 </div>
-
+<div class="feeds-more p1 mb3">
+  <a
+    class="feeds-more__link h4 p1"
+    href="<?php echo get_site_url(); ?>/insight/"
+  >
+    More Insights
+  </a>
+</div>
 
      <div class="feeds-title h3">News &amp; Events</div>
 <?php
@@ -332,9 +339,9 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-more p1 mb3">
   <a
     class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/blog-posts/"
+    href="<?php echo get_site_url(); ?>/news-events/"
   >
-    More Insights &amp; News
+    More News &amp; Events
   </a>
 </div>
 
