@@ -293,7 +293,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-more p1 mb3">
   <a
     class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/insight/"
+    href="<?php echo get_site_url(); ?>/insights/"
   >
     More Insights
   </a>
