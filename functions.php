@@ -458,6 +458,69 @@ function Insight_pagination( $atts ) {
 }
 add_shortcode('paginate-Insight', 'Insight_pagination');
 
+
+// Create a loop shortcode for News & Events
+function EventsLoop( $atts ) {
+    extract( shortcode_atts( array(
+        'type' => 'post',
+    ), $atts ) );
+    $output = '';
+    $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+    $args = array(
+        'post_type' => $type,
+        'category_name' => 'news',
+        'sort_column'   => 'menu_order',
+        'posts_per_page' => 10,
+        'paged' => $paged
+    );
+    $yo_quiery = new WP_Query( $args );
+
+   
+    while ($yo_quiery->have_posts() ) : $yo_quiery->the_post(); 
+    get_template_part('templates/loop-insights'); 
+    endwhile; 
+        
+    wp_reset_query();
+    return $output;
+}
+add_shortcode('Events-loop', 'EventsLoop');
+
+function Events_pagination( $atts ) {
+    extract( shortcode_atts( array(
+        'type' => 'post',
+    ), $atts ) );
+    $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+    $args = array(
+        // 'post_parent' => $parent,
+        'post_type' => $type,
+        'category_name' => 'news',
+        'sort_column'   => 'menu_order',
+        'posts_per_page' => 10,
+        'paged' => $paged
+    );
+    $yo_quiery = new WP_Query( $args );
+
+    $yo_quiery->query_vars['paged'] > 1 ? $current = $yo_quiery->query_vars['paged'] : $current = 1;
+
+    $pagination = array(
+        'base' => @add_query_arg('page','%#%'),
+        'format' => '',
+        'total' => $yo_quiery->max_num_pages,
+        'current' => $current,
+        'show_all' => true,
+        'type' => 'list',
+        'next_text' => '&raquo;',
+        'prev_text' => '&laquo;'
+    );
+
+    if( !empty($yo_quiery->query_vars['s']) )
+        $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+    wp_reset_query();
+    return paginate_links( $pagination );
+}
+add_shortcode('paginate-Events', 'Events_pagination');
+
 function M_trim_text ($string) {
   $maxlen = 180;
   $excerpt = $string;
