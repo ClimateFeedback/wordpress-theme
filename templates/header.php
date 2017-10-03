@@ -37,10 +37,7 @@
                 </li>
                 <li class="menu-item  menu-item-object-page  ">
                     <a href="<?php echo get_site_url(); ?>/news-events">News &amp; Events</a>
-                </li>
-                <li class="menu-item  menu-item-object-page ">
-                    <a href="<?php echo get_site_url(); ?>/contribute/">Support us</a>
-                </li>                
+                </li>              
             </ul>
         
       <!-- Social Media -->
