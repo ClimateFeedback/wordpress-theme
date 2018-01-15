@@ -242,6 +242,28 @@ foreach ( $blogusers as $user ) {
 }
 add_shortcode( 'quote_sci', 'quote_sci' );
 
+//  [quote_sci_pic user="first last"]
+function quote_sci_pic( $atts ) {
+    $a = shortcode_atts( array(
+        'user' => '',
+    ), $atts );
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a['user'] ) );
+foreach ( $blogusers as $user ) {   
+     $output .= 
+         '<div class="row expert-widget"> 
+         <div class="wid-left">
+            '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
+        </div>
+        <div class="wid-body">
+        <strong> <a target="_blank" href="'.esc_html($user->user_url).'">'.esc_html( $user->first_name ).' '.esc_html( $user->last_name ).'</a>, '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).':</strong>
+        </div>
+        </div>';
+}    
+    //Close and return markup
+    return $output;
+}
+add_shortcode( 'quote_sci_pic', 'quote_sci_pic' );
 
 // shortcode for adding reviewers list in post
 function art_revsl($atts) {    
