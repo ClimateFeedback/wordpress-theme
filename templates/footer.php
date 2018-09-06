@@ -5,9 +5,9 @@
 	  	<h3>climate feedback </h3>
 	  	<hr/>
 	  	<div class="col-sm-3 col-xs-6">
-	  		<h4>HOSTED BY</h4>
-	  		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ucmerced.jpg" class="sponser">
-	  		<p class="small">Center for Climate Communication, University of California, Merced</p>
+	  		<img
+          style="padding-top: -0.2em;" max-width="400px"
+          src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/cf_logo_white.png">
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 	  		<h4>COMMUNITY</h4>   
@@ -15,7 +15,6 @@
             <p class="small"><a href="/community-standards/">Community standards</a></p>
             <p class="small"><a href="/for-scientists/">Apply to become a reviewer</a></p>
             <p class="small"><a href="/contact-us/">Submit an item to review</a></p>
-            <p class="small"><a href="/contribute/">Donate</a></p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 	  		<h4>ORGANIZATION</h4>
@@ -23,11 +22,9 @@
             <p class="small"><a href="/claim-reviews-framework/">Our method to evaluate claims</a></p>
             <p class="small"><a href="/partners-funders-donors/">Partners and funders</a></p>
             <p class="small"><a href="/team-advisors-contributors/">Team</a></p>
-            <p class="small"><a href="/press-coverage/">Press</a></p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 			<h4 >GET IN TOUCH</h4>
-			<p class="small">Climate Feedback · Sierra Nevada Research Institute · 5200 N. Lake Road · Merced, CA 95343 · USA</p>
 			<p class="small"><a href="/contact-us/">Contact us</a></p>
             <h4 class="spaceup05">FOLLOW US</h4>
             <div class="social-footer">
