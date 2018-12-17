@@ -282,7 +282,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
           <?php echo get_trim_text(get_the_excerpt());?>
         </div>
         <div>
-          - <?php the_date(); ?>
+          - <?php echo get_the_date( 'd M Y' ); ?>
         </div>
       </div>
     </a>
@@ -328,7 +328,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
           <?php echo get_trim_text(get_the_excerpt());?>
         </div>
         <div>
-          - <?php the_date(); ?>
+          - <?php echo get_the_date( 'd M Y' ); ?>
         </div>
       </div>
     </a>
