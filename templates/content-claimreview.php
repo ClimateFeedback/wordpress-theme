@@ -163,7 +163,7 @@
         <p class="small">
             Published on: <?php echo get_the_date( 'd M Y' ); ?> &#124; Editor: <?php the_author_posts_link(); ?>
         </p>
-<div class="bot-box">
+  <div class="bot-box">
       <div class="row spaceup1">
           <div class="col-sm-9">
       <p class="small ">
@@ -172,7 +172,7 @@ Please <a href="https://climatefeedback.org/contact-us/">get in touch</a> if you
       </p>
           </div>
           <div class="col-sm-3">
-              <a href="https://climatefeedback.org/climate-feedback-accredited-international-fact-checking-network-poynter/"><img class="alignnone size-full wp-image-2168" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ifcn-fact-checkers-code-principles-signatory.png" alt="ifcn-fact-checkers-code-of-principles-signatory" width="140" /></a>
+              <a href="https://climatefeedback.org/climate-feedback-accredited-by-the-international-fact-checking-network-at-poynter-for-the-second-year/"><img class="alignnone size-full wp-image-2168" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ifcn-fact-checkers-code-principles-signatory.png" alt="ifcn-fact-checkers-code-of-principles-signatory" width="140" /></a>
           </div>
       </div>
   </div>
