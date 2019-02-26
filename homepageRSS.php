@@ -346,7 +346,7 @@ endif;
 
                     <?php echo $element->src, "\n"; ?>
                 
-                    <?php if ($myi == 1): ?>
+                    <?php if ($myi == 2): ?>
                         <img src="<?php echo $element->src; ?>" width="200px" />
                     <?php endif; ?>
                     <?php $myi++;?>
