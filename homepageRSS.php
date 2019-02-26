@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Homepage 2
+Template Name: Homepage RSS
 */
 ?>
 
