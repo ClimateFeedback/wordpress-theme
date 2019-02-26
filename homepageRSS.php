@@ -262,8 +262,8 @@ endif;
                 <?php echo  $item->get_date('j F Y') ; ?>
                 <?php echo esc_url( $item->get_permalink() ); ?>
                 <br />
-                <?php 
-                $graph = OpenGraph::fetch( $item->get_permalink() );
+                <?php /*
+                //$graph = OpenGraph::fetch( $item->get_permalink() );
 //print_r($graph);
                 foreach ($graph as $key => $value) {
                   //echo htmlspecialchars("$key: ");
@@ -271,9 +271,24 @@ endif;
                         $imgurl = $value;
                     }
                 }
+*/
                 ?>
-                <img src="<?php echo $imgurl; ?>" width="400px" />
+                 <!--  <img src="<?php echo $imgurl; ?>" width="400px" /> -->
                 
+                <?php require_once('lib/simplehtmldom_1_8_1/simple_html_dom.php');
+                // from https://www.electrictoolbox.com/extract-images-web-page-php/
+                $html = file_get_html($item->get_permalink());?>
+                
+                <?php $myi = 0;?>
+                <?php foreach ( $html->find('img') as $element ) : ?>
+
+                    <?php echo $element->src, "\n"; ?>
+                
+                    <?php if ($myi == 1): ?>
+                        <img src="<?php echo $element->src; ?>" width="200px" />
+                    <?php endif; ?>
+                    <?php $myi++;?>
+                <?php endforeach; ?>
             </li>
         <?php endforeach; ?>
     <?php endif; ?>
@@ -308,8 +323,8 @@ endif;
                 <?php echo  $item->get_date('j F Y') ; ?>
                 <?php echo esc_url( $item->get_permalink() ); ?>
                 <br />
-                <?php 
-                $graph = OpenGraph::fetch( $item->get_permalink() );
+                <?php /*
+                //$graph = OpenGraph::fetch( $item->get_permalink() );
 //print_r($graph);
                 foreach ($graph as $key => $value) {
                   //echo htmlspecialchars("$key: ");
@@ -317,9 +332,25 @@ endif;
                         $imgurl = $value;
                     }
                 }
+*/
                 ?>
-                <img src="<?php echo $imgurl; ?>" width="400px" />
+                 <!--  <img src="<?php echo $imgurl; ?>" width="400px" /> -->
+                <?php require_once('lib/simplehtmldom_1_8_1/simple_html_dom.php');
+                // from https://www.electrictoolbox.com/extract-images-web-page-php/
+                $html = file_get_html($item->get_permalink());
+                print_r($html);
+                ?>
                 
+                <?php $myi = 0;?>
+                <?php foreach ( $html->find('img') as $element ) : ?>
+
+                    <?php echo $element->src, "\n"; ?>
+                
+                    <?php if ($myi == 1): ?>
+                        <img src="<?php echo $element->src; ?>" width="200px" />
+                    <?php endif; ?>
+                    <?php $myi++;?>
+                <?php endforeach; ?>
             </li>
         <?php endforeach; ?>
     <?php endif; ?>
