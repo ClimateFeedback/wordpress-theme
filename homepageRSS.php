@@ -280,10 +280,7 @@ endif;
                 $html = file_get_html($item->get_permalink());?>
                 
                 <?php $myi = 0;?>
-                <?php foreach ( $html->find('img') as $element ) : ?>
-
-                    <?php echo $element->src, "\n"; ?>
-                
+                <?php foreach ( $html->find('img') as $element ) : ?>                
                     <?php if ($myi == 1): ?>
                         <img src="<?php echo $element->src; ?>" width="200px" />
                     <?php endif; ?>
@@ -343,9 +340,6 @@ endif;
                 
                 <?php $myi = 0;?>
                 <?php foreach ( $html->find('img') as $element ) : ?>
-
-                    <?php echo $element->src, "\n"; ?>
-                
                     <?php if ($myi == 2): ?>
                         <img src="<?php echo $element->src; ?>" width="200px" />
                     <?php endif; ?>
