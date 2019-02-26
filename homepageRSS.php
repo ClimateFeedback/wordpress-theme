@@ -338,7 +338,7 @@ endif;
                 <?php require_once('lib/simplehtmldom_1_8_1/simple_html_dom.php');
                 // from https://www.electrictoolbox.com/extract-images-web-page-php/
                 $html = file_get_html($item->get_permalink());
-                print_r($html);
+                //print_r($html);
                 ?>
                 
                 <?php $myi = 0;?>
