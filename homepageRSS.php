@@ -261,20 +261,7 @@ endif;
                 <?php echo  $item->get_description() ; ?>
                 <?php echo  $item->get_date('j F Y') ; ?>
                 <?php echo esc_url( $item->get_permalink() ); ?>
-                <br />
-                <?php /*
-                //$graph = OpenGraph::fetch( $item->get_permalink() );
-//print_r($graph);
-                foreach ($graph as $key => $value) {
-                  //echo htmlspecialchars("$key: ");
-                    if ($key == 'image'){
-                        $imgurl = $value;
-                    }
-                }
-*/
-                ?>
-                 <!--  <img src="<?php echo $imgurl; ?>" width="400px" /> -->
-                
+                <br />                
                 <?php require_once('lib/simplehtmldom_1_8_1/simple_html_dom.php');
                 // from https://www.electrictoolbox.com/extract-images-web-page-php/
                 $html = file_get_html($item->get_permalink());?>
@@ -320,18 +307,8 @@ endif;
                 <?php echo  $item->get_date('j F Y') ; ?>
                 <?php echo esc_url( $item->get_permalink() ); ?>
                 <br />
-                <?php /*
-                //$graph = OpenGraph::fetch( $item->get_permalink() );
-//print_r($graph);
-                foreach ($graph as $key => $value) {
-                  //echo htmlspecialchars("$key: ");
-                    if ($key == 'image'){
-                        $imgurl = $value;
-                    }
-                }
-*/
-                ?>
-                 <!--  <img src="<?php echo $imgurl; ?>" width="400px" /> -->
+
+                 <!--  <img src="<?php echo $imgurl; ?>" width="400px" /> 
                 <?php require_once('lib/simplehtmldom_1_8_1/simple_html_dom.php');
                 // from https://www.electrictoolbox.com/extract-images-web-page-php/
                 $html = file_get_html($item->get_permalink());
@@ -345,6 +322,7 @@ endif;
                     <?php endif; ?>
                     <?php $myi++;?>
                 <?php endforeach; ?>
+                -->
             </li>
         <?php endforeach; ?>
     <?php endif; ?>
