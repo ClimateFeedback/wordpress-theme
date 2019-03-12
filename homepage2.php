@@ -193,9 +193,13 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 <div class="feeds-container feeds-container__claim ">
     <div class="feeds-title h3">Latest Claim Reviews</div>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
       <div class="feed feed__claim col col-lg-6 mb1">
         <div class="feed__claim__container relative">
+            <div class='feed-title h3'>
+                <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
+                  <?php echo get_the_title(); ?>
+                </a>
+            </div>
           <div class="feed__claim__container__illustration col col-4">
             <div class="feed__claim__container__illustration__screenshot">
               <img
@@ -205,20 +209,19 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
             </div>
           </div>
           <div class="feed__claim__container__content col col-8">
-            <img
-              class="feed__claim__container__content__verdict__img mb1"
-              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-            >
             <div class="feed-excerpt feed__claim__container__content__text mb1">
               "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>"
             </div>
+              <img
+              class="feed__claim__container__content__verdict__img mb1"
+              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+            >
             <div class="feed__claim__container__content__outlet">
               <?php echo get_post_meta( get_the_ID(), 'author', true); ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
             </div>
           </div>
         </div>
       </div>
-    </a>
   <?php endwhile; ?>
 </div>
 <div class="feeds-more mb1 p1">
