@@ -18,10 +18,10 @@
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 	  		<h4>ORGANIZATION</h4>
+            <p class="small"><a href="http://sciencefeedback.co/about/">About</a></p>
             <p class="small"><a href="/process/">Our method to evaluate articles</a></p>
             <p class="small"><a href="/claim-reviews-framework/">Our method to evaluate claims</a></p>
             <p class="small"><a href="/partners-funders-donors/">Partners and funders</a></p>
-            <p class="small"><a href="/team-advisors-contributors/">Team</a></p>
 	  	</div>
 	  	<div class="col-sm-3 col-xs-6">
 			<h4 >GET IN TOUCH</h4>

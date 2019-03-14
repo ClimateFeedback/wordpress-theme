@@ -19,9 +19,6 @@
       ?>
       
             <ul id="menu-main" class="nav navbar-nav">
-                <li class="menu-item  menu-item-object-page  mmenu">  
-                    <a href="<?php echo get_site_url(); ?>/About/">About</a>
-                </li>
                 <div class="ddropdown">
                     <li class="menu-item  menu-item-object-page  menu-item-has-children">  
                         <button class="dropbtn"><a href="<?php echo get_site_url(); ?>/feedbacks/"><b class="caret"></b> Scientific Feedbacks</a></button>
