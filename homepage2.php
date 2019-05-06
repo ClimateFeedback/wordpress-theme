@@ -365,7 +365,7 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
         <a href="/press/climate-scientists-launch-brainy-attack-inaccurate-news/" target="_blank"> <img class="press-fig img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ps-Forbes.png"></a>
       </div>
       <div class="col-4">
-        <a href="/press-coverage/" class="btn btn-primary">More Press</a>
+        <a href="https://sciencefeedback.co/press-coverage/" class="btn btn-primary">More Press</a>
       </div>
     </div>
   </div>
