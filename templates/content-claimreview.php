@@ -74,7 +74,7 @@
         <br />
 
 
-        <h3>SCIENTISTS' REVIEW</h3>
+        <h3>REVIEW</h3>
         <blockquote> <span style="color: #808080;">CLAIM:</span> "<?php echo get_post_meta( get_the_ID(), 'claimfull', true) ?>"
         </blockquote>
         <p><?php the_content(); ?></p>
