@@ -19,8 +19,8 @@
               </div>
               
               <div class="feedpages__claim__container__content__outlet">
-                  <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?>, <?php echo get_post_meta( get_the_ID(), 'date', true) ?>
-                  </p> 
+                  <p> <span class="fact-check-card-title">SOURCE:</span> <span class="fact-check-card__details__text small"><?php echo get_post_meta( get_the_ID(), 'author', true) ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true) ?></p> 
+                  <p><span class="fact-check-card-title">Published: </span><span class="fact-check-card__details__text small"><?php echo get_the_date( 'd M Y' ); ?></span></p>
               </div>  
  
           </div>
