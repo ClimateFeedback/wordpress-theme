@@ -140,8 +140,22 @@
 							"name": "<?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>"
 						},
 						"datePublished": "<?php echo get_post_meta( get_the_ID(), 'date', true); ?>",
-						"url": "TBD"
-					},
+                        "appearance": <?php 
+                            function echo_repeat_urls(){
+                                $repeat_url_string = get_post_meta( get_the_ID(), 'repeat_urls', true);
+                                if (strlen($repeat_url_string) > 0) {
+                                    $repeat_urls = explode(",", $repeat_url_string);
+                                    function map_url($url){
+                                        return ['url' => $url];
+                                    }
+                                    echo json_encode(array_map("map_url", $repeat_urls), JSON_UNESCAPED_SLASHES);
+                                } else {
+                                    echo json_encode([]);
+                                }
+                            }   
+                            echo_repeat_urls();
+                        ?>
+                    },
 					"reviewRating": {
 						"@type": "Rating",
 						"alternateName": "<?php echo get_post_meta( get_the_ID(), 'verdict', true); ?>",
