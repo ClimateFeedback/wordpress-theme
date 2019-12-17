@@ -314,6 +314,43 @@ foreach ( $blogusers as $user ) {
     return $output;
 }
 
+// shortcode for adding editor(s) in widget
+function art_editor($atts) {    
+global $post;
+$arevs = '<span class="art-revs">';
+ob_start();
+
+$author_id = $post->post_author;
+// echo get_the_author_meta( 'nicename', $author_id );
+    
+$auth = get_the_author();
+     //echo $auth->name;
+     echo quote_edit2( get_the_author_meta( 'nicename', $author_id ) );
+     echo '<br /> ';
+$aedts = ob_get_contents();
+ob_end_clean();
+return $aedts;
+}
+add_shortcode ('editors', 'art_editor');
+
+function quote_edit2( $a ) {
+    $output = '';
+    $blogusers = get_users( array( 'search' => $a ) );
+foreach ( $blogusers as $user ) {   
+     $output .= '
+     <div class="row expert-widget"> 
+        <div class="wid-left">
+            '.get_avatar( $user->get('ID'), $size = '50', $default = '<path_to_url>' ).'
+        </div>
+        <div class="wid-body">
+            <a href="/editor/'.format_uri(esc_html($user->first_name)).'-'.format_uri(esc_html($user->last_name)).'">'.esc_html($user->first_name).' '.esc_html($user->last_name).'</a><br /> '.esc_html( $user->title ).', '.esc_html( $user->affiliation ).'
+        </div>
+     </div>';
+}    
+    //Close and return markup
+    return $output;
+}
+
 // Kill pingbacks
 // from http://blog.carlesmateo.com/2014/08/30/stopping-and-investigating-a-wordpress-xmlrpc-php-attack/
 add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
