@@ -50,7 +50,7 @@
     "jshint-stylish": "^1.0.1",
     "lazypipe": "^0.2.2",
     "merge-stream": "^0.1.7",
-    "minimist": "^1.1.1",
+    "minimist": "^1.2.3",
     "run-sequence": "^1.0.2",
     "traverse": "^0.6.6",
     "wiredep": "^2.2.2"
@@ -95,7 +95,7 @@
     "jshint-stylish": "^1.0.2",
     "lazypipe": "^0.2.4",
     "merge-stream": "^0.1.8",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "node-gyp": "^3.0.3",
     "portscanner": "^1.0.0",
     "readable-stream": "^2.0.4",
