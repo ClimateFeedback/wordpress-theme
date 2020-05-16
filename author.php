@@ -35,7 +35,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
           <div class="med-body">
             <h2 class="noborder"> <a style="text-decoration: none;"><?php echo esc_html( $curauth->first_name ); ?> <?php echo esc_html( $curauth->last_name ); ?> </a> </h2>
             <p><b><?php echo esc_html( $curauth->title ); ?></b></p>
-            
+            <p><?php the_author_description(); ?></p>
+            <p><small><a href="https://sciencefeedback.co/team-advisors-contributors/">The Science Feedback team</a></small></p>
           </div>
         </div>
         

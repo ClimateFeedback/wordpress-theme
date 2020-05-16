@@ -15,7 +15,7 @@
                   CLAIM
               </div>
               <div class="feedpages-excerpt feedpages__claim__container__content__text mb1">
-                  "<?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?>"
+                  <?php echo get_post_meta( get_the_ID(), 'claimshort', true) ?>
               </div>
               
               <div class="feedpages__claim__container__content__outlet">

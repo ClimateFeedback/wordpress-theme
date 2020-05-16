@@ -38,6 +38,131 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 </div>
 
 <div class="container">
+<?php
+//Extract ID from category name
+    $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
+    $theCatId2 = $theCatId2->term_id;
+  $args = array(
+    'post_type' => array('claimreview'),
+    'cat' => $theCatId2,
+    'posts_per_page' => 2
+  );
+  $loop = new WP_Query( $args );
+?>
+<div class="feeds-container feeds-container__claim ">
+    <div class="feeds-title h3">Latest Claim Reviews</div>
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <div class="feed feed__claim col col-lg-6 mb1">
+        <div class="feed__claim__container relative">
+            <div class='feed-title h3'>
+                <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
+                  <?php echo get_the_title(); ?>
+                </a>
+            </div>
+          <div class="feed__claim__container__illustration col col-4">
+            <div class="feed__claim__container__illustration__screenshot">
+              <img
+                class="feed__claim__container__illustration__screenshot__img"
+                src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
+              >
+            </div>
+          </div>
+          <div class="feed__claim__container__content col col-8">
+            <div class="feed-excerpt feed__claim__container__content__text mb1">
+              <?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>
+            </div>
+              <img
+              class="feed__claim__container__content__verdict__img mb1"
+              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
+            >
+            <div class="feed__claim__container__content__outlet">
+              <?php echo get_post_meta( get_the_ID(), 'author', true); ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
+            </div>
+            <div>
+                - <?php echo get_the_date( 'd M Y' ); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+  <?php endwhile; ?>
+</div>
+<div class="feeds-more mb1 p1">
+  <a
+    class="feeds-more__link h4 p1"
+    href="<?php echo get_site_url(); ?>/claim-reviews/"
+  >
+    More Claim Reviews
+  </a>
+</div>
+</div><!-- / .container -->
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; }
+</style>
+    <section class="mc_embed_bar">
+    <div class="container" id="mc_embed_signup" style="background-color: #F5F5F5;overflow-y:hidden;">
+        <form action="//climatefeedback.us9.list-manage.com/subscribe/post?u=e33d7323df2327db90438153a&amp;id=e4773425e1"
+    method="post" id="mc-embedded-subscribe-form"
+    name="mc-embedded-subscribe-form"
+    class="validate overflow-hidden"
+    target="_blank"
+    style="padding:5px;"
+  novalidate>
+    <div class="row">
+      <div class="col-sm-12 call-to-action">
+        <div class="media-left">
+            <img
+          class="sci-fig" style="padding-bottom: 2.0em;"
+          src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
+            >
+        </div>
+        <div class="media-body">
+          <div
+        class="col lg-col-4 feeds__sign-up__inputs"
+        id="mc_embed_signup_scroll"
+      >
+              <h3 style="font-size: 21px;">Get scientists’ reviews delivered directly to your inbox</h3>
+              </div>
+          <div
+        class="col lg-col-4 feeds__sign-up__inputs"
+        id="mc_embed_signup_scroll"
+      >
+         <div style="width:110%;">
+           <input
+            class="feeds__sign-up__inputs__input mb1"
+            type="email"
+            value=""
+            name="EMAIL"
+            class="email"
+            id="mce-EMAIL"
+            placeholder="enter your email address"
+            required
+          >
+             <div class="feeds__sign-up__button">
+              <input
+               class="button feeds-submit feeds__sign-up__inputs__input feeds__sign-up__inputs__input__button forceblue"
+               type="submit"
+               value="Sign Up"
+               name="subscribe"
+               id="mc-embedded-subscribe"
+             >
+           </div>
+         </div>
+         <div style="position: absolute; left: -5000px;" aria-hidden="true">
+           <input type="text" name="b_e33d7323df2327db90438153a_e4773425e1" tabindex="-1" value="">
+        </div>
+       </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </section>
+<!--End mc_embed_signup-->
+
+<div class="container">
 
 <?php
   $args = array(
@@ -112,132 +237,6 @@ Climate Feedback is a worldwide network of scientists sorting fact from fiction 
 </div>
 
     </div><!-- / .container -->
-<!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-    #mc_embed_signup{background:#fff; clear:left; }
-</style>
-    <section class="mc_embed_bar">
-    <div class="container" id="mc_embed_signup" style="background-color: #F5F5F5;overflow-y:hidden;">
-        <form action="//climatefeedback.us9.list-manage.com/subscribe/post?u=e33d7323df2327db90438153a&amp;id=e4773425e1"
-    method="post" id="mc-embedded-subscribe-form"
-    name="mc-embedded-subscribe-form"
-    class="validate overflow-hidden"
-    target="_blank"
-    style="padding:5px;"
-  novalidate>
-    <div class="row">
-      <div class="col-sm-12 call-to-action">
-        <div class="media-left">
-            <img
-          class="sci-fig" style="padding-bottom: 2.0em;"
-          src="<?php echo get_site_url(); ?>/wp-content/uploads/icons/paper-plane-xxl.png"
-            >
-        </div>
-        <div class="media-body">
-          <div
-        class="col lg-col-4 feeds__sign-up__inputs"
-        id="mc_embed_signup_scroll"
-      >
-              <h3 style="font-size: 21px;">Get scientists’ reviews delivered directly to your inbox</h3>
-              </div>
-          <div
-        class="col lg-col-4 feeds__sign-up__inputs"
-        id="mc_embed_signup_scroll"
-      >
-         <div style="width:110%;">
-           <input
-            class="feeds__sign-up__inputs__input mb1"
-            type="email"
-            value=""
-            name="EMAIL"
-            class="email"
-            id="mce-EMAIL"
-            placeholder="enter your email address"
-            required
-          >
-             <div class="feeds__sign-up__button">
-              <input
-               class="button feeds-submit feeds__sign-up__inputs__input feeds__sign-up__inputs__input__button forceblue"
-               type="submit"
-               value="Sign Up"
-               name="subscribe"
-               id="mc-embedded-subscribe"
-             >
-           </div>
-         </div>
-         <div style="position: absolute; left: -5000px;" aria-hidden="true">
-           <input type="text" name="b_e33d7323df2327db90438153a_e4773425e1" tabindex="-1" value="">
-        </div>
-       </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-        </section>
-<!--End mc_embed_signup-->
-
-<div class="container">
-<?php
-//Extract ID from category name
-    $theCatId2 = get_term_by( 'slug', 'featured', 'category' );
-    $theCatId2 = $theCatId2->term_id;
-  $args = array(
-    'post_type' => array('claimreview'),
-    'cat' => $theCatId2,
-    'posts_per_page' => 2
-  );
-  $loop = new WP_Query( $args );
-?>
-<div class="feeds-container feeds-container__claim ">
-    <div class="feeds-title h3">Latest Claim Reviews</div>
-  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <div class="feed feed__claim col col-lg-6 mb1">
-        <div class="feed__claim__container relative">
-            <div class='feed-title h3'>
-                <a href="<?php echo get_permalink( get_the_ID() ); ?>" >
-                  <?php echo get_the_title(); ?>
-                </a>
-            </div>
-          <div class="feed__claim__container__illustration col col-4">
-            <div class="feed__claim__container__illustration__screenshot">
-              <img
-                class="feed__claim__container__illustration__screenshot__img"
-                src="<?php echo get_post_meta( get_the_ID(), 'screenshot', true)?>"
-              >
-            </div>
-          </div>
-          <div class="feed__claim__container__content col col-8">
-            <div class="feed-excerpt feed__claim__container__content__text mb1">
-              "<?php echo get_post_meta( get_the_ID(), 'claimshort', true); ?>"
-            </div>
-              <img
-              class="feed__claim__container__content__verdict__img mb1"
-              src="<?php echo get_site_url(); ?>/wp-content/uploads/tags/HTag_<?php echo get_post_meta( get_the_ID(), 'verdict', true)?>.png"
-            >
-            <div class="feed__claim__container__content__outlet">
-              <?php echo get_post_meta( get_the_ID(), 'author', true); ?>, <?php echo get_post_meta( get_the_ID(), 'outlet', true); ?>
-            </div>
-            <div>
-                - <?php echo get_the_date( 'd M Y' ); ?>
-            </div>
-          </div>
-        </div>
-      </div>
-  <?php endwhile; ?>
-</div>
-<div class="feeds-more mb1 p1">
-  <a
-    class="feeds-more__link h4 p1"
-    href="<?php echo get_site_url(); ?>/claim-reviews/"
-  >
-    More Claim Reviews
-  </a>
-</div>
-
-
-</div><!-- / .container -->
 
 <section class="scientist-signup">
   <div class="container">
