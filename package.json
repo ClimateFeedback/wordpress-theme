@@ -107,7 +107,7 @@
     "strip-ansi": "^3.0.0",
     "supports-color": "^3.1.2",
     "traverse": "^0.6.6",
-    "ua-parser-js": "^0.7.9",
+    "ua-parser-js": "^0.7.24",
     "ucfirst": "^1.0.0",
     "vinyl": "^1.1.0",
     "wiredep": "^2.2.2"
